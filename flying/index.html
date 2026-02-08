@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+
+
+
+
+<html
+ lang="de"
+ class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content=#ffffff>
+    
+    <title>Fliegen - FVA</title>
+    
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="shortcut icon" type="image/png"
+           href="/favicon.png" 
+    />
+    <link rel=preload href="/assets/css/roboto.css" as="style">
+    <link rel=preload href="/assets/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/roboto-v20-latin-ext_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <script src="/assets/js/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/fontawesome.all.min.css">
+    
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="header.flying" />
+<meta property="og:locale" content="de" />
+<meta property="og:site_name" content="FVA" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="header.flying" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"header.flying","url":"/flying/"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- head scripts --></head>
+
+  
+  <body>
+  
+    <nav class="navbar is-primary  is-fixed-top " x-data="{ openNav: false }">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/" class="navbar-item">
+                <img src=/assets/img/fvaLogo.png>
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu" :class="{ 'is-active': openNav }" x-on:click="openNav = !openNav">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu" :class="{ 'is-active': openNav }">
+            <div class="navbar-start">
+                <a href="/" class="navbar-item ">FVA</a>
+                
+                
+                    
+                    <a href="/blog/" class="navbar-item ">News</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/about/" class="navbar-link ">Über uns</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/about/team/" class="navbar-item ">Team</a>
+                            
+                            <a href="/about/workshop/" class="navbar-item ">Werkstatt</a>
+                            
+                            <a href="/about/history/" class="navbar-item ">Geschichte</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/projects/" class="navbar-link ">Projekte</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/projects/fva30/" class="navbar-item ">FVA 30</a>
+                            
+                            <a href="/projects/fva29/" class="navbar-item ">FVA 29</a>
+                            
+                            <a href="/projects/fva24/" class="navbar-item ">FVA 24d</a>
+                            
+                            <a href="/projects/oldprojects/" class="navbar-item ">Ältere Projekte</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <a href="/flying/" class="navbar-item is-active">Fliegen</a>
+                    
+                
+                    
+                    <a href="/join/" class="navbar-item ">Mitmachen</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/partners/" class="navbar-link ">Partner</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/partners/newpartner/" class="navbar-item ">Partner werden</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/contact/" class="navbar-link ">Kontakt</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/contact/imprint/" class="navbar-item ">Impressum</a>
+                            
+                            <a href="/contact/privacy/" class="navbar-item ">Datenschutz</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                
+            </div>
+                <div class="navbar-end">
+			
+			        
+			        <a class="navbar-item" href="/en/flying/">
+                            <span>&nbsp;EN</span>
+                            <span class="icon"><i class="fas fa-globe"></i></span>
+                		</a>
+			
+        	</div>        
+        </div>
+    </div>
+</nav>
+
+    
+        <section class="hero  is-medium  is-bold is-primary"  style="background: url('/assets/img/fliegen_hero.jpg') no-repeat center center; background-size: cover;" >
+    <div class="hero-body ">
+        <div class="container">
+            
+            <h1 class="title is-2">Fliegen</h1>
+            
+            <p class="subtitle is-3"></p>
+            
+        </div>
+    </div>
+</section>
+    
+    
+
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                
+                <div class="column is-4-desktop is-4-tablet">
+                    
+
+<aside class="menu">
+
+    <p class="menu-label"></p>
+    <ul class="menu-list">
+        
+        <li>
+            <a href="/flying/#learn" class="">Lernen</a>
+            
+        </li>
+        
+        <li>
+            <a href="/flying/#aircraft" class="">Flugzeugpark</a>
+            
+        </li>
+        
+        <li>
+            <a href="/flying/#camp" class="">Fluglager</a>
+            
+        </li>
+        
+        <li>
+            <a href="/flying/#airfield" class="">Flugplatz</a>
+            
+        </li>
+            
+    </ul>
+
+</aside>
+                </div>
+                
+                <div class="column is-8">
+                    
+                    
+                    
+                    
+                    
+<div class="content">
+    <p><b>Die Welt von oben sehen</b> - Getreu unserem Motto kommt das Fliegen bei uns im Verein natürlich nicht zu kurz.
+  Neben der Forschung und dem Prototypenbau kannst du bei uns die komplette Segelflugpilotenausbildung (SPL) machen und
+  gebaute Prototypen testen! Wir fliegen hauptsächlich auf unserem Stammflugplatz in Aachen-Merzbrück. Dort gibt es
+  neben dem Flugbetrieb jedes Jahr viele verschiedene Veranstaltungen bei denen sowohl FlugschülerInnen als auch
+  ScheinpilotInnen auf ihre Kosten kommen.</p>
+
+<p>Neben dem Flugbetrieb in Aachen gehört zu einer gelungenen Flugsaison unser dreiwöchiges Fluglager in Feurs,
+  Frankreich. Dort fährt die FVA traditionell jedes Jahr gegen Ende März hin, um gemeinsam zu Fliegen, zu Zelten und
+  Spaß zu haben. Während viele FlugschülerInnen dort ihre Ausbildung beginnen, genießen die ScheinpilotInnen die
+  Aufwinde des Zentralmassivs. </p>
+
+<p>Natürlich gibt es neben den von der FVA organisierten Fluglagern und Lehrgängen viele weitere Veranstaltungen, die
+  man
+  wahrnehmen kann. Wie zum Beispiel das von der Idaflieg organisierte Sommertreffen, auf dem alle Akafliegs aus ganz
+  Deutschland zusammen kommen, um die vereinseigenen Flugzeuge und Prototypen zu erproben und zu vermessen.</p>
+
+<p>Mit all diesen Veranstaltungen wird eins immer wieder bestätigt: Segelflugsport ist Teamsport und das macht es zu
+  etwas Besonderem!</p>
+
+<div id="learn"></div>
+</div></div></div></section></div>
+<section class="hero is-narrow is-bold is-primary">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title is-2">Lernen</h1>
+        </div>
+    </div>
+</section>
+<section class="section"><div class="container"><div class="columns"><div class="column "><div class="content">
+
+<div class="columns">
+  <div class="column is-4">
+    <div x-data="{ open: false }">
+    <a @click="open = true" title="View large image">
+        <figure class="image ">
+            <img src="/assets/img/flying/lernen.jpg" alt="">
+        </figure>
+    </a>
+    <div class="modal" :class="{ 'is-active': open }">
+        <div class="modal-background" @click="open = false"></div>
+        <div class="modal-content">
+            
+                <img src="/assets/img/flying/lernen.jpg" alt="">
+            
+        </div>
+        <button class="modal-close is-large" aria-label="close" @click="{ open = false }"></button>
+    </div>
+</div>
+
+  </div>
+  <div class="column is-8">
+    Die Ausbildung zum Scheinpiloten ist gegliedert in drei Abschnitte. Dazu gehören die A, B und C Prüfung und ein
+    Überlandflug inklusive amtlicher Prüfung. Im A Teil erlernst du alle Grundlagen bis zum ersten Alleinflug. Dazu
+    gehört
+    einwandfreies Beherrschen des Starts, der Platzrunde und der Ladung, sowie das korrekte Verhalten am und rund um den
+    Flugplatz. Im Abschnitt B und C wirst du sogenannte Übungsflüge machen, das erste Mal Einsitzer fliegen und die
+    Nutzung von Thermik erlernen. Anschließend bereitest du dich auf Überlandflüge vor, um dann einen 50 km Überlandflug
+    alleine als Ausbildungsabschluss zu
+    absolvieren. Natürlich gehört zur Segelflugausbildung auch der theoretische Teil. Demensprechend wirst du am
+    Bezirksunterricht
+    teilnehmen, die theoretischen Prüfungen zum Abschnitt A, B und C schreiben und zum Schluss die amtliche
+    Theorieprüfung
+    in Düsseldorf ablegen. Die Segelfluglizenz ist jedoch erst der Start in deine Pilotenausbildung. Es bieten sich
+    viele Möglichkeiten der
+    Fort- und Weiterbildung. So gibt es beispielsweise Lehrgänge für Kunstflug, Motorsegler, Echo Klasse (also
+    Einmotorige Flugzeuge bis 2t Abflugmasse) oder auch die
+    Fortbildung zum Fluglehrer.
+  </div>
+</div>
+
+<div id="aircraft"></div>
+</div></div></div></section></div>
+<section class="hero is-narrow is-bold is-primary">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title is-2">Flugzeugpark</h1>
+        </div>
+    </div>
+</section>
+<section class="section"><div class="container"><div class="columns"><div class="column "><div class="content">
+
+<p>Mit unserem doppelsitzigen Segelflugzeug, zwei Einsitzern und unserer Schleppmaschine haben wir einen
+  Flugzeugpark, auf den wir stolz sein können.
+  Unsere Flugzeuge sind vielseitig einsetzbar. Von der Schulung über Streckenflug, bis hin zum Kunstflug ist alles
+  möglich.
+</p>
+<p>
+<div class="columns">
+  <div class="column is-4">
+    <div x-data="{ open: false }">
+    <a @click="open = true" title="View large image">
+        <figure class="image ">
+            <img src="/assets/img/flying/aircraft/DG-1001S.jpg" alt="">
+        </figure>
+    </a>
+    <div class="modal" :class="{ 'is-active': open }">
+        <div class="modal-background" @click="open = false"></div>
+        <div class="modal-content">
+            
+                <img src="/assets/img/flying/aircraft/DG-1001S.jpg" alt="">
+            
+        </div>
+        <button class="modal-close is-large" aria-label="close" @click="{ open = false }"></button>
+    </div>
+</div>
+
+  </div>
+  <div class="column is-8">
+    <h3>DG-1001S</h3>
+
+    Nach vielen Jahren Begeisterung am Fliegen mit der DG-1000T, darf die FVA ein neues Flugzeug im Park willkommen
+    heißen: Die DG-1001S der FVA wurde im Frühjahr 2022 werksneu ausgeliefert und fliegt seitdem in allen unserer
+    Bereiche: Leistungsstreckenflug, Kunstflug und Schulung. Als DG-1001 erhielt das Flugzeug die neu entwickelten
+    neo-Winglets, die die Flugeigenschaften weiter verbessern und das Flugzeug zu einem gefährlichen Konkurrenten bei
+    Wettbewerben. Inbesondere der einsitzige Betrieb wurde durch das elektrische Einziehfahrwerk weiter verbessert.
+  </div>
+</div>
+</p>
+<p>
+<div class="columns">
+  <div class="column is-4">
+    <div x-data="{ open: false }">
+    <a @click="open = true" title="View large image">
+        <figure class="image ">
+            <img src="/assets/img/flying/aircraft/FVA29.jpg" alt="">
+        </figure>
+    </a>
+    <div class="modal" :class="{ 'is-active': open }">
+        <div class="modal-background" @click="open = false"></div>
+        <div class="modal-content">
+            
+                <img src="/assets/img/flying/aircraft/FVA29.jpg" alt="">
+            
+        </div>
+        <button class="modal-close is-large" aria-label="close" @click="{ open = false }"></button>
+    </div>
+</div>
+
+  </div>
+  <div class="column is-8">
+    <h3>FVA 29</h3>
+
+    Ursprünglich als ASW 28-18 vom Hersteller Schleicher beschafft, hat sich die Typenbezeichnung dieses Segelflugzeugs
+    gewandelt. Denn mit dem Forschungsprojekt FVA 29 wurde der zunächst leere Motorkasten im Rumpf hinter dem Cockpit
+    mit einem elektrischen Antriebsstrang ausgestattet. Das Kennzeichen D-KWRL ist hier Programm: Sollte auf dem Heimweg
+    eines längeren Überlandfluges die Thermik ausbleiben, kann das Hilfstriebwerk ausgefahren werden und die FVA 29
+    erreicht "quirlend" ihr Ziel. Der leistungsfähige Einsitzer besteht aus modernen Faserverstärkten Kunststoffen,
+    besser bekannt als GFK und CFK. In der FVA werden die 18 m Spannweite sowohl zum Streckenflug, als auch häufig zur
+    Einsitzer-Schulung eingesetzt.
+  </div>
+</div>
+</p>
+<p>
+<div class="columns">
+  <div class="column is-4">
+    <div x-data="{ open: false }">
+    <a @click="open = true" title="View large image">
+        <figure class="image ">
+            <img src="/assets/img/flying/aircraft/GZ_DR400.jpg" alt="">
+        </figure>
+    </a>
+    <div class="modal" :class="{ 'is-active': open }">
+        <div class="modal-background" @click="open = false"></div>
+        <div class="modal-content">
+            
+                <img src="/assets/img/flying/aircraft/GZ_DR400.jpg" alt="">
+            
+        </div>
+        <button class="modal-close is-large" aria-label="close" @click="{ open = false }"></button>
+    </div>
+</div>
+
+  </div>
+  <div class="column is-8">
+
+
+
+    <h3>Robin DR400/180R</h3>
+
+    Das Arbeitstier unseres Flugzeugparks trägt die Musterbezeichnung DR400/180R, wird liebevoll aber auch "Remo"
+    genannt. Das ist die französische Kurzform für "Remorqueur", was Schleppflugzeug bedeutet. Das 180 PS starke
+    Motorflugzeug ist in Holzbauweise konstruiert. Es erledigt auch nach fast 35.000 Landungen weiterhin zuverlässig
+    seinen Job und bietet für einen gelegentlichen Lokal- oder Überlandflug bis zu vier Passagieren Platz. Darüber
+    hinaus ist unsere "GZ" auch eine Forschungsplattform. Nicht die Bauweise oder das Triebwerk mit 5,9 Litern Hubraum
+    sind innovativ, sondern die von der FVA eigenentwickelte Schleppseil-Einzugvorrichtung mit der Projektbezeichnung
+    FVA 24. Die "WiMi" ist auf der Hutablage montiert und rollt das Schleppseil nach dem Ausklinken des Segelflugzeugs
+    ein. So kann die "Remo" unmittelbar zum Anflug übergehen und sicher landen.
+  </div>
+</div>
+</p>
+<p>
+  <div class="columns">
+    <div class="column is-4">
+      <div x-data="{ open: false }">
+    <a @click="open = true" title="View large image">
+        <figure class="image ">
+            <img src="/assets/img/flying/aircraft/DG-300.jpg" alt="">
+        </figure>
+    </a>
+    <div class="modal" :class="{ 'is-active': open }">
+        <div class="modal-background" @click="open = false"></div>
+        <div class="modal-content">
+            
+                <img src="/assets/img/flying/aircraft/DG-300.jpg" alt="">
+            
+        </div>
+        <button class="modal-close is-large" aria-label="close" @click="{ open = false }"></button>
+    </div>
+</div>
+</div>
+    <div class="column is-8">
+  
+  
+      <h3>DG 300</h3>
+  
+      Die DG 300 wurde in den 80er Jahren von DG Flugzeugbau entwickelt. Das Standardklasse Flugzeug mit 15 Metern 
+      Spannweite bietet gute Flugeigenschaften und ist auch für Streckenflüge geeignet. Bei uns wird sie vor allem
+      zur Schulung eingesetzt, da sie nach einer doppelsitzigen und später einsitzigen Ausbildung auf der DG 1000, sehr gut für die ersten
+      Übungsflüge mit einem Einsitzer geeignet ist. Bei uns ist sie seit 2023 im Einsatz.
+    </div>
+  </div>
+  </p>
+<p>
+<div class="columns">
+  <div class="column is-4">
+    <div x-data="{ open: false }">
+    <a @click="open = true" title="View large image">
+        <figure class="image ">
+            <img src="/assets/img/flying/aircraft/Hornet.jpg" alt="">
+        </figure>
+    </a>
+    <div class="modal" :class="{ 'is-active': open }">
+        <div class="modal-background" @click="open = false"></div>
+        <div class="modal-content">
+            
+                <img src="/assets/img/flying/aircraft/Hornet.jpg" alt="">
+            
+        </div>
+        <button class="modal-close is-large" aria-label="close" @click="{ open = false }"></button>
+    </div>
+</div>
+</div>
+  <div class="column is-8">
+
+
+    <h3>Glasflügel Hornet</h3>
+
+    Die Firma Glasflügel baute prägend die ersten Segelflugzeuge in FVK-Bauweise. Die "Hornet" wurde in den 1970er
+    Jahren als Einsitzer mit 15 m Spannweite konstruiert. Sie wird bei uns häufig für Streckenflüge und Wettbewerbe
+    genutzt. Scheinpilotinnen und Scheinpiloten schätzen das agile und angenehme Flugverhalten sowie die gute Ausrüstung
+    und Avionik der "HK". Zur Zeit wird sie zusätzlich in der Schulung eingesetzt. Flugzeugtypen aus dem Hause des
+    Konstrukteur-Ehepaars Hänle bereichern den Flugzeugpark der FVA seit je her.
+  </div>
+</div>
+</p>
+<div id="camp"></div>
+</div></div></div></section></div>
+<section class="hero is-narrow is-bold is-primary">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title is-2">Fluglager</h1>
+        </div>
+    </div>
+</section>
+<section class="section"><div class="container"><div class="columns"><div class="column "><div class="content">
+
+<div class="columns">
+  <div class="column is-3">
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img src="/assets/img/flying/Feurs.jpg">
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="content">
+          <h4>Feurs</h4>
+          <p>Für gewöhnlich startet unsere Flugsaison in Form eines dreiwöchigen Fluglagers in Frankreich in Feurs.
+            Dort wird viel geflogen, gezeltet und gemeinsam eine unvergessliche Zeit genossen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="column is-3">
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img src="/assets/img/projects/fva29.jpg">
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="content">
+          <h4>Sommertreffen</h4>
+          <p>Beim jährlichen Sommertreffen kommt die gesamte Idaflieg zusammen und führt Forschungsflüge und Erprobungen
+            der selbstgebauten Prototypen durch.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="column is-3">
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img src="/assets/img/flying/StCroix.jpg">
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="content">
+          <h4>St. Croix</h4>
+          <p>Um den eigenen Fliegerhorizont stets zu erweitern gibt es für unsere Poilotinnen und Piloten die
+            einzigartige
+            Möglichkeit in einem weiteren Zeltlager die Alpen aus der Luft zu erleben.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="column is-3">
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img src="/assets/img/flying/HeSchuLa.jpg">
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="content">
+          <h4>Herbstschulungslager</h4>
+          <p>Ausgerichtet von der Akaflieg Karlruhe findet im Herbst ein weiteres Fluglager speziel für FlugschülerInnen
+            statt.
+            Hier heißt es zwei Wochen lang intensives Starten und Landen Lernen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="airfield"></div>
+</div></div></div></section></div>
+<section class="hero is-narrow is-bold is-primary">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title is-2">Flugplatz</h1>
+        </div>
+    </div>
+</section>
+<section class="section"><div class="container"><div class="columns"><div class="column "><div class="content">
+
+<b>50°49'38'' N / 06°11'18'' E</b> - Einen Katzensprung entfernt von unserer Werkstatt liegt der Flugplatz
+Aachen-Merzbrück, welcher unsere fliegerische Heimat und Ausgangspunkt von Platzrunden, Dreiecken und Kunstflügen ist.
+Er beheimatet außer uns auch noch die Segelfluggruppe Nordstern und den Luftsportverein Aachen, mit denen wir eine enge
+Kooperation, unter anderem auch in der Schulung, eingegangen sind. So erweitert sich unsere Segelfliegergemeinschaft auf
+insgesamt drei Schleppmaschinen, weitere Schulungsflugzeuge und viele Fliegerkameraden.
+
+Dies garantiert auch vielfältige Möglichkeiten den Flugbetrieb zu organisieren. Grundsätzlich sind an jedem Wochenende
+Fluglehrer und Schlepppiloten für den Flugbetrieb vor Ort, es sei denn das Wetter zieht uns einen Strich durch die
+Rechnung. Aber auch unter der Woche kann man auf das Kooperationsnetzwerk zurückgreifen und relativ spontan einen
+Flugbetrieb auf die Beine stellen.
+
+<img src="/assets/img/about/workshop/map_region.png">
+</div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+        <footer class="footer">
+    <div class="container">
+        
+        
+        <div class="columns is-multiline">
+            
+        </div>
+        
+
+        <div class="column is-12">
+            <div class="has-text-centered">
+                <p><strong>Folgen auf</strong></p>
+                <div class="buttons is-centered">
+                    <a href="https://www.facebook.com/fva1920/" class="button is-light">
+                        <i class="fab fa-facebook fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.instagram.com/fva1920/" class="button is-light">
+                        <i class="fab fa-instagram fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCTCcUCZQNPcGdRwlTqN_M-Q" class="button is-light">
+                        <i class="fab fa-youtube fa-lg has-text-danger"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/fva-1920/" class="button is-light">
+                        <i class="fab fa-linkedin fa-lg has-text-link"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class="">Theme built by <a href="https://www.csrhymes.com">C.S. Rhymes</a></p>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class=""><a href="/contact/imprint/">Impressum</a> 
+                <a href="/contact/privacy/">Datenschutzerklärung</a>
+                <a href="https://fva.cloud">Intern</a></p>
+            </div>
+    </div>
+</footer>
+
+    
+    <script src="/assets/js/app.js" type="text/javascript"></script><!-- footer scripts --></body>
+</html>

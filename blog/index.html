@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+
+
+
+
+<html
+ lang="de"
+ class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content=#ffffff>
+    
+    <title>News - FVA</title>
+    
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="shortcut icon" type="image/png"
+           href="/favicon.png" 
+    />
+    <link rel=preload href="/assets/css/roboto.css" as="style">
+    <link rel=preload href="/assets/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/roboto-v20-latin-ext_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <script src="/assets/js/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/fontawesome.all.min.css">
+    
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="header.news" />
+<meta property="og:locale" content="de" />
+<meta property="og:site_name" content="FVA" />
+<meta property="og:type" content="website" />
+<link rel="next" href="/blog/page2" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="header.news" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"header.news","url":"/blog/"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- head scripts --></head>
+
+  
+  <body>
+  
+    <nav class="navbar is-primary  is-fixed-top " x-data="{ openNav: false }">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/" class="navbar-item">
+                <img src=/assets/img/fvaLogo.png>
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu" :class="{ 'is-active': openNav }" x-on:click="openNav = !openNav">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu" :class="{ 'is-active': openNav }">
+            <div class="navbar-start">
+                <a href="/" class="navbar-item ">FVA</a>
+                
+                
+                    
+                    <a href="/blog/" class="navbar-item is-active">News</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/about/" class="navbar-link ">Über uns</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/about/team/" class="navbar-item ">Team</a>
+                            
+                            <a href="/about/workshop/" class="navbar-item ">Werkstatt</a>
+                            
+                            <a href="/about/history/" class="navbar-item ">Geschichte</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/projects/" class="navbar-link ">Projekte</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/projects/fva30/" class="navbar-item ">FVA 30</a>
+                            
+                            <a href="/projects/fva29/" class="navbar-item ">FVA 29</a>
+                            
+                            <a href="/projects/fva24/" class="navbar-item ">FVA 24d</a>
+                            
+                            <a href="/projects/oldprojects/" class="navbar-item ">Ältere Projekte</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <a href="/flying/" class="navbar-item ">Fliegen</a>
+                    
+                
+                    
+                    <a href="/join/" class="navbar-item ">Mitmachen</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/partners/" class="navbar-link ">Partner</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/partners/newpartner/" class="navbar-item ">Partner werden</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/contact/" class="navbar-link ">Kontakt</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/contact/imprint/" class="navbar-item ">Impressum</a>
+                            
+                            <a href="/contact/privacy/" class="navbar-item ">Datenschutz</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                
+            </div>
+                <div class="navbar-end">
+			
+			        
+			        <a class="navbar-item" href="/en/blog/">
+                            <span>&nbsp;EN</span>
+                            <span class="icon"><i class="fas fa-globe"></i></span>
+                		</a>
+			
+        	</div>        
+        </div>
+    </div>
+</nav>
+
+    
+        <section class="hero  is-narrow  is-bold is-primary" >
+    <div class="hero-body ">
+        <div class="container">
+            
+            <h1 class="title is-2">News</h1>
+            
+            <p class="subtitle is-3"></p>
+            
+        </div>
+    </div>
+</section>
+    
+    
+
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                
+                <div class="column is-12">
+                    
+                    
+                    
+                    
+                    
+
+<div class="columns is-multiline">
+    <div class="column is-12">
+        <nav class="pagination is-centered">
+    
+    <p class="pagination-previous" disabled>Neuere</p>
+    
+    
+    <a href="/blog/page2" class="pagination-next is-info">Ältere</a>
+    
+    <ul class="pagination-list">
+        
+        
+        <li><a class="pagination-link is-current">1</a></li>
+        
+        
+        
+        <li><a href="/blog/page2" class="pagination-link">2</a></li>
+        
+        
+        
+        <li><a href="/blog/page3" class="pagination-link">3</a></li>
+        
+        
+        
+        <li><a href="/blog/page4" class="pagination-link">4</a></li>
+        
+        
+        
+        <li><a href="/blog/page5" class="pagination-link">5</a></li>
+        
+        
+        
+        <li><a href="/blog/page6" class="pagination-link">6</a></li>
+        
+        
+        
+        <li><a href="/blog/page7" class="pagination-link">7</a></li>
+        
+        
+        
+        <li><a href="/blog/page8" class="pagination-link">8</a></li>
+        
+        
+        
+        <li><a href="/blog/page9" class="pagination-link">9</a></li>
+        
+        
+        
+        <li><a href="/blog/page10" class="pagination-link">10</a></li>
+        
+        
+        
+        <li><a href="/blog/page11" class="pagination-link">11</a></li>
+        
+        
+        
+        <li><a href="/blog/page12" class="pagination-link">12</a></li>
+        
+        
+        
+        <li><a href="/blog/page13" class="pagination-link">13</a></li>
+        
+        
+        
+        <li><a href="/blog/page14" class="pagination-link">14</a></li>
+        
+        
+        
+        <li><a href="/blog/page15" class="pagination-link">15</a></li>
+        
+        
+    </ul>
+</nav>
+
+    </div>
+    
+    <div class="column is-6">
+        <div class="card">
+    
+    <div class="card-image">
+        <img src="/assets/img/articles/2026-01-21-wintertreffen-2026/witre1.jpg" alt="Wintertreffen 2026 in Berlin">
+    </div>
+    
+    <div class="card-content">
+        <div class="content">
+            
+            <a class="title is-4" href="/2026/01/21/wintertreffen-2026/">Wintertreffen 2026 in Berlin</a>
+            
+            
+                <p>Die Anreise zum Wintertreffen 2026 begann mit hoher Motivation.</p>
+
+            
+        </div>
+        <div class="has-text-centered">
+            <a href="/2026/01/21/wintertreffen-2026/" class="button is-primary">Weiterlesen</a>
+        </div>
+    </div>
+    <footer class="card-footer">
+        <p class="card-footer-item">Veröffentlicht am 21.01.2026</p>
+    </footer>
+</div>
+    </div>
+    
+    <div class="column is-6">
+        <div class="card">
+    
+    <div class="card-image">
+        <img src="/assets/img/archive/Header_Kennenlernwoche_SS21_g-1.png" alt="Dein Weg in die FVA">
+    </div>
+    
+    <div class="card-content">
+        <div class="content">
+            
+            <a class="title is-4" href="/2025/09/22/einfuehrungswoche-ws25/">Dein Weg in die FVA</a>
+            
+            
+                <p>Du hast Lust auf Forschen? Bauen? Fliegen? Dann bist du bei der FVA genau richtig. Komm am…</p>
+
+            
+        </div>
+        <div class="has-text-centered">
+            <a href="/2025/09/22/einfuehrungswoche-ws25/" class="button is-primary">Weiterlesen</a>
+        </div>
+    </div>
+    <footer class="card-footer">
+        <p class="card-footer-item">Veröffentlicht am 22.09.2025</p>
+    </footer>
+</div>
+    </div>
+    
+    <div class="column is-6">
+        <div class="card">
+    
+    <div class="card-image">
+        <img src="/assets/img/articles/2025-01-20-wintertreffen-2025/witre1.jpg" alt="Wintertreffen 2025">
+    </div>
+    
+    <div class="card-content">
+        <div class="content">
+            
+            <a class="title is-4" href="/2025/01/20/wintertreffen-2025/">Wintertreffen 2025</a>
+            
+            
+                <p>Das diesjährige Idaflieg Wintertreffen fand vom 10. bis 12. Januar 2025 in Darmstadt statt…</p>
+
+            
+        </div>
+        <div class="has-text-centered">
+            <a href="/2025/01/20/wintertreffen-2025/" class="button is-primary">Weiterlesen</a>
+        </div>
+    </div>
+    <footer class="card-footer">
+        <p class="card-footer-item">Veröffentlicht am 20.01.2025</p>
+    </footer>
+</div>
+    </div>
+    
+    <div class="column is-6">
+        <div class="card">
+    
+    <div class="card-image">
+        <img src="/assets/img/articles/2024-11-04-heschula2024/d0282-2.jpg" alt="Herbstschulungslager 2024">
+    </div>
+    
+    <div class="card-content">
+        <div class="content">
+            
+            <a class="title is-4" href="/2024/11/04/heschula2024/">Herbstschulungslager 2024</a>
+            
+            
+                <p>Gegen Ende der Flugsaison stand auch in diesem Jahr wieder das Herbstschulungslager (HeSchuLa) der Akaflieg Karlsruhe auf dem Plan vieler FVA-Flugschüler:innen…</p>
+
+            
+        </div>
+        <div class="has-text-centered">
+            <a href="/2024/11/04/heschula2024/" class="button is-primary">Weiterlesen</a>
+        </div>
+    </div>
+    <footer class="card-footer">
+        <p class="card-footer-item">Veröffentlicht am 4.11.2024</p>
+    </footer>
+</div>
+    </div>
+    
+    <div class="column is-6">
+        <div class="card">
+    
+    <div class="card-image">
+        <img src="/assets/img/articles/2024-07-17-lsj-streckenfluglehrgang-2024/IMG_20240706_152922.jpg" alt="LSJ Streckenfluglehrgang 2024">
+    </div>
+    
+    <div class="card-content">
+        <div class="content">
+            
+            <a class="title is-4" href="/2024/07/17/lsj-streckenfluglehrgang-2024/">LSJ Streckenfluglehrgang 2024</a>
+            
+            
+                <p>Anfang Juli diesen Jahres durfte ich am Streckenfluglehrgang der Luftsportjugend (LSJ) in Bergheim teilnehmen. Gemeinsam mit…</p>
+
+            
+        </div>
+        <div class="has-text-centered">
+            <a href="/2024/07/17/lsj-streckenfluglehrgang-2024/" class="button is-primary">Weiterlesen</a>
+        </div>
+    </div>
+    <footer class="card-footer">
+        <p class="card-footer-item">Veröffentlicht am 17.07.2024</p>
+    </footer>
+</div>
+    </div>
+    
+    <div class="column is-6">
+        <div class="card">
+    
+    <div class="card-image">
+        <img src="/assets/img/archive/Header_Kennenlernwoche_SS21_g-1.png" alt="Einführungswoche">
+    </div>
+    
+    <div class="card-content">
+        <div class="content">
+            
+            <a class="title is-4" href="/2024/05/24/einfuehrungswoche-ss24/">Einführungswoche</a>
+            
+            
+                <p>Du hast Interesse der FVA beizutreten oder die FVA besser kennen zu lernen? Dann schau doch in der Einführungswoche vorbei, wo…</p>
+
+            
+        </div>
+        <div class="has-text-centered">
+            <a href="/2024/05/24/einfuehrungswoche-ss24/" class="button is-primary">Weiterlesen</a>
+        </div>
+    </div>
+    <footer class="card-footer">
+        <p class="card-footer-item">Veröffentlicht am 24.05.2024</p>
+    </footer>
+</div>
+    </div>
+    
+    <div class="column is-6">
+        <div class="card">
+    
+    <div class="card-image">
+        <img src="/assets/img/articles/2023-11-17-fva29-erstflug/thumb.jpg" alt="FVA 29 Erstflug">
+    </div>
+    
+    <div class="card-content">
+        <div class="content">
+            
+            <a class="title is-4" href="/2023/11/17/fva29-erstflug/">FVA 29 Erstflug</a>
+            
+            
+                <p>Am 30.10.2023 war es endlich so weit: Unser Prototyp für eine elektrische Heimkehrhilfe, die FVA 29, durfte endlich ihren ersten angetriebenen Flug absolvieren!</p>
+
+            
+        </div>
+        <div class="has-text-centered">
+            <a href="/2023/11/17/fva29-erstflug/" class="button is-primary">Weiterlesen</a>
+        </div>
+    </div>
+    <footer class="card-footer">
+        <p class="card-footer-item">Veröffentlicht am 17.11.2023</p>
+    </footer>
+</div>
+    </div>
+    
+    <div class="column is-6">
+        <div class="card">
+    
+    <div class="card-image">
+        <img src="/assets/img/articles/2023-10-14-rasengittersteine/thumb.jpg" alt="Neue Rasengittersteine an der Werkstatt">
+    </div>
+    
+    <div class="card-content">
+        <div class="content">
+            
+            <a class="title is-4" href="/2023/10/14/rasengittersteine/">Neue Rasengittersteine an der Werkstatt</a>
+            
+            
+                <p>Ein Wort, bei dem es vielen FVAlern wahrscheinlich kalt den Rücken herunterläuft. Lange in Planung und nun endlich erledigt. Wir haben den Sommer genutzt, um unserer unkrautbedeckten, unebenen Einfahrt ein Upgrade zu verpassen.</p>
+
+            
+        </div>
+        <div class="has-text-centered">
+            <a href="/2023/10/14/rasengittersteine/" class="button is-primary">Weiterlesen</a>
+        </div>
+    </div>
+    <footer class="card-footer">
+        <p class="card-footer-item">Veröffentlicht am 14.10.2023</p>
+    </footer>
+</div>
+    </div>
+    
+    <div class="column is-6">
+        <div class="card">
+    
+    <div class="card-image">
+        <img src="/assets/img/articles/2023-05-11-speedgoat-video/thumb.jpg" alt="FVA30 - Der elektrische Antriebsstrang auf dem Prüfstand">
+    </div>
+    
+    <div class="card-content">
+        <div class="content">
+            
+            <a class="title is-4" href="/2023/05/11/speedgoat-video/">FVA30 - Der elektrische Antriebsstrang auf dem Prüfstand</a>
+            
+            
+                <p>Die Fortschritte am hybrid elektrische Motorsegler FVA30 sind in vollem Gange. Wie und auf welche Art und Weise uns ein Prüfstand dabei hilft die Entwicklung des elektrischen Antriebsstrangs zu optimieren, erzählt euch Eric Kortemeier im Video.</p>
+
+            
+        </div>
+        <div class="has-text-centered">
+            <a href="/2023/05/11/speedgoat-video/" class="button is-primary">Weiterlesen</a>
+        </div>
+    </div>
+    <footer class="card-footer">
+        <p class="card-footer-item">Veröffentlicht am 11.05.2023</p>
+    </footer>
+</div>
+    </div>
+    
+    <div class="column is-6">
+        <div class="card">
+    
+    <div class="card-image">
+        <img src="/assets/img/articles/2023-05-09-hydrogen-summit/1.jpg" alt="Hydrogen Summit">
+    </div>
+    
+    <div class="card-content">
+        <div class="content">
+            
+            <a class="title is-4" href="/2023/05/09/hydrogen-summit/">Hydrogen Summit</a>
+            
+            
+                <p>Die Idaflieg war 2023 wieder auf der Aero mit zahlreichen Forschungsprojekten der Akafliegs vertreten.</p>
+
+            
+        </div>
+        <div class="has-text-centered">
+            <a href="/2023/05/09/hydrogen-summit/" class="button is-primary">Weiterlesen</a>
+        </div>
+    </div>
+    <footer class="card-footer">
+        <p class="card-footer-item">Veröffentlicht am 9.05.2023</p>
+    </footer>
+</div>
+    </div>
+    
+    <div class="column is-6">
+        <div class="card">
+    
+    <div class="card-image">
+        <img src="/assets/img/archive/Header_Kennenlernwoche_SS21_g-1.png" alt="Einführungswoche">
+    </div>
+    
+    <div class="card-content">
+        <div class="content">
+            
+            <a class="title is-4" href="/2023/04/26/einfuehrungswoche/">Einführungswoche</a>
+            
+            
+                <p>Du hast Interesse der FVA beizutreten oder die FVA besser kennen zu lernen? Dann schau doch in der Einführungswoche vorbei, wo…</p>
+
+            
+        </div>
+        <div class="has-text-centered">
+            <a href="/2023/04/26/einfuehrungswoche/" class="button is-primary">Weiterlesen</a>
+        </div>
+    </div>
+    <footer class="card-footer">
+        <p class="card-footer-item">Veröffentlicht am 26.04.2023</p>
+    </footer>
+</div>
+    </div>
+    
+    <div class="column is-6">
+        <div class="card">
+    
+    <div class="card-image">
+        <img src="/assets/img/articles/2023-03-29-100jahrfeier/banner.png" alt="100 Jahrfeier">
+    </div>
+    
+    <div class="card-content">
+        <div class="content">
+            
+            <a class="title is-4" href="/2023/03/29/100jahrfeier/">100 Jahrfeier</a>
+            
+            
+                <p>Ende Mai ist es soweit, die Flugwissenschaftliche Vereinigung Aachen (1920) e.V. kann 2023, mit drei Jahren Verspätung aufgrund der Pandemie, ihr 100-jähriges Jubiläum feiern.</p>
+
+            
+        </div>
+        <div class="has-text-centered">
+            <a href="/2023/03/29/100jahrfeier/" class="button is-primary">Weiterlesen</a>
+        </div>
+    </div>
+    <footer class="card-footer">
+        <p class="card-footer-item">Veröffentlicht am 29.03.2023</p>
+    </footer>
+</div>
+    </div>
+    
+    <div class="column is-6">
+        <div class="card">
+    
+    <div class="card-image">
+        <img src="/assets/img/articles/2023-02-28-neue-solaranlage/1.jpg" alt="Unsere neue Solaranlage">
+    </div>
+    
+    <div class="card-content">
+        <div class="content">
+            
+            <a class="title is-4" href="/2023/02/28/neue-solaranlage/">Unsere neue Solaranlage</a>
+            
+            
+                <p>Die ersten warmen Sonnentage des Jahres wurden fleißig für Arbeiten auf dem Dach der Werkstatt genutzt:</p>
+
+            
+        </div>
+        <div class="has-text-centered">
+            <a href="/2023/02/28/neue-solaranlage/" class="button is-primary">Weiterlesen</a>
+        </div>
+    </div>
+    <footer class="card-footer">
+        <p class="card-footer-item">Veröffentlicht am 28.02.2023</p>
+    </footer>
+</div>
+    </div>
+    
+    <div class="column is-6">
+        <div class="card">
+    
+    <div class="card-image">
+        <img src="/assets/img/articles/2022-12-01-zellenwart2022/image1.jpg" alt="Zellenwart 2022">
+    </div>
+    
+    <div class="card-content">
+        <div class="content">
+            
+            <a class="title is-4" href="/2022/12/01/zellenwart2022/">Zellenwart 2022</a>
+            
+            
+                <p>Nachdem die meisten schon ein bis zwei Tage vorher angereist waren, ging es am Dienstag, den 15. November endlich mit dem Lehrgang los.</p>
+
+            
+        </div>
+        <div class="has-text-centered">
+            <a href="/2022/12/01/zellenwart2022/" class="button is-primary">Weiterlesen</a>
+        </div>
+    </div>
+    <footer class="card-footer">
+        <p class="card-footer-item">Veröffentlicht am 1.12.2022</p>
+    </footer>
+</div>
+    </div>
+    
+    <div class="column is-6">
+        <div class="card">
+    
+    <div class="card-image">
+        <img src="/assets/img/articles/2022-08-16-auslegung-motortraeger/4.png" alt="Projektarbeit zur Auslegung eines Motorträgers für die FVA 30">
+    </div>
+    
+    <div class="card-content">
+        <div class="content">
+            
+            <a class="title is-4" href="/2022/08/16/auslegung-motortraeger/">Projektarbeit zur Auslegung eines Motorträgers für die FVA 30</a>
+            
+            
+                <p>Wie verbindet man am geschicktesten den Fortschritt des eigenen Studiums mit der FVA und bringt dabei ein Projekt noch möglichst fundiert und nachhaltig weiter?</p>
+
+            
+        </div>
+        <div class="has-text-centered">
+            <a href="/2022/08/16/auslegung-motortraeger/" class="button is-primary">Weiterlesen</a>
+        </div>
+    </div>
+    <footer class="card-footer">
+        <p class="card-footer-item">Veröffentlicht am 16.08.2022</p>
+    </footer>
+</div>
+    </div>
+    
+    <div class="column is-6">
+        <div class="card">
+    
+    <div class="card-image">
+        <img src="/assets/img/articles/2022-08-06-salzmanncup-2022/flightline.jpg" alt="Salzmanncup 2022">
+    </div>
+    
+    <div class="card-content">
+        <div class="content">
+            
+            <a class="title is-4" href="/2022/08/06/salzmanncup-2022/">Salzmanncup 2022</a>
+            
+            
+                <p>„Der Salzmanncup“. Mehr oder weniger oft hat man diesen anscheinend berühmt berüchtigten Cup irgendwo in einem der zahlreichen Gespräche um den oder auf dem Flugplatz schonmal gehört…</p>
+
+            
+        </div>
+        <div class="has-text-centered">
+            <a href="/2022/08/06/salzmanncup-2022/" class="button is-primary">Weiterlesen</a>
+        </div>
+    </div>
+    <footer class="card-footer">
+        <p class="card-footer-item">Veröffentlicht am 6.08.2022</p>
+    </footer>
+</div>
+    </div>
+    
+    <div class="column is-12">
+        <nav class="pagination is-centered">
+    
+    <p class="pagination-previous" disabled>Neuere</p>
+    
+    
+    <a href="/blog/page2" class="pagination-next is-info">Ältere</a>
+    
+    <ul class="pagination-list">
+        
+        
+        <li><a class="pagination-link is-current">1</a></li>
+        
+        
+        
+        <li><a href="/blog/page2" class="pagination-link">2</a></li>
+        
+        
+        
+        <li><a href="/blog/page3" class="pagination-link">3</a></li>
+        
+        
+        
+        <li><a href="/blog/page4" class="pagination-link">4</a></li>
+        
+        
+        
+        <li><a href="/blog/page5" class="pagination-link">5</a></li>
+        
+        
+        
+        <li><a href="/blog/page6" class="pagination-link">6</a></li>
+        
+        
+        
+        <li><a href="/blog/page7" class="pagination-link">7</a></li>
+        
+        
+        
+        <li><a href="/blog/page8" class="pagination-link">8</a></li>
+        
+        
+        
+        <li><a href="/blog/page9" class="pagination-link">9</a></li>
+        
+        
+        
+        <li><a href="/blog/page10" class="pagination-link">10</a></li>
+        
+        
+        
+        <li><a href="/blog/page11" class="pagination-link">11</a></li>
+        
+        
+        
+        <li><a href="/blog/page12" class="pagination-link">12</a></li>
+        
+        
+        
+        <li><a href="/blog/page13" class="pagination-link">13</a></li>
+        
+        
+        
+        <li><a href="/blog/page14" class="pagination-link">14</a></li>
+        
+        
+        
+        <li><a href="/blog/page15" class="pagination-link">15</a></li>
+        
+        
+    </ul>
+</nav>
+
+    </div>
+    <!--<div class="column is-12">
+        <div class="has-text-centered">
+    <a href="/feed.xml" class="button is-primary">
+        <span class="icon"><i class="fas fa-rss"></i></span>
+        <span>Subscribe</span>
+    </a>
+</div>
+    </div>-->
+</div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+        <footer class="footer">
+    <div class="container">
+        
+        
+        <div class="columns is-multiline">
+            
+        </div>
+        
+
+        <div class="column is-12">
+            <div class="has-text-centered">
+                <p><strong>Folgen auf</strong></p>
+                <div class="buttons is-centered">
+                    <a href="https://www.facebook.com/fva1920/" class="button is-light">
+                        <i class="fab fa-facebook fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.instagram.com/fva1920/" class="button is-light">
+                        <i class="fab fa-instagram fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCTCcUCZQNPcGdRwlTqN_M-Q" class="button is-light">
+                        <i class="fab fa-youtube fa-lg has-text-danger"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/fva-1920/" class="button is-light">
+                        <i class="fab fa-linkedin fa-lg has-text-link"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class="">Theme built by <a href="https://www.csrhymes.com">C.S. Rhymes</a></p>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class=""><a href="/contact/imprint/">Impressum</a> 
+                <a href="/contact/privacy/">Datenschutzerklärung</a>
+                <a href="https://fva.cloud">Intern</a></p>
+            </div>
+    </div>
+</footer>
+
+    
+    <script src="/assets/js/app.js" type="text/javascript"></script><!-- footer scripts --></body>
+</html>

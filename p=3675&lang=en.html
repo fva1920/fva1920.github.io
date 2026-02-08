@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+
+
+
+<html
+ lang="de"
+ class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content=#ffffff>
+    
+    <title>Bau des ersten Batteriemoduls - FVA</title>
+    
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="shortcut icon" type="image/png"
+           href="/favicon.png" 
+    />
+    <link rel=preload href="/assets/css/roboto.css" as="style">
+    <link rel=preload href="/assets/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/roboto-v20-latin-ext_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <script src="/assets/js/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/fontawesome.all.min.css">
+    
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Bau des ersten Batteriemoduls" />
+<meta name="author" content="Marvin Garbade" />
+<meta property="og:locale" content="de" />
+<meta property="og:site_name" content="FVA" />
+<meta property="og:image" content="/assets/img/archive/fva-30-battery-full.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-07-04T12:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="/assets/img/archive/fva-30-battery-full.jpg" />
+<meta property="twitter:title" content="Bau des ersten Batteriemoduls" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Marvin Garbade"},"dateModified":"2019-07-04T12:00:00+00:00","datePublished":"2019-07-04T12:00:00+00:00","headline":"Bau des ersten Batteriemoduls","image":"/assets/img/archive/fva-30-battery-full.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"/p=3675&lang=en.html"},"url":"/p=3675&lang=en.html"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- head scripts --></head>
+
+  
+  <body>
+  
+    <nav class="navbar is-primary  is-fixed-top " x-data="{ openNav: false }">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/" class="navbar-item">
+                <img src=/assets/img/fvaLogo.png>
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu" :class="{ 'is-active': openNav }" x-on:click="openNav = !openNav">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu" :class="{ 'is-active': openNav }">
+            <div class="navbar-start">
+                <a href="/" class="navbar-item ">FVA</a>
+                
+                
+                    
+                    <a href="/blog/" class="navbar-item ">News</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/about/" class="navbar-link ">Über uns</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/about/team/" class="navbar-item ">Team</a>
+                            
+                            <a href="/about/workshop/" class="navbar-item ">Werkstatt</a>
+                            
+                            <a href="/about/history/" class="navbar-item ">Geschichte</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/projects/" class="navbar-link ">Projekte</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/projects/fva30/" class="navbar-item ">FVA 30</a>
+                            
+                            <a href="/projects/fva29/" class="navbar-item ">FVA 29</a>
+                            
+                            <a href="/projects/fva24/" class="navbar-item ">FVA 24d</a>
+                            
+                            <a href="/projects/oldprojects/" class="navbar-item ">Ältere Projekte</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <a href="/flying/" class="navbar-item ">Fliegen</a>
+                    
+                
+                    
+                    <a href="/join/" class="navbar-item ">Mitmachen</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/partners/" class="navbar-link ">Partner</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/partners/newpartner/" class="navbar-item ">Partner werden</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/contact/" class="navbar-link ">Kontakt</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/contact/imprint/" class="navbar-item ">Impressum</a>
+                            
+                            <a href="/contact/privacy/" class="navbar-item ">Datenschutz</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                
+            </div>
+                <div class="navbar-end">
+			
+			        
+			        <a class="navbar-item" href="/en/p=3675&lang=en.html">
+                            <span>&nbsp;EN</span>
+                            <span class="icon"><i class="fas fa-globe"></i></span>
+                		</a>
+			
+        	</div>        
+        </div>
+    </div>
+</nav>
+
+    
+        <section class="hero  is-narrow  is-bold is-primary" >
+    <div class="hero-body ">
+        <div class="container">
+            
+            <h1 class="title is-2">Bau des ersten Batteriemoduls</h1>
+            
+            <p class="subtitle is-3"></p>
+            
+        </div>
+    </div>
+</section>
+    
+    
+
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                
+                <div class="column is-12">
+                    
+                    
+                    
+                    
+                    <div class="content">
+
+    <p>Veröffentlicht am 4.07.2019 von Marvin Garbade</p>
+
+    <p><img src="/assets/img/archive/fva-30-battery-full.jpg" alt="" /></p>
+
+<p>Gerade pünktlich zu unserem Werkstattfest im Juni war sie fertig zur Präsentation: Nach langen Tagen und zahlreichen Nächten harter Arbeit konnten wir unsere erste voll funktionsfähige Testbatterie fertigstellen, nachdem Anfang des Jahres das vorläufige Batteriedesign für die FVA-30 abgeschlossen worden war. 60 Batteriezellen, die später eines von 24 Modulen bilden, werden in eine Verbundstruktur mit einem Phasenwechselmaterial integriert und über verschweißte Kupferkontakte miteinander verbunden. Das Phasenwechselmaterial dient zur Aufnahme der Verlustleistung in Form von latenter Wärme und wurde uns als Granulat vom Fraunhofer-Institut für Betriebsfestigkeit und Systemzuverlässigkeit (LBF) zur Verfügung gestellt. Die verwendeten 18650-Zellen wurden mit einem simulationsbasierten Vorauswahl-Rechner mit automatischer Pack-Auslegung sowie zahlreichen Tests auf Basis unserer Flugprofile gewählt und zeichnen sich durch gute Kühleigenschaften, Formstabilität und ein integriertes Current Interrupt Device (CID) aus. Das Batteriemodul verfügt darüber hinaus bereits über eine umfangreiche Sensorik und Schutzelektronik und kann über eine CAN-Verbindung von einem Computer gesteuert werden.</p>
+
+<p>In den nächsten Wochen stehen nun zahlreiche Belastungstests unter verschiedenen Betriebsbedingungen an. Dieser Artikel fasst den Aufbau der Batterie kurz in Bildern zusammen und bildet den Auftakt zur kommenden Bauphase für unser Projekt FVA-30.</p>
+
+<p><img src="/assets/img/archive/fva-30-battery-construction-0.jpg" alt="" /></p>
+
+<p>CAD-Entwurf des Batterietestmoduls mit 60 Zellen in 12s5p-Konfiguration</p>
+
+<p><img src="/assets/img/archive/fva-30-battery-construction-1.jpg" alt="" /></p>
+
+<p>Das zur Kühlung verwendete Phasenwechselmaterial ist ein Paraffinwachs, das in einem Verbund aus HDPE und Graphit verarbeitet wird. Für die Batterie musste das Granulat in die richtige Form gepresst werden.</p>
+
+<p><img src="/assets/img/archive/fva-30-battery-construction-2.jpg" alt="" /></p>
+
+<p>Zum Verpressen wurde eine eigene Form entwickelt und gefräst, die auf 180 °C vorgeheizt wird und maximalen Druck auf das Granulat ausübt.</p>
+
+<p><img src="/assets/img/archive/fva-30-battery-construction-3.jpg" alt="" /></p>
+
+<p>Erste Versuche führten noch zu einem starken Verlust von Paraffin und verliehen unserer Werkstatt einen interessanten Duft.</p>
+
+<p><img src="/assets/img/archive/fva-30-battery-construction-4.jpg" alt="" /></p>
+
+<p>Nach längerer Prozessoptimierung konnten schließlich stabile PCM-Blöcke ohne Materialverlust hergestellt werden. Der Kunststoff ließ sich vorsichtig mit unserer Fräse bohren.</p>
+
+<p><img src="/assets/img/archive/fva-30-battery-construction-6.jpg" alt="" /></p>
+
+<p>Insgesamt wurden 12 Blöcke hergestellt, die jeweils 5 parallel verschaltete Zellen beinhalten sollen.</p>
+
+<p><img src="/assets/img/archive/fva-30-battery-construction-5.jpg" alt="" /></p>
+
+<p>Die Zellen wurden unter Zugabe von Wärmeleitpaste in die vorgesehenen Löcher gepresst und sitzen fest in ihrer Halterung.</p>
+
+<p><img src="/assets/img/archive/fva-30-battery-construction-7.jpg" alt="" /></p>
+
+<p>Isolierende Kunststoffplatten an beiden Batteriepolen verfügen über gefräste Aussparungen für die Kontaktierungsflächen und Luftkanäle, welche zur späteren Abkühlung des PCMs dienen.</p>
+
+<p><img src="/assets/img/archive/fva-30-battery-construction-8.jpg" alt="" /></p>
+
+<p>Die beiden Platten werden zur Stabilisierung miteinander verschraubt und später fest am Gehäuse verankert. Die Kupferbleche sind zur Vorbereitung auf das Schweißen bereits fixiert.</p>
+
+<p><img src="/assets/img/archive/fva-30-battery-construction-9.jpg" alt="" /></p>
+
+<p>Durch ein kontaktloses Lichtbogen-Schweißverfahren werden Kupferableiter und Zellen fest miteinander verbunden. Hierbei erhielten wir Unterstrützung von der Firma Aixcon aus Stolberg.</p>
+
+<p><img src="/assets/img/archive/fva-30-battery-construction-10.jpg" alt="" /></p>
+
+<p>Bis tief in die Nacht wurde an der Software unseres Batteriemanagementsystems gearbeitet. Das BMS basiert auf einem Open-Source Projekt und kommuniziert über eine CAN-Schnittstelle.</p>
+
+<p><img src="/assets/img/archive/fva-30-battery-construction-11.jpg" alt="" /></p>
+
+<p>Die fertige Testbatterie ist sicher durch Plexiglasplatten geschützt und geht erst nach Schalten der Leistungsschütze in Betrieb. Ein Notaus-Schalter schafft zusätzliches Vertrauen.</p>
+
+<p><img src="/assets/img/archive/fva-30-battery-construction-12.jpg" alt="" /></p>
+
+<p>Eine 50 V Last zu finden war auf die Schnelle schwieriger als erwartet. 1000 W Halogen erfüllen diesen Zweck jedoch gut.</p>
+
+<p><img src="/assets/img/archive/fva-30-battery-werkstattfeier.jpg" alt="" /></p>
+
+<p>Wir freuen uns auf die anstehenden Versuche und Ergebnisse!</p>
+
+</div>
+
+<div class="field is-grouped is-grouped-multiline">
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/FVA30">
+<span class="tag  is-primary ">
+    FVA30
+</span>
+</a>
+    </div>
+  </div>
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/FVA30power">
+<span class="tag  is-primary ">
+    FVA30 Antriebsstrang
+</span>
+</a>
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+        <footer class="footer">
+    <div class="container">
+        
+        
+        <div class="columns is-multiline">
+            
+        </div>
+        
+
+        <div class="column is-12">
+            <div class="has-text-centered">
+                <p><strong>Folgen auf</strong></p>
+                <div class="buttons is-centered">
+                    <a href="https://www.facebook.com/fva1920/" class="button is-light">
+                        <i class="fab fa-facebook fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.instagram.com/fva1920/" class="button is-light">
+                        <i class="fab fa-instagram fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCTCcUCZQNPcGdRwlTqN_M-Q" class="button is-light">
+                        <i class="fab fa-youtube fa-lg has-text-danger"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/fva-1920/" class="button is-light">
+                        <i class="fab fa-linkedin fa-lg has-text-link"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class="">Theme built by <a href="https://www.csrhymes.com">C.S. Rhymes</a></p>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class=""><a href="/contact/imprint/">Impressum</a> 
+                <a href="/contact/privacy/">Datenschutzerklärung</a>
+                <a href="https://fva.cloud">Intern</a></p>
+            </div>
+    </div>
+</footer>
+
+    
+    <script src="/assets/js/app.js" type="text/javascript"></script><!-- footer scripts --></body>
+</html>

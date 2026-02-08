@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+
+
+
+
+<html
+ lang="de"
+ class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content=#ffffff>
+    
+    <title>Certification Process for a Hybrid Electric Aircraft - FVA</title>
+    
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="shortcut icon" type="image/png"
+           href="/favicon.png" 
+    />
+    <link rel=preload href="/assets/css/roboto.css" as="style">
+    <link rel=preload href="/assets/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/roboto-v20-latin-ext_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <script src="/assets/js/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/fontawesome.all.min.css">
+    
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Certification Process for a Hybrid Electric Aircraft" />
+<meta name="author" content="Felix Diekmann, Eric Kortemeier" />
+<meta property="og:locale" content="de" />
+<meta name="description" content="Dieses Paper wurde auf Englisch verfasst, der Reichweite halber wird aus auch hier im deutschsprachigen Teil veröffentlicht." />
+<meta property="og:description" content="Dieses Paper wurde auf Englisch verfasst, der Reichweite halber wird aus auch hier im deutschsprachigen Teil veröffentlicht." />
+<meta property="og:site_name" content="FVA" />
+<meta property="og:image" content="/assets/img/articles/2022-02-22-speedgoat-certification/Sonne1.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-02-22T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="/assets/img/articles/2022-02-22-speedgoat-certification/Sonne1.png" />
+<meta property="twitter:title" content="Certification Process for a Hybrid Electric Aircraft" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Felix Diekmann, Eric Kortemeier"},"dateModified":"2022-02-22T00:00:00+00:00","datePublished":"2022-02-22T00:00:00+00:00","description":"Dieses Paper wurde auf Englisch verfasst, der Reichweite halber wird aus auch hier im deutschsprachigen Teil veröffentlicht.","headline":"Certification Process for a Hybrid Electric Aircraft","image":"/assets/img/articles/2022-02-22-speedgoat-certification/Sonne1.png","mainEntityOfPage":{"@type":"WebPage","@id":"/2022/02/22/speedgoat-certification/"},"url":"/2022/02/22/speedgoat-certification/"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- head scripts --></head>
+
+  
+  <body>
+  
+    <nav class="navbar is-primary  is-fixed-top " x-data="{ openNav: false }">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/" class="navbar-item">
+                <img src=/assets/img/fvaLogo.png>
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu" :class="{ 'is-active': openNav }" x-on:click="openNav = !openNav">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu" :class="{ 'is-active': openNav }">
+            <div class="navbar-start">
+                <a href="/" class="navbar-item ">FVA</a>
+                
+                
+                    
+                    <a href="/blog/" class="navbar-item ">News</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/about/" class="navbar-link ">Über uns</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/about/team/" class="navbar-item ">Team</a>
+                            
+                            <a href="/about/workshop/" class="navbar-item ">Werkstatt</a>
+                            
+                            <a href="/about/history/" class="navbar-item ">Geschichte</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/projects/" class="navbar-link ">Projekte</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/projects/fva30/" class="navbar-item ">FVA 30</a>
+                            
+                            <a href="/projects/fva29/" class="navbar-item ">FVA 29</a>
+                            
+                            <a href="/projects/fva24/" class="navbar-item ">FVA 24d</a>
+                            
+                            <a href="/projects/oldprojects/" class="navbar-item ">Ältere Projekte</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <a href="/flying/" class="navbar-item ">Fliegen</a>
+                    
+                
+                    
+                    <a href="/join/" class="navbar-item ">Mitmachen</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/partners/" class="navbar-link ">Partner</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/partners/newpartner/" class="navbar-item ">Partner werden</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/contact/" class="navbar-link ">Kontakt</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/contact/imprint/" class="navbar-item ">Impressum</a>
+                            
+                            <a href="/contact/privacy/" class="navbar-item ">Datenschutz</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                
+            </div>
+                <div class="navbar-end">
+			
+			        
+			        <a class="navbar-item" href="/en/2022/02/22/speedgoat-certification/">
+                            <span>&nbsp;EN</span>
+                            <span class="icon"><i class="fas fa-globe"></i></span>
+                		</a>
+			
+        	</div>        
+        </div>
+    </div>
+</nav>
+
+    
+        <section class="hero  is-narrow  is-bold is-primary" >
+    <div class="hero-body ">
+        <div class="container">
+            
+            <h1 class="title is-2">Certification Process for a Hybrid Electric Aircraft</h1>
+            
+            <p class="subtitle is-3"></p>
+            
+        </div>
+    </div>
+</section>
+    
+    
+
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                
+                <div class="column is-12">
+                    
+                    
+                    
+                    
+                    <div class="content">
+
+    <p>Veröffentlicht am 22.02.2022 von Felix Diekmann, Eric Kortemeier</p>
+
+    <p><em>Dieses Paper wurde auf Englisch verfasst, der Reichweite halber wird aus auch hier im deutschsprachigen Teil veröffentlicht.</em></p>
+
+<h2 id="abstract">Abstract</h2>
+<p>The scientific aviation association (FVA) is developing the FVA 30, a hybrid electric motor glider,
+in order to research alternative propulsion systems.
+Due to strict safety requirements in aviation, the
+electric drivetrain must be reliable at all time and
+the responsible local aviation agency with jurisdiction requires evidence of compliance with the complex certification guidelines, which is a challenging
+and time-consuming task for aerospace manufacturers. This article focuses on the certification process of the FVA 30 power train, using a Speedgoat
+target computer.</p>
+
+<h2 id="fva-30">FVA 30</h2>
+<p>The aircraft features two electric motors at the tail
+(Fig. 2). A high voltage lithium-ion battery pack
+directly behind the canopy provides enough energy
+for short flights powered exclusively by electricity. The fuselage contains two inverters to supply
+the engines with AC voltage. As a hybrid electric
+aircraft an additional generator and inverter connected to a propulsion engine charges the battery
+during the flight. This combination of a highly efficient electric powertrain with fuel as an additional
+energy source enables long flights with a range of
+up to 650km. (Fig. 1) [8]</p>
+
+<h2 id="certification-guidelines">Certification Guidelines</h2>
+<p>According to European Union regulation nr.
+2018/1139 [5], which provides basic laws for aviation safety, the FVA 30 project does fall under the
+authority of the European Aviation Safety Agency
+as it is considered a research aircraft. The competent authority according to §2 of the LuftGerPV
+(the German federal ordinance on the testing of aircraft and aeronautical products) is the Luftfahrtbundesamt (LBA). [1] The LBA is part of the Federal Ministry of Transport and Digital Infrastructure and manages certification, approval and supervisory tasks in German aviation. [7] Since the FVA
+30 will only be built once, the certification process
+will be loosely based on annex 1 of EU regulation
+nr. 748/2012 also referred to as ’Part 21’. This is
+stated in §3 LuftGerPV. [1] The core of the process consists of a certification program defined in
+close cooperation with the LBA. Firstly the LBA
+determines the applicable EASA certification specifications (CS): in this case, CS-22 (Sailplanes and
+Powered Sailplanes) was allocated. [6] Since current CSs do not cover electric aircraft, the preliminary Special Condition ’CS-22 Installation of electric propulsion units in powered sailplanes’ must
+also be met. [3]Another unusual attribute of the
+FVA 30 is its multi engine setup, which is uncommon in the class of (powered) sailplanes. Another
+special condition is therefore being established in
+cooperation with the LBA, which will include the
+paragraphs of CS-23 (Normal-Category Airplanes)
+applicable to multi engine aircraft. [4]</p>
+
+<h4 id="figure-1-fva-30-factsheet">Figure 1: FVA 30 factsheet</h4>
+<p><img src="/assets/img/articles/2022-02-22-speedgoat-certification/FVA30_facts.jpg" alt="" /></p>
+
+<h4 id="figure-2-fva-30-design">Figure 2: FVA 30 design</h4>
+<p><img src="/assets/img/articles/2022-02-22-speedgoat-certification/FVA30_3perspectives.png" alt="" /></p>
+
+<h2 id="means-of-compliance">Means of Compliance</h2>
+<p>Compliance must demonstrated with each single
+paragraph of the mentioned documents. This will
+be carried out based on an extensive list entitled
+Means of Compliance (MoC) and in accordance
+with the details set out in Table 1 below. With regard to the FVA 30 drivetrain, we will concentrate
+our efforts on design reviews, as well as laboratory
+and ground tests. The Speedgoat target machine
+can be used in conjunction with compliance methods number four ’Laboratory tests’ and number five
+’Ground tests on related product’. The test programs will be performed and compliance-relevant
+data recorded. Before the verification phase commences, the means of compliance will be agreed
+with the LBA.</p>
+
+<h2 id="laboratory-tests">Laboratory Tests</h2>
+<p>In the first phase of the certification process, individual modules will be investigated for their use in
+aviation. For this purpose, an ironbird has been
+built, which is a setup of all the electronic components which will be installed in the future aircraft. The Speedgoat target machine can expose
+the system to faults, critical environmental conditions and flight cases years ahead of the flight testing phase, effectively shortening development time.
+These tests will be done according to existing specifications to guarantee an accurate recreation of the
+use cases and maximum safety. These specifications
+include RCTA DO-311, DO-160 and DO-178. Adhering to third party specifications for these tests
+not only saves time, but also ensures that the same
+level of safety can be reproduced for other aircraft.
+The results and logs of, for example, a fault insertion are then transferred into individual certification reports.</p>
+
+<h4 id="table-1-overview-of-verification-methods-source-easa-2">Table 1: Overview of verification methods (Source: EASA, [2])</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type of Compliance</th>
+      <th>Means of Compliance</th>
+      <th>Associated Compliance Documents</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Engineering evaluation</td>
+      <td>0: Compliance statement, Reference to Type Design documents, selection of methods or factors, definitions</td>
+      <td>- Type Design documents - Recorded statements</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>1: Design review</td>
+      <td>- Descriptions - Drawings</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>2: Calculation/ Analysis</td>
+      <td>- Substantiation reports</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>3: Safety assessment</td>
+      <td>- Safety analysis</td>
+    </tr>
+    <tr>
+      <td>Tests</td>
+      <td>4: Laboratory tests 5: Ground tests on related product 6: Flight tests 8: Simulation</td>
+      <td>- Test programs - Test reports - Test interpretations</td>
+    </tr>
+    <tr>
+      <td>Inspection</td>
+      <td>7: Design inspection/ audit</td>
+      <td>- Inspection or audit reports</td>
+    </tr>
+    <tr>
+      <td>Equipment qualification</td>
+      <td>9: Equipment qualification</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="ground-and-flight-tests">Ground and Flight Tests</h2>
+<p>Although all components are already tested before
+the construction phase, additional items must also
+be investigated in ground tests with the final assembled aircraft: for example, electromagnetic interferences can differ significantly from the effects
+observed on the ironbird test bench. Another important part of the ground test is to verify the calculated and simulated characteristics for accuracy.
+These tests are also conducted and documented by
+the Speedgoat real time target machine. Various
+measured values, for example cooling liquid temperatures are recorded over time and are appended
+to the certification documents.
+Each report will therefore demonstrate compliance with our MoC and will finally be provided to
+the LBA for examination. After a successful inspection, only the flight-testing requirements will
+be considered. Subsequently, the Speedgoat real
+time target machine will serve as the ECM and
+documentation tool to demonstrate further compliance.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>As described in (2), electrifying the power train
+means that supplementary certification specifications must be met in addition to the usual certification specifications for powered sailplanes. Consequently, additional test bench runs are required.
+Using a real-time target computer from Speedgoat,
+the FVA can meet the additional specifications by
+implementing an ironbird for the FVA 30. The
+functionality of the electric system will be demonstrated in two stages: both in laboratory tests and
+on the assembled aircraft. Another part of the certification is the documentation for test reports. For
+this purpose, the FVA will use the Speedgoat target
+machine, which will also record measurements.</p>
+
+<h2 id="references">References</h2>
+<ol>
+ <li>Bundesministerium der Justiz und für Verbraucherschutz, Bundesamt für Justiz :<i>Verordnung zur Prüfung von Luftfahrtgerät: LuftGerPV. </i><b><a href="https://eur-lex.europa.eu/legalcontent/EN/TXT/?uri=CELEX%3A32018R1139">https://eur-lex.europa.eu/legalcontent/EN/TXT/?uri=CELEX%3A32018R1139</a>.</b> Version: 15.02.2013</li>
+ <li>EASA: <i>Manual of Alternative Procedure to DOA - Template.</i><b><a href="https://www.easa.europa.eu/downloads/18653/en">https://www.easa.europa.eu/downloads/18653/en</a></b></li>
+ <li>EASA: <i>Special Condition - CS-22 - Installation of electric propulsion units in powered sailplanes: SC-22.2014-01.</i>  <b><a href="https://www.easa.europa.eu/downloads/16912/en">https://www.easa.europa.eu/downloads/16912/en</a> .</b> Version: 14.11.2014</li>
+ <li>EASA: <i>CS-23 Easy Access Rules for Normal-Category Aeroplanes - Amendment 5 - Issue 1. </i><b><a href="https://www.easa.europa.eu/downloads/106158/en">https://www.easa.europa.eu/downloads/106158/en</a> .</b> Version: 14.11.2019</li>
+ <li>EASA: <i>Regulation (EU) 2018/1139. </i>&lt;/i&gt;<b><a href="https://www.easa.europa.eu/document-library/regulations/regulation-eu-20181139">https://www.easa.europa.eu/document-library/regulations/regulation-eu-20181139</a> .</b> Version: 22.08.2018</li>
+ <li>EASA: <i>CS-22 Sailplanes and Powered Sailplanes - Amendment 2. </i><b><a href="https://www.easa.europa.eu/downloads/1598/en">https://www.easa.europa.eu/downloads/1598/en</a> .</b>Version: 30.03.2009</li>
+ <li>Luftfahrt-Bundesamt: <i>Aufgaben und Ziele des Luftfahrt-Bundesamtes. </i><b><a href="https://www.lba.de/DE/LBA/Aufgabe/Aufgaben_node.html">https://www.lba.de/DE/LBA/Aufgabe/Aufgaben_node.html</a> .</b>Version: 20.01.2022</li>
+ <li>Moxter, T. ; Enders, W. ; Kelm, B. ; Scholjegerdes, M. ; Koch, C. ; Garbade, M. ; Dahmann, P.:<i>Investigation of Alternative Propulsion Concepts for Small Aircraft with the Hybrid Electric Motor Glider FVA 30</i></li>
+</ol>
+
+</div>
+
+<div class="field is-grouped is-grouped-multiline">
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/FVA30">
+<span class="tag  is-primary ">
+    FVA30
+</span>
+</a>
+    </div>
+  </div>
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/Forschen">
+<span class="tag  is-primary ">
+    Forschen
+</span>
+</a>
+    </div>
+  </div>
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/Projekt">
+<span class="tag  is-primary ">
+    Projekt
+</span>
+</a>
+    </div>
+  </div>
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/Bauen">
+<span class="tag  is-primary ">
+    Bauen
+</span>
+</a>
+    </div>
+  </div>
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/Kooperation">
+<span class="tag  is-primary ">
+    Kooperation
+</span>
+</a>
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+        <footer class="footer">
+    <div class="container">
+        
+        
+        <div class="columns is-multiline">
+            
+        </div>
+        
+
+        <div class="column is-12">
+            <div class="has-text-centered">
+                <p><strong>Folgen auf</strong></p>
+                <div class="buttons is-centered">
+                    <a href="https://www.facebook.com/fva1920/" class="button is-light">
+                        <i class="fab fa-facebook fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.instagram.com/fva1920/" class="button is-light">
+                        <i class="fab fa-instagram fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCTCcUCZQNPcGdRwlTqN_M-Q" class="button is-light">
+                        <i class="fab fa-youtube fa-lg has-text-danger"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/fva-1920/" class="button is-light">
+                        <i class="fab fa-linkedin fa-lg has-text-link"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class="">Theme built by <a href="https://www.csrhymes.com">C.S. Rhymes</a></p>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class=""><a href="/contact/imprint/">Impressum</a> 
+                <a href="/contact/privacy/">Datenschutzerklärung</a>
+                <a href="https://fva.cloud">Intern</a></p>
+            </div>
+    </div>
+</footer>
+
+    
+    <script src="/assets/js/app.js" type="text/javascript"></script><!-- footer scripts --></body>
+</html>

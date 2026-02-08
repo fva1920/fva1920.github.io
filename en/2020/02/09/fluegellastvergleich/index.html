@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+
+
+
+<html
+ lang="en"
+ class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content=#ffffff>
+    
+    <title>Wing Load Comparison with the e-Genius I - FVA</title>
+    
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="shortcut icon" type="image/png"
+           href="/favicon.png" 
+    />
+    <link rel=preload href="/assets/css/roboto.css" as="style">
+    <link rel=preload href="/assets/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/roboto-v20-latin-ext_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <script src="/assets/js/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/fontawesome.all.min.css">
+    
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Wing Load Comparison with the e-Genius I" />
+<meta name="author" content="FVA" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="In order to be able to start planning the wing production, the focus in the area of structure was most recently on the wing load comparison between the FVA-30 and the e-Genius. The goal of the wing load comparison is to test the reusability of the wing structure of the e-Genius for the FVA-30. In addition to minor improvements, such as a more precise mass distribution of the wing, our load calculator was expanded to include various mass configurations for the different refueling options. For the load comparison, an analysis of the critical load cases and mass configurations as well as the higher section loads compared to the e-Genius was performed." />
+<meta property="og:description" content="In order to be able to start planning the wing production, the focus in the area of structure was most recently on the wing load comparison between the FVA-30 and the e-Genius. The goal of the wing load comparison is to test the reusability of the wing structure of the e-Genius for the FVA-30. In addition to minor improvements, such as a more precise mass distribution of the wing, our load calculator was expanded to include various mass configurations for the different refueling options. For the load comparison, an analysis of the critical load cases and mass configurations as well as the higher section loads compared to the e-Genius was performed." />
+<meta property="og:site_name" content="FVA" />
+<meta property="og:image" content="/en/assets/img/archive/Lastvergleich.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-02-09T12:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="/en/assets/img/archive/Lastvergleich.jpg" />
+<meta property="twitter:title" content="Wing Load Comparison with the e-Genius I" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"FVA"},"dateModified":"2020-02-09T12:00:00+00:00","datePublished":"2020-02-09T12:00:00+00:00","description":"In order to be able to start planning the wing production, the focus in the area of structure was most recently on the wing load comparison between the FVA-30 and the e-Genius. The goal of the wing load comparison is to test the reusability of the wing structure of the e-Genius for the FVA-30. In addition to minor improvements, such as a more precise mass distribution of the wing, our load calculator was expanded to include various mass configurations for the different refueling options. For the load comparison, an analysis of the critical load cases and mass configurations as well as the higher section loads compared to the e-Genius was performed.","headline":"Wing Load Comparison with the e-Genius I","image":"/en/assets/img/archive/Lastvergleich.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"/en/2020/02/09/fluegellastvergleich/"},"url":"/en/2020/02/09/fluegellastvergleich/"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- head scripts --></head>
+
+  
+  <body>
+  
+    <nav class="navbar is-primary  is-fixed-top " x-data="{ openNav: false }">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/en/" class="navbar-item">
+                <img src=/assets/img/fvaLogo.png>
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu" :class="{ 'is-active': openNav }" x-on:click="openNav = !openNav">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu" :class="{ 'is-active': openNav }">
+            <div class="navbar-start">
+                <a href="/en/" class="navbar-item ">FVA</a>
+                
+                
+                    
+                    <a href="/en/blog/" class="navbar-item ">News</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/en/about/" class="navbar-link ">About</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/en/about/team/" class="navbar-item ">Team</a>
+                            
+                            <a href="/en/about/workshop/" class="navbar-item ">Workshop</a>
+                            
+                            <a href="/en/about/history/" class="navbar-item ">History</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/en/projects/" class="navbar-link ">Projects</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/en/projects/fva30/" class="navbar-item ">FVA 30</a>
+                            
+                            <a href="/en/projects/fva29/" class="navbar-item ">FVA 29</a>
+                            
+                            <a href="/en/projects/fva24/" class="navbar-item ">FVA 24d</a>
+                            
+                            <a href="/en/projects/oldprojects/" class="navbar-item ">Older Projects</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <a href="/en/flying/" class="navbar-item ">Fly</a>
+                    
+                
+                    
+                    <a href="/en/join/" class="navbar-item ">Join</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/en/partners/" class="navbar-link ">Partners</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/en/partners/newpartner/" class="navbar-item ">Become a partner!</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/en/contact/" class="navbar-link ">Contact</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/en/contact/imprint/" class="navbar-item ">Imprint</a>
+                            
+                            <a href="/en/contact/privacy/" class="navbar-item ">Privacy</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                
+            </div>
+                <div class="navbar-end">
+			
+				
+			  	<a class="navbar-item" href="/2020/02/09/fluegellastvergleich/">
+                            <span>&nbsp;DE</span>
+                    		<span class="icon"><i class="fas fa-globe"></i></span>
+        			</a>
+			
+        	</div>        
+        </div>
+    </div>
+</nav>
+
+    
+        <section class="hero  is-narrow  is-bold is-primary" >
+    <div class="hero-body ">
+        <div class="container">
+            
+            <h1 class="title is-2">Wing Load Comparison with the e-Genius I</h1>
+            
+            <p class="subtitle is-3"></p>
+            
+        </div>
+    </div>
+</section>
+    
+    
+
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                
+                <div class="column is-12">
+                    
+                    
+                    
+                    
+                    <div class="content">
+
+    <p>Published: 9.02.2020 by FVA</p>
+
+    <p>In order to be able to start planning the wing production, the focus in the area of structure was most recently on the wing load comparison between the FVA-30 and the e-Genius. The goal of the wing load comparison is to test the reusability of the wing structure of the e-Genius for the FVA-30. In addition to minor improvements, such as a more precise mass distribution of the wing, our load calculator was expanded to include various mass configurations for the different refueling options. For the load comparison, an analysis of the critical load cases and mass configurations as well as the higher section loads compared to the e-Genius was performed.</p>
+
+<p>For reasons of flight mechanics, it was decided to shift the wings by 120 mm in the direction of the tailplane, resulting in a changed tailplane size. The new geometry parameters as well as current individual masses of the various system components were updated. Furthermore, the various refueling and payload options of the FVA-30 had to be incorporated. To this end, a further eight mass configurations have been added to the four already available. These take into account battery-only flight without fuel, operation with gasoline stored in wing tanks, and operation with natural gas stored in the wingpod. Combinations of one or two pilots and simultaneous operation with both fuel types have also been added. All payload options were considered in the selection of mass configurations, not exceeding the maximum mass of 903 kg. In addition, minor improvements, such as a more accurate wing mass distribution in the spanwise direction, have been included to more accurately represent the unloading effect of the wing mass on the structure. This leads to more realistic absolute values, which are needed in case of a redimensioning of the ribs or wing shell and spar.</p>
+
+<h2 id="cutting-loads-of-the-fva-30-wing">Cutting loads of the FVA-30 wing</h2>
+
+<p>The load calculator determines the forces and moments acting on the structure in the form of section loads in the three coordinate directions x, y and z. The diagrams shown in the figure below show the current section loads of the FVA-30 wing in span direction related to the leading edge of the wing. The sectional load curves of all load cases for the mass configuration battery flight with two pilots (empty wing tank &amp; without wingpod) are shown. The total mass in this configuration is 837 kg.</p>
+
+<p><img src="/assets/img/archive/Schnittlasten_no_fuel.png" alt="" /></p>
+
+<p>Cut loads of the FVA-30 wing – mass configuration with two pilots (empty wing tank, without wingpod).</p>
+
+<p>The critical load case on the bending moment course Mx (flapping direction) seems to be positive and negative gusts at the design speed of 61 m/s both in positive and negative direction. The dimensioning case of the course of the torsional moment My seems to be the load case with full aileron deflection in positive and negative direction at the maneuvering speed of 56.63 m/s. In the case of the bending moment in the wing sweep direction Mz, in the negative direction, an upward gust at the design speed appears to be the critical load case. In the positive direction, however, the dimensioning case appears to be the aileron deflection at maneuvering speed.</p>
+
+<h2 id="influence-of-the-mass-configuration">Influence of the mass configuration</h2>
+
+<p>For comparison, the following figure shows a mass configuration with filled wing tanks and wing pods. The total mass of this configuration is 839 kg and is thus comparable to the one shown above. A local decrease in force can be seen in the internal force curve in the y-direction, indicating a relieving effect of the wing tanks and wingpods on the wing structure. The bending moment Mx at the wing root is about 10% lower here in both positive and negative directions.</p>
+
+<p><img src="/assets/img/archive/Schnittlasten_fuel_1pilot.png" alt="" /></p>
+
+<p>Cutting loads of the FVA-30 wing – mass configuration with one pilot and filled gas and wing tank</p>
+
+<p>The cutting loads of the 903 kg fully loaded configurations, compared to a lower total mass, show increased cutting loads in all directions and are therefore the dimensioning factor.</p>
+
+<h2 id="wing-load-comparison">Wing load comparison</h2>
+
+<p>To compare the wing loads of FVA-30 and e-Genius, the section loads in the center of the wing (y = 0 m) and at the separation point of the inner and outer wing (y = 3.6 m) are considered. For this purpose, the envelopes of all loads in the two sections are compared, as shown in the figure below. The areas where the FVA-30 has higher loads than the e-Genius are marked in red. It can be seen that the loads of the FVA-30 are sporadically increased in the center of the wing as well as at the wing separation point. At these points, the loads are between 4 – 12 % higher.</p>
+
+<p><img src="/assets/img/archive/Lastvergleich.jpg" alt="" /></p>
+
+<p>Comparison of the cutting loads of FVA 30 and e-Genius in the center of the sash and the sash separation point.</p>
+
+<p>The reasons for the deviations are, on the one hand, the higher masses of the drives at the tail tips compared to the e-Genius. These are far away from the center of gravity axis and increase the rotational inertia, which leads to increased bending moments during roll maneuvers. On the other hand, the payload due to the wing tank and wingpod leads to an increase in loads in certain load cases. Further influence on the cutting loads has the wing displacement, which results in higher trim forces. Differences in the critical load cases for the wings cannot be observed. An exact evaluation and validation of the results and the influencing factors still has to be carried out.</p>
+
+<h2 id="outlook">Outlook</h2>
+
+<p>In order to be able to complete the load comparison and start wing production, firstly the load case list must be extended to include the flap in landing configuration and the extension of the airbrakes. Subsequently, the results are to be evaluated in detail and validated before it can be decided whether the wings of the e-Genius can be used for the FVA 30 without reinforcement measures.</p>
+
+<p>Furthermore, the root rib and ribs in the inner wing must be redimensioned, as fuel pipes and hoses are to be routed through them.</p>
+
+<p>Finally, a final load report presenting the results must be prepared for certification by the LBA and for further dimensioning work, such as tail and fuselage dimensioning.</p>
+
+</div>
+
+<div class="field is-grouped is-grouped-multiline">
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/en/tags/FVA30">
+<span class="tag  is-primary ">
+    FVA30
+</span>
+</a>
+    </div>
+  </div>
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/en/tags/FVA30struct">
+<span class="tag  is-primary ">
+    FVA30 structure
+</span>
+</a>
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+        <footer class="footer">
+    <div class="container">
+        
+        
+        <div class="columns is-multiline">
+            
+        </div>
+        
+
+        <div class="column is-12">
+            <div class="has-text-centered">
+                <p><strong>Follow</strong></p>
+                <div class="buttons is-centered">
+                    <a href="https://www.facebook.com/fva1920/" class="button is-light">
+                        <i class="fab fa-facebook fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.instagram.com/fva1920/" class="button is-light">
+                        <i class="fab fa-instagram fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCTCcUCZQNPcGdRwlTqN_M-Q" class="button is-light">
+                        <i class="fab fa-youtube fa-lg has-text-danger"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/fva-1920/" class="button is-light">
+                        <i class="fab fa-linkedin fa-lg has-text-link"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class="">Theme built by <a href="https://www.csrhymes.com">C.S. Rhymes</a></p>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class=""><a href="/en/contact/imprint/">Impressum</a> 
+                <a href="/en/contact/privacy/">Datenschutzerklärung</a>
+                <a href="https://fva.cloud">Intern</a></p>
+            </div>
+    </div>
+</footer>
+
+    
+    <script src="/assets/js/app.js" type="text/javascript"></script><!-- footer scripts --></body>
+</html>

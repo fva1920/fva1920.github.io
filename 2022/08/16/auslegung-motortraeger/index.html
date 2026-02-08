@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+
+
+
+<html
+ lang="de"
+ class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content=#ffffff>
+    
+    <title>Projektarbeit zur Auslegung eines Motorträgers für die FVA 30 - FVA</title>
+    
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="shortcut icon" type="image/png"
+           href="/favicon.png" 
+    />
+    <link rel=preload href="/assets/css/roboto.css" as="style">
+    <link rel=preload href="/assets/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/roboto-v20-latin-ext_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <script src="/assets/js/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/fontawesome.all.min.css">
+    
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Projektarbeit zur Auslegung eines Motorträgers für die FVA 30" />
+<meta name="author" content="Florian Mock" />
+<meta property="og:locale" content="de" />
+<meta name="description" content="Wie verbindet man am geschicktesten den Fortschritt des eigenen Studiums mit der FVA und bringt dabei ein Projekt noch möglichst fundiert und nachhaltig weiter? Indem man eine im Studienverlauf benötigte wissenschaftliche Arbeit innerhalb eines FVA-Projektes schreibt! So auch von Valentin Storre und Florian „Flock“ Mock kürzlich durchgeführt." />
+<meta property="og:description" content="Wie verbindet man am geschicktesten den Fortschritt des eigenen Studiums mit der FVA und bringt dabei ein Projekt noch möglichst fundiert und nachhaltig weiter? Indem man eine im Studienverlauf benötigte wissenschaftliche Arbeit innerhalb eines FVA-Projektes schreibt! So auch von Valentin Storre und Florian „Flock“ Mock kürzlich durchgeführt." />
+<meta property="og:site_name" content="FVA" />
+<meta property="og:image" content="/assets/img/articles/2022-08-16-auslegung-motortraeger/4.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-08-16T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="/assets/img/articles/2022-08-16-auslegung-motortraeger/4.png" />
+<meta property="twitter:title" content="Projektarbeit zur Auslegung eines Motorträgers für die FVA 30" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Florian Mock"},"dateModified":"2022-08-16T00:00:00+00:00","datePublished":"2022-08-16T00:00:00+00:00","description":"Wie verbindet man am geschicktesten den Fortschritt des eigenen Studiums mit der FVA und bringt dabei ein Projekt noch möglichst fundiert und nachhaltig weiter? Indem man eine im Studienverlauf benötigte wissenschaftliche Arbeit innerhalb eines FVA-Projektes schreibt! So auch von Valentin Storre und Florian „Flock“ Mock kürzlich durchgeführt.","headline":"Projektarbeit zur Auslegung eines Motorträgers für die FVA 30","image":"/assets/img/articles/2022-08-16-auslegung-motortraeger/4.png","mainEntityOfPage":{"@type":"WebPage","@id":"/2022/08/16/auslegung-motortraeger/"},"url":"/2022/08/16/auslegung-motortraeger/"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- head scripts --></head>
+
+  
+  <body>
+  
+    <nav class="navbar is-primary  is-fixed-top " x-data="{ openNav: false }">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/" class="navbar-item">
+                <img src=/assets/img/fvaLogo.png>
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu" :class="{ 'is-active': openNav }" x-on:click="openNav = !openNav">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu" :class="{ 'is-active': openNav }">
+            <div class="navbar-start">
+                <a href="/" class="navbar-item ">FVA</a>
+                
+                
+                    
+                    <a href="/blog/" class="navbar-item ">News</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/about/" class="navbar-link ">Über uns</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/about/team/" class="navbar-item ">Team</a>
+                            
+                            <a href="/about/workshop/" class="navbar-item ">Werkstatt</a>
+                            
+                            <a href="/about/history/" class="navbar-item ">Geschichte</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/projects/" class="navbar-link ">Projekte</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/projects/fva30/" class="navbar-item ">FVA 30</a>
+                            
+                            <a href="/projects/fva29/" class="navbar-item ">FVA 29</a>
+                            
+                            <a href="/projects/fva24/" class="navbar-item ">FVA 24d</a>
+                            
+                            <a href="/projects/oldprojects/" class="navbar-item ">Ältere Projekte</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <a href="/flying/" class="navbar-item ">Fliegen</a>
+                    
+                
+                    
+                    <a href="/join/" class="navbar-item ">Mitmachen</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/partners/" class="navbar-link ">Partner</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/partners/newpartner/" class="navbar-item ">Partner werden</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/contact/" class="navbar-link ">Kontakt</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/contact/imprint/" class="navbar-item ">Impressum</a>
+                            
+                            <a href="/contact/privacy/" class="navbar-item ">Datenschutz</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                
+            </div>
+                <div class="navbar-end">
+			
+			        
+			        <a class="navbar-item" href="/en/2022/08/16/auslegung-motortraeger/">
+                            <span>&nbsp;EN</span>
+                            <span class="icon"><i class="fas fa-globe"></i></span>
+                		</a>
+			
+        	</div>        
+        </div>
+    </div>
+</nav>
+
+    
+        <section class="hero  is-narrow  is-bold is-primary" >
+    <div class="hero-body ">
+        <div class="container">
+            
+            <h1 class="title is-2">Projektarbeit zur Auslegung eines Motorträgers für die FVA 30</h1>
+            
+            <p class="subtitle is-3"></p>
+            
+        </div>
+    </div>
+</section>
+    
+    
+
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                
+                <div class="column is-12">
+                    
+                    
+                    
+                    
+                    <div class="content">
+
+    <p>Veröffentlicht am 16.08.2022 von Florian Mock</p>
+
+    <p>Wie verbindet man am geschicktesten den Fortschritt des eigenen Studiums mit der FVA und bringt dabei ein Projekt noch möglichst fundiert und nachhaltig weiter? Indem man eine im Studienverlauf benötigte wissenschaftliche Arbeit innerhalb eines FVA-Projektes schreibt! So auch von Valentin Storre und Florian „Flock“ Mock kürzlich durchgeführt.</p>
+
+<p>Für den Motorträger der FVA 30 existierte seit Längerem ein Konzept, welches im Rahmen einer Masterarbeit zur strukturellen Auslegung des Leitwerks entwickelt wurde. Da der Motorträger beziehungsweise die Motorgondel insgesamt jedoch nicht das Hauptthema dieser Arbeit war und kein ausführlicher Auslegungsprozess für diese Baugruppe stattfand, wies das Konzept noch einige Schwächen auf. Daher wurde mit Hilfe eines standardisierten Konstruktionsprozesses ein neues Konzept für den Bauraum der Motorgondel erarbeitet. Dieses sieht einen Motorträger vor, welcher die mechanischen Lasten aller Bauteile der Baugruppe trägt und in die Leitwerksstruktur einleitet. Neben dem Motor selbst müssen hauptsächlich Komponenten zur Kühlung des Motors sowie Leistungs- und Datenelektronik berücksichtigt werden. Aus aerodynamischen Gründen wird die Motorgondel natürlich verkleidet, die Schale trägt jedoch außer des Eigengewichts keine weiteren Lasten.</p>
+
+<p><img src="/assets/img/articles/2022-08-16-auslegung-motortraeger/1.png" alt="" />
+Anordnung der Elemente des Kühlkreislaufs sowie der Elektronik</p>
+
+<p><img src="/assets/img/articles/2022-08-16-auslegung-motortraeger/2.png" alt="" />
+Aerodynamisch verkleidete Motorgondel der FVA 30 mit Lufteinlass zur Durchströmung des Kühlers</p>
+
+<p>Nachdem das Konzept für die Baugruppe fertig war, fehlte „nur noch“ ein passender Motorträger, welcher den Belastungen durch die im Flug beschleunigten Massen der Bauteile standhält. Aufgrund der großen Entfernung zwischen Motorgondel und Schwerpunkt ist eine möglichst geringe Masse anzustreben, da schon kleine Massen durch großen Hebelarm zu hohen Momenten führen. Seit einiger Zeit geistert daher die Idee eines topologieoptimierten und 3D-gedruckten Motorträgers durch das Strukturteam der FVA 30. Schnell entstand daraus das Thema für eine Projektarbeit, in der ein solches  Konzept mit einem für solche Anwendungen typischen Fachwerk aus miteinander verschweißten Rohren verglichen wird.</p>
+
+<p>Zunächst wurden die Einschränkungen des verfügbaren Bauraums durch die weiteren Bauteile und die Lagerung des Motorträgers auf der Abschlussrippe des Leitwerks definiert. Eine Dreipunktlagerung erschien am sinnvollsten, wobei ein Lagerpunkt nahe der Profilnase auf der Rippe liegt, und die beiden anderen direkt in den Leitwerksholm integriert werden. Dies hat den Vorteil, dass die Belastungen auf direktem Weg in die tragende Struktur eingeleitet werden. Des Weiteren ist zur Auslegung eines Bauteils die Berechnung der erwarteten Lasten unumgänglich. Diese erfolgte durch die Beachtung der geforderten Lastfälle aus der Zulassungsvorschrift CS-22. Dort sind Beschleunigungen angegeben, welche durch Multiplikation mit den Bauteilmassen zu Kräften führt, welche durch die Struktur zu tragen sind. Nach einer ausführlichen Gegenüberstellung der mechanischen Eigenschaften verschiedener Werkstoffe wurde sich für die Verwendung von Aluminium entschieden, da damit die geringsten Massen erzielt werden können. Dieser Werkstoff hat jedoch auch seine Tücken, welche vor allem beim Schweißen zu beachten sind. Mit diesen Informationen können nun zwei Motorträger ausgelegt werden. Zum einen ein Fachwerk aus verschweißten Rohren, zum anderen ein topologieoptimierter Freiformkörper, welcher additiv im 3D-Drucker gefertigt wird.</p>
+
+<p>Beide Konzepte besitzen verschiedene Vor- und Nachteile. So ist es für eine Software zur Topologieoptimierung problemlos möglich, eine Struktur um bestehende Hindernisse herum zu berechnen. Geometrische Einschränkungen durch weitere Bauteile können so ohne großen Aufwand beachtet werden. Des Weiteren ist die Fertigung nach der Auslegung keine große Hürde mehr, da sie zum allergrößten Teil von einer Maschine übernommen wird. Andererseits ist in diesem Anwendungsfall aus Gründen der Oberflächengüte nur das Drucken von massiven Stäben möglich. Dadurch entstehen im Verhältnis zur mechanischen Leistung große Massen.</p>
+
+<p><img src="/assets/img/articles/2022-08-16-auslegung-motortraeger/3.png" alt="" />
+So könnte ein Freiformkörper als Motorträger in der Baugruppe aussehen</p>
+
+<p>Bei einem Fachwerk aus geschweißten Rohren ist die Geometrie der einzelnen Elemente nicht an die Hindernisse anpassbar, was die Erfüllung der Bauraumeinschränkungen verkompliziert. Außerdem ist die Komplexität des Fachwerks beschränkt, da es am Ende händisch geschweißt werden muss. Diese Nachteile werden aber letztendlich von den mechanischen Vorteilen von Rohren gegenüber Vollstäben deutlich überkompensiert. Im Massenvergleich schneiden die geschweißten Fachwerke deutlich besser ab als die additiv gefertigten, massiven Motorträger.</p>
+
+<p><img src="/assets/img/articles/2022-08-16-auslegung-motortraeger/4.png" alt="" />
+So könnte ein Rohrfachwerk als Motorträger in der Baugruppe aussehen</p>
+
+<p>Daher ist das Ergebnis der Projektarbeit ein Motorträger, welcher aus Aluminiumrohren besteht und an den alle benötigten Elemente der Baugruppe befestigt werden können. Zur Vereinfachung der Fertigung wurde die Auslegung zum Schluss dahingehend angepasst, dass alle Rohre den gleichen Querschnitt besitzen. Dieser Motorträger erfüllt nun alle geforderten Sicherheitsfaktoren bei einem Gesamtgewicht von 705 Gramm.</p>
+
+<p>Die Projektarbeit beruht auf einer vorläufigen Geometrie des Leitwerks. Sobald sie finalisiert wird und ein Vorgehen zur Zulassung mit dem Luftfahrtbundesamt abgestimmt ist, kann mit der Fertigung des Motorträgers begonnen werden.</p>
+
+</div>
+
+<div class="field is-grouped is-grouped-multiline">
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/FVA30">
+<span class="tag  is-primary ">
+    FVA30
+</span>
+</a>
+    </div>
+  </div>
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/FVA30struct">
+<span class="tag  is-primary ">
+    FVA30 Struktur
+</span>
+</a>
+    </div>
+  </div>
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/FVA30constr">
+<span class="tag  is-primary ">
+    FVA30 Konstruktion
+</span>
+</a>
+    </div>
+  </div>
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/Forschen">
+<span class="tag  is-primary ">
+    Forschen
+</span>
+</a>
+    </div>
+  </div>
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/Bauen">
+<span class="tag  is-primary ">
+    Bauen
+</span>
+</a>
+    </div>
+  </div>
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/Projekt">
+<span class="tag  is-primary ">
+    Projekt
+</span>
+</a>
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+        <footer class="footer">
+    <div class="container">
+        
+        
+        <div class="columns is-multiline">
+            
+        </div>
+        
+
+        <div class="column is-12">
+            <div class="has-text-centered">
+                <p><strong>Folgen auf</strong></p>
+                <div class="buttons is-centered">
+                    <a href="https://www.facebook.com/fva1920/" class="button is-light">
+                        <i class="fab fa-facebook fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.instagram.com/fva1920/" class="button is-light">
+                        <i class="fab fa-instagram fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCTCcUCZQNPcGdRwlTqN_M-Q" class="button is-light">
+                        <i class="fab fa-youtube fa-lg has-text-danger"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/fva-1920/" class="button is-light">
+                        <i class="fab fa-linkedin fa-lg has-text-link"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class="">Theme built by <a href="https://www.csrhymes.com">C.S. Rhymes</a></p>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class=""><a href="/contact/imprint/">Impressum</a> 
+                <a href="/contact/privacy/">Datenschutzerklärung</a>
+                <a href="https://fva.cloud">Intern</a></p>
+            </div>
+    </div>
+</footer>
+
+    
+    <script src="/assets/js/app.js" type="text/javascript"></script><!-- footer scripts --></body>
+</html>

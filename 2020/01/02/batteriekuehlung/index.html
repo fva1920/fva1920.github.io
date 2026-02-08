@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+
+
+
+
+<html
+ lang="de"
+ class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content=#ffffff>
+    
+    <title>Batteriekühlung: PCM-Simulation - FVA</title>
+    
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="shortcut icon" type="image/png"
+           href="/favicon.png" 
+    />
+    <link rel=preload href="/assets/css/roboto.css" as="style">
+    <link rel=preload href="/assets/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/roboto-v20-latin-ext_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <script src="/assets/js/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/fontawesome.all.min.css">
+    
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Batteriekühlung: PCM-Simulation" />
+<meta name="author" content="Marvin Garbade" />
+<meta property="og:locale" content="de" />
+<meta name="description" content="Eine besondere Herausforderung bei der Entwicklung unseres Batteriepacks ist der Entwurf eines ausfallsicheren Temperaturmanagementsystems, das den Temperaturanstieg während des Starts und des Steigflugs abmildern und eine Unterkühlung während des 4-5-stündigen Reiseflugs mit Range Extender in bis zu 3000 m Höhe, bei dem die Akkus wieder aufgeladen werden und betriebsbereit bleiben müssen (z. B. für ein Durchstartmanöver), verhindern kann. Daher wurde ein passiver Kühlungsansatz auf Basis eines Phasenwechselmaterialverbunds (Paraffin, eingekapselt in eine feste Struktur, z. B. eine poröse Struktur aus verpresstem expandierten Graphit oder HDPE mit einem wärmeleitenden Zusatz) entworfen, der effektiv die thermische Trägheit des Batteriepacks erhöht, zur strukturellen Festigkeit beiträgt (reduzierter Overhead bei Zellhalterungen) und eine vollständige Versiegelung der Batteriemodule ermöglicht. Dieser Ansatz behebt damit wesentliche Nachteile herkömmlicher Kühltechniken: Sowohl die Flüssig- als auch die Luftkühlung würden keinen wesentlichen Volumengewinn durch eine dichtere Zellanordnung erbringen (3.6 mm Zellabstand im PCM-Verbund) und haben daher unabhängig von ihrer Kühlleistung einen höheren Volumenbedarf aufgrund zusätzlicher Komponenten außerhalb des Packs (z. B. Lufteinlass, Schläuche, Wärmetauscher), wobei das Volumen unsere größte Einschränkung darstellt, da der verfügbare Bauraum auch Range Extender und Umrichter unterbringen muss. Darüber hinaus bietet der nachgewiesene Schutz gegen Brandausbreitung einen entscheidenden Vorteil gegenüber der konventionellen Kühlung. Was das Gewicht anbelangt, so ist das zusätzliche PCM-Masse im Vergleich zu einer leichteren (aktiven) Luftkühlung ebenfalls von Vorteil, da die Batterie zur Stabilisierung unseres Schwerpunkts dient, der durch unseren heckintegrierten Antrieb nach hinten verlagert wird." />
+<meta property="og:description" content="Eine besondere Herausforderung bei der Entwicklung unseres Batteriepacks ist der Entwurf eines ausfallsicheren Temperaturmanagementsystems, das den Temperaturanstieg während des Starts und des Steigflugs abmildern und eine Unterkühlung während des 4-5-stündigen Reiseflugs mit Range Extender in bis zu 3000 m Höhe, bei dem die Akkus wieder aufgeladen werden und betriebsbereit bleiben müssen (z. B. für ein Durchstartmanöver), verhindern kann. Daher wurde ein passiver Kühlungsansatz auf Basis eines Phasenwechselmaterialverbunds (Paraffin, eingekapselt in eine feste Struktur, z. B. eine poröse Struktur aus verpresstem expandierten Graphit oder HDPE mit einem wärmeleitenden Zusatz) entworfen, der effektiv die thermische Trägheit des Batteriepacks erhöht, zur strukturellen Festigkeit beiträgt (reduzierter Overhead bei Zellhalterungen) und eine vollständige Versiegelung der Batteriemodule ermöglicht. Dieser Ansatz behebt damit wesentliche Nachteile herkömmlicher Kühltechniken: Sowohl die Flüssig- als auch die Luftkühlung würden keinen wesentlichen Volumengewinn durch eine dichtere Zellanordnung erbringen (3.6 mm Zellabstand im PCM-Verbund) und haben daher unabhängig von ihrer Kühlleistung einen höheren Volumenbedarf aufgrund zusätzlicher Komponenten außerhalb des Packs (z. B. Lufteinlass, Schläuche, Wärmetauscher), wobei das Volumen unsere größte Einschränkung darstellt, da der verfügbare Bauraum auch Range Extender und Umrichter unterbringen muss. Darüber hinaus bietet der nachgewiesene Schutz gegen Brandausbreitung einen entscheidenden Vorteil gegenüber der konventionellen Kühlung. Was das Gewicht anbelangt, so ist das zusätzliche PCM-Masse im Vergleich zu einer leichteren (aktiven) Luftkühlung ebenfalls von Vorteil, da die Batterie zur Stabilisierung unseres Schwerpunkts dient, der durch unseren heckintegrierten Antrieb nach hinten verlagert wird." />
+<meta property="og:site_name" content="FVA" />
+<meta property="og:image" content="/assets/img/archive/makrozelle.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-01-02T12:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="/assets/img/archive/makrozelle.jpg" />
+<meta property="twitter:title" content="Batteriekühlung: PCM-Simulation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Marvin Garbade"},"dateModified":"2020-01-02T12:00:00+00:00","datePublished":"2020-01-02T12:00:00+00:00","description":"Eine besondere Herausforderung bei der Entwicklung unseres Batteriepacks ist der Entwurf eines ausfallsicheren Temperaturmanagementsystems, das den Temperaturanstieg während des Starts und des Steigflugs abmildern und eine Unterkühlung während des 4-5-stündigen Reiseflugs mit Range Extender in bis zu 3000 m Höhe, bei dem die Akkus wieder aufgeladen werden und betriebsbereit bleiben müssen (z. B. für ein Durchstartmanöver), verhindern kann. Daher wurde ein passiver Kühlungsansatz auf Basis eines Phasenwechselmaterialverbunds (Paraffin, eingekapselt in eine feste Struktur, z. B. eine poröse Struktur aus verpresstem expandierten Graphit oder HDPE mit einem wärmeleitenden Zusatz) entworfen, der effektiv die thermische Trägheit des Batteriepacks erhöht, zur strukturellen Festigkeit beiträgt (reduzierter Overhead bei Zellhalterungen) und eine vollständige Versiegelung der Batteriemodule ermöglicht. Dieser Ansatz behebt damit wesentliche Nachteile herkömmlicher Kühltechniken: Sowohl die Flüssig- als auch die Luftkühlung würden keinen wesentlichen Volumengewinn durch eine dichtere Zellanordnung erbringen (3.6 mm Zellabstand im PCM-Verbund) und haben daher unabhängig von ihrer Kühlleistung einen höheren Volumenbedarf aufgrund zusätzlicher Komponenten außerhalb des Packs (z. B. Lufteinlass, Schläuche, Wärmetauscher), wobei das Volumen unsere größte Einschränkung darstellt, da der verfügbare Bauraum auch Range Extender und Umrichter unterbringen muss. Darüber hinaus bietet der nachgewiesene Schutz gegen Brandausbreitung einen entscheidenden Vorteil gegenüber der konventionellen Kühlung. Was das Gewicht anbelangt, so ist das zusätzliche PCM-Masse im Vergleich zu einer leichteren (aktiven) Luftkühlung ebenfalls von Vorteil, da die Batterie zur Stabilisierung unseres Schwerpunkts dient, der durch unseren heckintegrierten Antrieb nach hinten verlagert wird.","headline":"Batteriekühlung: PCM-Simulation","image":"/assets/img/archive/makrozelle.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"/2020/01/02/batteriekuehlung/"},"url":"/2020/01/02/batteriekuehlung/"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- head scripts --></head>
+
+  
+  <body>
+  
+    <nav class="navbar is-primary  is-fixed-top " x-data="{ openNav: false }">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/" class="navbar-item">
+                <img src=/assets/img/fvaLogo.png>
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu" :class="{ 'is-active': openNav }" x-on:click="openNav = !openNav">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu" :class="{ 'is-active': openNav }">
+            <div class="navbar-start">
+                <a href="/" class="navbar-item ">FVA</a>
+                
+                
+                    
+                    <a href="/blog/" class="navbar-item ">News</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/about/" class="navbar-link ">Über uns</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/about/team/" class="navbar-item ">Team</a>
+                            
+                            <a href="/about/workshop/" class="navbar-item ">Werkstatt</a>
+                            
+                            <a href="/about/history/" class="navbar-item ">Geschichte</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/projects/" class="navbar-link ">Projekte</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/projects/fva30/" class="navbar-item ">FVA 30</a>
+                            
+                            <a href="/projects/fva29/" class="navbar-item ">FVA 29</a>
+                            
+                            <a href="/projects/fva24/" class="navbar-item ">FVA 24d</a>
+                            
+                            <a href="/projects/oldprojects/" class="navbar-item ">Ältere Projekte</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <a href="/flying/" class="navbar-item ">Fliegen</a>
+                    
+                
+                    
+                    <a href="/join/" class="navbar-item ">Mitmachen</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/partners/" class="navbar-link ">Partner</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/partners/newpartner/" class="navbar-item ">Partner werden</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/contact/" class="navbar-link ">Kontakt</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/contact/imprint/" class="navbar-item ">Impressum</a>
+                            
+                            <a href="/contact/privacy/" class="navbar-item ">Datenschutz</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                
+            </div>
+                <div class="navbar-end">
+			
+			        
+			        <a class="navbar-item" href="/en/2020/01/02/batteriekuehlung/">
+                            <span>&nbsp;EN</span>
+                            <span class="icon"><i class="fas fa-globe"></i></span>
+                		</a>
+			
+        	</div>        
+        </div>
+    </div>
+</nav>
+
+    
+        <section class="hero  is-narrow  is-bold is-primary" >
+    <div class="hero-body ">
+        <div class="container">
+            
+            <h1 class="title is-2">Batteriekühlung: PCM-Simulation</h1>
+            
+            <p class="subtitle is-3"></p>
+            
+        </div>
+    </div>
+</section>
+    
+    
+
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                
+                <div class="column is-12">
+                    
+                    
+                    
+                    
+                    <div class="content">
+
+    <p>Veröffentlicht am 2.01.2020 von Marvin Garbade</p>
+
+    <p>Eine besondere Herausforderung bei der Entwicklung unseres Batteriepacks ist der Entwurf eines ausfallsicheren Temperaturmanagementsystems, das den Temperaturanstieg während des Starts und des Steigflugs abmildern und eine Unterkühlung während des 4-5-stündigen Reiseflugs mit Range Extender in bis zu 3000 m Höhe, bei dem die Akkus wieder aufgeladen werden und betriebsbereit bleiben müssen (z. B. für ein Durchstartmanöver), verhindern kann. Daher wurde ein passiver Kühlungsansatz auf Basis eines Phasenwechselmaterialverbunds (Paraffin, eingekapselt in eine feste Struktur, z. B. eine poröse Struktur aus verpresstem expandierten Graphit oder HDPE mit einem wärmeleitenden Zusatz) entworfen, der effektiv die thermische Trägheit des Batteriepacks erhöht, zur strukturellen Festigkeit beiträgt (reduzierter Overhead bei Zellhalterungen) und eine vollständige Versiegelung der Batteriemodule ermöglicht. Dieser Ansatz behebt damit wesentliche Nachteile herkömmlicher Kühltechniken: Sowohl die Flüssig- als auch die Luftkühlung würden keinen wesentlichen Volumengewinn durch eine dichtere Zellanordnung erbringen (3.6 mm Zellabstand im PCM-Verbund) und haben daher unabhängig von ihrer Kühlleistung einen höheren Volumenbedarf aufgrund zusätzlicher Komponenten außerhalb des Packs (z. B. Lufteinlass, Schläuche, Wärmetauscher), wobei das Volumen unsere größte Einschränkung darstellt, da der verfügbare Bauraum auch Range Extender und Umrichter unterbringen muss. Darüber hinaus bietet der nachgewiesene Schutz gegen Brandausbreitung einen entscheidenden Vorteil gegenüber der konventionellen Kühlung. Was das Gewicht anbelangt, so ist das zusätzliche PCM-Masse im Vergleich zu einer leichteren (aktiven) Luftkühlung ebenfalls von Vorteil, da die Batterie zur Stabilisierung unseres Schwerpunkts dient, der durch unseren heckintegrierten Antrieb nach hinten verlagert wird.</p>
+
+<p>Zuvor haben wir über den Bau unseres ersten Testmoduls sowie die damit durchgeführten Flugprofiltests berichtet, wobei das Modul bereits alle relevanten Komponenten des späteren Batteriesystems, das aus 12 solcher Module in Serie bestehen wird, integriert. Die Komponentenauswahl für das Testsystem erfolgte jedoch teilweise aufgrund von Komponenten-Verfügbarkeiten und weicht daher vom endgültigen Design ab. Insbesondere das verwendete PCM-Material – eine Spende des Fraunhofer-Instituts für Betriebsfestigkeit und Systemzuverlässigkeit (LBF) – passt mit einem Schmelzpunkt von 25 °C nicht zu unseren Anforderungen, da das in der Struktur eingekapselte Paraffin bei angemessenen Bodentemperaturen nicht schon geschmolzen sein darf, sodass der Phasenwechsel erst durch die Batterieerwärmung ausgelöst wird. Der CAD-Entwurf und die vorangegangenen Materialbedarfsabschätzungen basierten jedoch auf dem Produkt PCC48-1000 von AllCell Technologies, das eine gute Referenz für die möglichen Kühleigenschaften darstellt. Diese Materialeigenschaften sollen in Verbindung mit der Verlustleistung unserer Batteriezelle unter Berücksichtigung verschiedener Flugszenarien genauer analysiert werden. Durch die Untersuchung der Verlustleistung und des transienten Wärmeflusses können wir die Materialauswahl (Schmelzpunkt) und die Zusammensetzung (Wärmekapazität ⇔ Wärmeleitfähigkeit) optimieren.</p>
+
+<p>Das Batteriemodul besteht aus 12 in Reihe geschalteten Submodulen, die jeweils aus einer Reihe von 5 parallel geschalteten Zellen in einem PCM-Zellenhalter aufgebaut sind (vgl. Abbildung unten).</p>
+
+<p><img src="/assets/img/archive/makrozelle.jpg" alt="" /></p>
+
+<p>Submodul mit fünf parallel geschalteten Zellen im PCM-Zellenhalter</p>
+
+<p>Jede Zelle ist von einer an der schmalsten Stelle 1.8 mm dicken PCM-Wand umgeben (daher 3.6 mm Abstand zwischen den Zellen). Die thermische Verbindung zwischen Zelle und PCM wird hergestellt, indem die Zellen fest in die entsprechenden Fassungen eingepasst und mit Wärmeleitpaste versehen werden.</p>
+
+<h2 id="simulationsstrategie">Simulationsstrategie</h2>
+
+<p>Für die transiente thermische Analyse wird die kostenlose CAE-Software SimScale verwendet. Eine einzelne Batteriezelle, die von der entsprechenden PCM-Schale umschlossen ist, wird hier wie unten gezeigt importiert.</p>
+
+<p><img src="/assets/img/archive/einzelzelle.jpg" alt="" /></p>
+
+<p>Einzelzelle mit PCM-Mantel, 1.8 mm Wandstärke (schmalste Stelle)</p>
+
+<p>Der Simulationsaufbau ist vollständig adiabat, d. h. alle Leistungsverluste der Zelle werden in sensible Wärme der Batterie und des PCMs sowie in latente Wärme des Phasenwechsels übertragen. Daher liefert dieses Szenario eine konservative Abschätzung des thermischen Verhaltens, da der starke Wärmeabfluss in die Kupferverbinder und die Erwärmung anderer Elemente im Modulaufbau vernachlässigt wird.</p>
+
+<p>Der Einfachheit halber wird die Wärmeleitfähigkeit als isotrop implementiert, wobei Werte für die radiale Leitfähigkeit innerhalb der Zelle (die viel geringer ist als die axiale Leitfähigkeit) und pessimistische Leitfähigkeitswerte aus dem PCM-Datenblatt verwendet werden.</p>
+
+<p>Der Phasenübergang wird in eine sensible Wärmeänderung übertragen, indem für den gegebenen Schmelzbereich von 45° C – 50 °C die PCM-Wärmekapazität durch die über dieses Temperaturintervall aufgeteilte latente Wärmekapazität ersetzt wird.</p>
+
+<p>Es wird angenommen, dass die Batterie einen gleichmäßigen Volumenwärmestrom erzeugt, der dem simulierten Profil entspricht. Die Verlustleistung wird direkt aus den Strom- und Spannungsdaten geschätzt, wobei die vom Ladezustand (SOC) abhängige Leerlaufspannung (OCV) der Zelle als Referenz dient:</p>
+
+<p><img src="/assets/img/archive/latex.svg" alt="" /></p>
+
+<h2 id="simulationsprofile">Simulationsprofile</h2>
+
+<p>Es werden die gleichen Profile verwendet, die zuvor am gesamten Modul getestet wurden, d. h. Konstantleistungsprofile für die 4 Fälle:</p>
+
+<ul>
+  <li>Batterieelektrisches Profil mit voller Leistung (ELECTRIC-FULL)</li>
+  <li>Batterieelektrisches Profil mit reduzierter Steigrate (ELECTRIC-REDUCED)</li>
+  <li>Range-Extender-gestütztes Profil (REX)</li>
+  <li>Redundanz-Profil bei einseitigem Batterieausfall (EMERGENCY)</li>
+</ul>
+
+<p>Es werden die Messdaten aus den vorherigen Tests verwendet, bei denen der gemessene Modulstrom gleichmäßig auf die 5 parallelen Zellen aufgeteilt und die Zellspannungen gemittelt werden. Die gemessenen Leistungsprofile für die oben genannten 4 Fälle sind in den folgenden Tabellen nochmals zusammengefasst, hier abgebildet auf Einzelzellenebene.</p>
+
+<h3 id="electric-full">ELECTRIC-FULL</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Start</th>
+      <th>Steigflug</th>
+      <th>Reiseflug</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Leistung</td>
+      <td>65.5 W</td>
+      <td>47.57 W</td>
+      <td>10.22 W</td>
+    </tr>
+    <tr>
+      <td>Dauer</td>
+      <td>90 s</td>
+      <td>300 s</td>
+      <td>1108 s</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="electric-reduced">ELECTRIC-REDUCED</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Start</th>
+      <th>Steigflug</th>
+      <th>Reiseflug</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Leistung</td>
+      <td>65.5 W</td>
+      <td>34.67 W</td>
+      <td>10.22 W</td>
+    </tr>
+    <tr>
+      <td>Dauer</td>
+      <td>90 s</td>
+      <td>634 s</td>
+      <td>389 s</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="rex">REX</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Start</th>
+      <th>Steigflug</th>
+      <th>Reiseflug</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Leistung</td>
+      <td>48.17 W</td>
+      <td>30.17 W</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Dauer</td>
+      <td>90 s</td>
+      <td>891 s</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="emergency">EMERGENCY</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Start</th>
+      <th>Steigflug</th>
+      <th>Reiseflug</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Leistung</td>
+      <td>131 W</td>
+      <td>83.3 W</td>
+      <td>20.4 W</td>
+    </tr>
+    <tr>
+      <td>Dauer</td>
+      <td>35 s</td>
+      <td>160 s</td>
+      <td>764 s</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="materialparameter">Materialparameter</h2>
+
+<p>Folgende Materialparameter wurden dem Datenblatt von PCC48-1000 entnommen und nach der oben beschriebenen Vorgehensweise implementiert.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Schmelzbereich</td>
+      <td>45 °C – 50 °C</td>
+    </tr>
+    <tr>
+      <td>Dichte</td>
+      <td>890 kg/m<sup>3</sup></td>
+    </tr>
+    <tr>
+      <td>Wärmeleitfähigkeit (hier isotrop)</td>
+      <td>10 W/mK</td>
+    </tr>
+    <tr>
+      <td>Latente Wärmekapazität</td>
+      <td>180000 J/kg</td>
+    </tr>
+    <tr>
+      <td>Spezifische Wärmekapazität (fest)</td>
+      <td>1820 J/kgK</td>
+    </tr>
+    <tr>
+      <td>Spezifische Wärmekapazität (flüssig)</td>
+      <td>1960 J/kgK</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Insgesamt beträgt die PCM-Masse pro Zelle laut unserem CAD-Entwurf 7,27 g. Daraus ergibt sich eine latente Wärmekapazität von 1308,6 J = 0,3635 Wh. Weitere Wärmeverluste führen zu einer Temperaturerhöhung von Batterie und PCM. Die spezifische Wärmekapazität der Batteriezelle wurde mit 950 J/kgK angenommen, basierend auf Literaturwerten für vergleichbare 18650-Zellen.</p>
+
+<p>Für die Wärmeleitfähigkeit innerhalb der Zelle wurden Literaturwerte untersucht und ein Wert von 0,2 W/mK schien eine sinnvolle konservative Abschätzung für eine 18650 Hochenergie-NMC-Zelle zu sein (vgl. z.b. NASA-Bericht (2018)).</p>
+
+<p>Alle Profile starten bei einer Umgebungstemperatur von 20 °C.</p>
+
+<h2 id="simulationsergebisse">Simulationsergebisse</h2>
+
+<p>Für jedes Profil werden zwei Ergebnisse angezeigt: Auf der linken Seite wird die Verlustleistung über die Zeit dargestellt, wobei das Integral die erzeugte Wärmemenge angibt, während auf der rechten Seite die Temperatursimulation zu sehen ist.</p>
+
+<h3 id="electric-full-1">ELECTRIC-FULL</h3>
+
+<p><img src="/assets/img/archive/electric.jpg" alt="" />
+<a href="/assets/img/archive/electric.mp4">Video</a></p>
+
+<h3 id="electric-reduced-1">ELECTRIC-REDUCED</h3>
+
+<p><img src="/assets/img/archive/reduced.jpg" alt="" />
+<a href="/assets/img/archive/reduced.mp4">Video</a></p>
+
+<h2 id="rex-1">REX</h2>
+
+<p><img src="/assets/img/archive/rex.jpg" alt="" />
+<a href="/assets/img/archive/rex.mp4">Video</a></p>
+
+<h3 id="emergency-1">EMERGENCY</h3>
+
+<p><img src="/assets/img/archive/redundance.jpg" alt="" />
+<a href="/assets/img/archive/emergency.mp4">Video</a></p>
+
+<p>Unter Berücksichtigung der thermischen Masse von Batterie und PCM zusätzlich zur Phasenwechselenergie würde die theoretische thermische Kapazität für einen Temperaturanstieg von \Delta T = 40 ^\circ\text{C} (z. B. ausgehend von 20 °C Bodentemperatur und einer maximal tolerierten Temperatur von 60 °C) 1,01 Wh betragen, was für alle Profile außer dem Notfallprofil ausreichend ist. Letzteres muss in kommenden Tests gesondert analysiert werden.</p>
+
+<p>Es ist jedoch anzumerken, dass alle oben genannten Profile über die eigentlichen Auslegungsziele hinausgehen, d.h. ein vollelektrischer Flug mit Start, 1000 m Steigen und 15 Minuten Reiseflug (Phase I) bzw. ein batteriegestützter Start mit Range Extender bis zu einer maximalen Höhe von 3000 m (aber nicht unbedingt mit der getesteten hohen Steigrate von 3,4 m/s), wobei der Range Extender die konstante Reiseflugleistung abdeckt (Phase II).</p>
+
+<p>Bezüglich der PCM-Zusammensetzung legen die Simulationen nahe, dass die Eigenschaften von PCC48-1000 sowohl hinsichtlich der Wärmekapazität als auch der Leitfähigkeit ausreichen würden. Auch höhere Paraffinbeladungen scheinen möglich, da die Wärmeleitfähigkeit aufgrund der dünnen Struktur eine untergeordnete Rolle spielt. Hinsichtlich des optimalen Schmelzpunktes könnte jedoch eine leichte Absenkung, z. B. auf 42 – 45 °C, von Vorteil sein, da der Schmelzvorgang erst dann ausgelöst wird, wenn die Batteriezelle bereits eine (deutlich) höhere Temperatur erreicht hat.</p>
+
+</div>
+
+<div class="field is-grouped is-grouped-multiline">
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/FVA30">
+<span class="tag  is-primary ">
+    FVA30
+</span>
+</a>
+    </div>
+  </div>
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/FVA30power">
+<span class="tag  is-primary ">
+    FVA30 Antriebsstrang
+</span>
+</a>
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+        <footer class="footer">
+    <div class="container">
+        
+        
+        <div class="columns is-multiline">
+            
+        </div>
+        
+
+        <div class="column is-12">
+            <div class="has-text-centered">
+                <p><strong>Folgen auf</strong></p>
+                <div class="buttons is-centered">
+                    <a href="https://www.facebook.com/fva1920/" class="button is-light">
+                        <i class="fab fa-facebook fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.instagram.com/fva1920/" class="button is-light">
+                        <i class="fab fa-instagram fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCTCcUCZQNPcGdRwlTqN_M-Q" class="button is-light">
+                        <i class="fab fa-youtube fa-lg has-text-danger"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/fva-1920/" class="button is-light">
+                        <i class="fab fa-linkedin fa-lg has-text-link"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class="">Theme built by <a href="https://www.csrhymes.com">C.S. Rhymes</a></p>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class=""><a href="/contact/imprint/">Impressum</a> 
+                <a href="/contact/privacy/">Datenschutzerklärung</a>
+                <a href="https://fva.cloud">Intern</a></p>
+            </div>
+    </div>
+</footer>
+
+    
+    <script src="/assets/js/app.js" type="text/javascript"></script><!-- footer scripts --></body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+
+
+
+<html
+ lang="de"
+ class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content=#ffffff>
+    
+    <title>Propeller-Leitwerks-Interaktion - FVA</title>
+    
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="shortcut icon" type="image/png"
+           href="/favicon.png" 
+    />
+    <link rel=preload href="/assets/css/roboto.css" as="style">
+    <link rel=preload href="/assets/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/roboto-v20-latin-ext_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <script src="/assets/js/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/fontawesome.all.min.css">
+    
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Propeller-Leitwerks-Interaktion" />
+<meta name="author" content="FVA" />
+<meta property="og:locale" content="de" />
+<meta name="description" content="Nach der vollständigen Dimensionierung und Auslegung des V-Leitwerks der FVA-30 wurde ein wichtiger Effekt, der das Leitwerk betrifft, im letzten Semester noch einmal genauer untersucht: Die Interaktion des Propellernachlaufs mit den umströmten Steuerflächen am Leitwerk und der daraus resultierenden Ruderwirksamkeit beeinflusst sowohl im zweimotorigen Betrieb, als auch im einmotorigen Betrieb (One-Engine-Inoperative, einseitiger Antriebsausfall) maßgeblich die Nachweisführung der Längs- und Seitenstabilität und betrifft somit auch die Auslegung des Leitwerks. Hierbei interagieren der Propellernachlauf und die Leitwerksflächen, indem diese den aerodynamischen Anströmvektor drehen und den Staudruck verändern. In Absprache mit dem LBA kamen wir zu dem Ergebnis, dass dieser Effekt im Detail untersucht werden müsse, um einen sicheren Betrieb unter allen Umständen zu gewährleisten. Da der Effekt der Propeller-Leitwerk-Interaktion bei den für die FVA-30 dimensionierten Propellern und deren Leistungen in den verschiedenen Flugfällen teils sehr stark ausgeprägt ist, wurde eine Methode zur Nachrechnung dieses Effekts ermittelt. Damit wurden die erforderlichen Ruderwinkel neu bestimmt und bewertet. Es ließen sich die Effekte der Drallüberlagerung von Propeller und Leitwerk in das bestehende Modell und die Nachrechnung ohne großen Mehraufwand integrieren." />
+<meta property="og:description" content="Nach der vollständigen Dimensionierung und Auslegung des V-Leitwerks der FVA-30 wurde ein wichtiger Effekt, der das Leitwerk betrifft, im letzten Semester noch einmal genauer untersucht: Die Interaktion des Propellernachlaufs mit den umströmten Steuerflächen am Leitwerk und der daraus resultierenden Ruderwirksamkeit beeinflusst sowohl im zweimotorigen Betrieb, als auch im einmotorigen Betrieb (One-Engine-Inoperative, einseitiger Antriebsausfall) maßgeblich die Nachweisführung der Längs- und Seitenstabilität und betrifft somit auch die Auslegung des Leitwerks. Hierbei interagieren der Propellernachlauf und die Leitwerksflächen, indem diese den aerodynamischen Anströmvektor drehen und den Staudruck verändern. In Absprache mit dem LBA kamen wir zu dem Ergebnis, dass dieser Effekt im Detail untersucht werden müsse, um einen sicheren Betrieb unter allen Umständen zu gewährleisten. Da der Effekt der Propeller-Leitwerk-Interaktion bei den für die FVA-30 dimensionierten Propellern und deren Leistungen in den verschiedenen Flugfällen teils sehr stark ausgeprägt ist, wurde eine Methode zur Nachrechnung dieses Effekts ermittelt. Damit wurden die erforderlichen Ruderwinkel neu bestimmt und bewertet. Es ließen sich die Effekte der Drallüberlagerung von Propeller und Leitwerk in das bestehende Modell und die Nachrechnung ohne großen Mehraufwand integrieren." />
+<meta property="og:site_name" content="FVA" />
+<meta property="og:image" content="/assets/img/archive/Inboard_Down.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-12-05T12:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="/assets/img/archive/Inboard_Down.png" />
+<meta property="twitter:title" content="Propeller-Leitwerks-Interaktion" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"FVA"},"dateModified":"2020-12-05T12:00:00+00:00","datePublished":"2020-12-05T12:00:00+00:00","description":"Nach der vollständigen Dimensionierung und Auslegung des V-Leitwerks der FVA-30 wurde ein wichtiger Effekt, der das Leitwerk betrifft, im letzten Semester noch einmal genauer untersucht: Die Interaktion des Propellernachlaufs mit den umströmten Steuerflächen am Leitwerk und der daraus resultierenden Ruderwirksamkeit beeinflusst sowohl im zweimotorigen Betrieb, als auch im einmotorigen Betrieb (One-Engine-Inoperative, einseitiger Antriebsausfall) maßgeblich die Nachweisführung der Längs- und Seitenstabilität und betrifft somit auch die Auslegung des Leitwerks. Hierbei interagieren der Propellernachlauf und die Leitwerksflächen, indem diese den aerodynamischen Anströmvektor drehen und den Staudruck verändern. In Absprache mit dem LBA kamen wir zu dem Ergebnis, dass dieser Effekt im Detail untersucht werden müsse, um einen sicheren Betrieb unter allen Umständen zu gewährleisten. Da der Effekt der Propeller-Leitwerk-Interaktion bei den für die FVA-30 dimensionierten Propellern und deren Leistungen in den verschiedenen Flugfällen teils sehr stark ausgeprägt ist, wurde eine Methode zur Nachrechnung dieses Effekts ermittelt. Damit wurden die erforderlichen Ruderwinkel neu bestimmt und bewertet. Es ließen sich die Effekte der Drallüberlagerung von Propeller und Leitwerk in das bestehende Modell und die Nachrechnung ohne großen Mehraufwand integrieren.","headline":"Propeller-Leitwerks-Interaktion","image":"/assets/img/archive/Inboard_Down.png","mainEntityOfPage":{"@type":"WebPage","@id":"/2020/12/05/propeller-tail/"},"url":"/2020/12/05/propeller-tail/"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- head scripts --></head>
+
+  
+  <body>
+  
+    <nav class="navbar is-primary  is-fixed-top " x-data="{ openNav: false }">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/" class="navbar-item">
+                <img src=/assets/img/fvaLogo.png>
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu" :class="{ 'is-active': openNav }" x-on:click="openNav = !openNav">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu" :class="{ 'is-active': openNav }">
+            <div class="navbar-start">
+                <a href="/" class="navbar-item ">FVA</a>
+                
+                
+                    
+                    <a href="/blog/" class="navbar-item ">News</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/about/" class="navbar-link ">Über uns</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/about/team/" class="navbar-item ">Team</a>
+                            
+                            <a href="/about/workshop/" class="navbar-item ">Werkstatt</a>
+                            
+                            <a href="/about/history/" class="navbar-item ">Geschichte</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/projects/" class="navbar-link ">Projekte</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/projects/fva30/" class="navbar-item ">FVA 30</a>
+                            
+                            <a href="/projects/fva29/" class="navbar-item ">FVA 29</a>
+                            
+                            <a href="/projects/fva24/" class="navbar-item ">FVA 24d</a>
+                            
+                            <a href="/projects/oldprojects/" class="navbar-item ">Ältere Projekte</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <a href="/flying/" class="navbar-item ">Fliegen</a>
+                    
+                
+                    
+                    <a href="/join/" class="navbar-item ">Mitmachen</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/partners/" class="navbar-link ">Partner</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/partners/newpartner/" class="navbar-item ">Partner werden</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/contact/" class="navbar-link ">Kontakt</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/contact/imprint/" class="navbar-item ">Impressum</a>
+                            
+                            <a href="/contact/privacy/" class="navbar-item ">Datenschutz</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                
+            </div>
+                <div class="navbar-end">
+			
+			        
+			        <a class="navbar-item" href="/en/2020/12/05/propeller-tail/">
+                            <span>&nbsp;EN</span>
+                            <span class="icon"><i class="fas fa-globe"></i></span>
+                		</a>
+			
+        	</div>        
+        </div>
+    </div>
+</nav>
+
+    
+        <section class="hero  is-narrow  is-bold is-primary" >
+    <div class="hero-body ">
+        <div class="container">
+            
+            <h1 class="title is-2">Propeller-Leitwerks-Interaktion</h1>
+            
+            <p class="subtitle is-3"></p>
+            
+        </div>
+    </div>
+</section>
+    
+    
+
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                
+                <div class="column is-12">
+                    
+                    
+                    
+                    
+                    <div class="content">
+
+    <p>Veröffentlicht am 5.12.2020 von FVA</p>
+
+    <p>Nach der vollständigen Dimensionierung und Auslegung des V-Leitwerks der FVA-30 wurde ein wichtiger Effekt, der das Leitwerk betrifft, im letzten Semester noch einmal genauer untersucht: Die Interaktion des Propellernachlaufs mit den umströmten Steuerflächen am Leitwerk und der daraus resultierenden Ruderwirksamkeit beeinflusst sowohl im zweimotorigen Betrieb, als auch im einmotorigen Betrieb (One-Engine-Inoperative, einseitiger Antriebsausfall) maßgeblich die Nachweisführung der Längs- und Seitenstabilität und betrifft somit auch die Auslegung des Leitwerks. Hierbei interagieren der Propellernachlauf und die Leitwerksflächen, indem diese den aerodynamischen Anströmvektor drehen und den Staudruck verändern. In Absprache mit dem LBA kamen wir zu dem Ergebnis, dass dieser Effekt im Detail untersucht werden müsse, um einen sicheren Betrieb unter allen Umständen zu gewährleisten. Da der Effekt der Propeller-Leitwerk-Interaktion bei den für die FVA-30 dimensionierten Propellern und deren Leistungen in den verschiedenen Flugfällen teils sehr stark ausgeprägt ist, wurde eine Methode zur Nachrechnung dieses Effekts ermittelt. Damit wurden die erforderlichen Ruderwinkel neu bestimmt und bewertet. Es ließen sich die Effekte der Drallüberlagerung von Propeller und Leitwerk in das bestehende Modell und die Nachrechnung ohne großen Mehraufwand integrieren.</p>
+
+<p>Im Folgenden wird der Sachverhalt näher erläutert, die bisherigen zugehörigen Entwicklungen rekapituliert, und auf die auftretenden für die flugmechanische Stabilität relevanten Effekte hingewiesen.</p>
+
+<p>Da die Antriebe an den Enden des V-Leitwerks angebracht werden, verursacht die Schubkraft der Propeller am Leitwerk, je nach Einstellwinkel der Antriebe, ein unerwünschtes, abnickendes Moment. Dieses Moment ist für Flugphasen mit großem Schubbedarf, wie z.B. beim Start oder Durchstarten, nicht zu vernachlässigen. Zur Kompensation wäre eine Neigung der Antriebe möglich, was jedoch eine asymmetrische Anströmung der Propeller zur Folge hätte. Dadurch würden jedoch eine erhöhte Wechselbelastung auf die Propeller sowie Einbußen im Vortriebswirkungsgrad entstehen. Für die FVA 30 wird das obige Problem an drei Stellen angegangen. Zunächst werden die Antriebe leicht geneigt und entlang der Strömung im Reiseflug ausgerichtet, um die Blattbelastung gering zu halten. Als zweite Maßnahme wird der Drehsinn der Propeller jeweils so gewählt, dass das innenliegende Propellerblatt sich abwärts bewegt (Inboard-Down, siehe Abbildung unten).</p>
+
+<p><img src="/assets/img/archive/Inboard_Down.png" alt="" /></p>
+
+<p>Drehsinn der Propeller, beide Inboard-Down</p>
+
+<p>Der vom Propeller induzierte Drall reduziert so den lokalen Anstellwinkel am Leitwerk, welches dann einen erhöhten Abtrieb erzeugt und das abnickende Moment zum Teil kompensiert. Zudem beugt die örtliche Verringerung des Anstellwinkels einen Strömungsabriss am Leitwerk vor. Es sei noch erwähnt, dass die Propeller aufgrund der Gegenläufigkeit kein resultierendes Moment um die Längsachse des Flugzeugs und keine resultierenden Kreiselmomente erzeugen.</p>
+
+<p>Als Drittes wird das verbleibende Moment durch die Ruder ausgesteuert, wobei es diesen Anteil so gering wie möglich zu halten gilt, um den Piloten zu entlasten und einen effizienten Flug mit geringen Ruderausschlägen zu ermöglichen.</p>
+
+<p>Nun wird näher auf die Unterschiede in den verschiedenen Flugfällen eingegangen. Im zweimotorigen Betrieb wird die Höhenruderwirksamkeit in die abnickende Richtung abgemindert, da beide Propeller wie oben beschrieben Inboard-Down rotieren. Ebenso gilt im Fall der Seitenleitwerksfunktion, dass je ein Seitenruder einer jeweiligen Fläche pro Leitwerk in beide Kurvenrichtungen vermindert wirksam ist. Dies betrifft vor allem den kritischen Flugfälle des Durchstartens sowie die Trimmfälle aus CS-22 mit den Geschwindigkeiten 1.2 – 2.0 VS1 (VS1: Minimale Reisegeschwindigkeit). Im Fall eines Antriebsausfalls auf einer Seite (One-Engine-Inoperative) muss durch einen Ruderausschlag am Leitwerk die Seitenleitwerksfunktion vollständig aufrecht erhalten werden und etwaige Instabilitäten ausgeglichen werden. Dies bedarf eines erhöhten Ruderausschlags, da die Wirksamkeit des Ausschlages des Ruders an der Leitwerksfläche an der Seite, an der der Motor noch läuft, in einer Richtung herabgesetzt wird. Dieser Effekt gilt aufgrund der V-Leitwerks-Konfiguration für das Seitenruder und gleichzeitig für das Höhenruder. Durch den Ausfall einer Antriebseinheit wird zudem noch eine Widerstandskraft durch Windmilling erzeugt. Bisher wurden noch keine Daten zu Windmilling-Effekten erhoben, die Untersuchung der Windmilling-Effekte steht noch aus. Der Effekt der Propeller-Leitwerks-Interaktion wird besonders im Schiebeflug, bspw. im kritischen Flugfall CS23.147 -”Schiebeflug mit +/- 15° Schiebewinkel und einseitigem Motorausfall“ auftreten. Dort tritt dieser genau dann auf, wenn das Flugzeug den maximalen, ausgehend von der Auslegung des Seitenleitwerks möglichen, Schiebewinkel fliegt. Das nun zusätzlich einsetzende Moment aus Vollschub eines Motors und Windmilling des anderen Motors besitzt die Orientierung, dass die FVA-30 weiter aus der Anströmung hinausdreht. Damit überschreitet der Anströmwinkel am Leitwerk den maximalen Winkel.</p>
+
+<h2 id="nachweisrechnung-in-avl">Nachweisrechnung in AVL</h2>
+
+<p>Zur Nachweisrechnung wird die Wirbel-Gitter-Methode verwendet, welche auch als Vortex Lattice Method (VLM) bekannt ist. Da in AVL (VLM-Code) nur die Skelettlinie des Profil betrachtet wird ist eine Änderung des örtlichen Anstellwinkels mit einer entsprechend entgegengesetzten Drehung des Skelettlinie äquivalent. Nähere Informationen zur verwendeten VLM lassen sich im Progress Report vom SS20 finden. Da der Effekt der Propeller-Leitwerk-Interaktion bei den für die FVA-30 dimensionierten Propellern und deren Leistungen in den verschiedenen Flugfällen teils sehr stark ausgeprägt ist, wird im Folgenden die Nachrechnung dieses Effekts vorgestellt.</p>
+
+<p>Der Propeller erzeugt hinter der Rotorebene ein stark instationäres Strömungsfeld und daraus einen Drall, der auf die Leitwerksfläche hinter dem Rotor aufgeprägt wird. Dieser Drall induziert einen Anstellwinkel, der im Bereich des Propellers bestimmt werden kann. Die daraus resultierende Verteilung über die Propellerebene ist in der folgenden Abbildung beispielhaft für den Fall beim Durchstarten aufgeführt.</p>
+
+<p><img src="/assets/img/archive/Drallwinkelverteilung_updated.png" alt="" /></p>
+
+<p>Drallwinkelverteilung beim Durchstarten</p>
+
+<p>Daraus ist ersichtlich, inwiefern der Propeller einen Abwind auf das Leitwerk aufprägt und in welcher Größenordnung sich der induzierte Drallwinkel bewegt. Unter Berücksichtigung des Drallwinkels über die vom Propellerstrahl umströmte Spannweite des V-Leitwerks kann der Effekt der Propeller-Leitwerk-Interaktion modelliert werden. Dies kann in AVL über eine segmentweise Diskretisierung der Drallwinkelverteilung und der Änderung des lokalen Einstellwinkels über eine vollflächige Wölbungsklappe abgebildet werden. Insgesamt sind 15 Segmente diskretisiert worden und darin die Drallwinkel ausgehend von der Propellerrechnung in die Geometrie-Datei eingepflegt worden. Die Geometrie des Leitwerks an sich wurde nicht beeinflusst, da die entsprechenden Positionen der Segmente zuvor auf die Leitwerkspositionen bestimmt wurden. Die Segmente erstrecken sich über die gesamte Sehnentiefe des Leitwerks, die Ruder sind davon in ihrer Geometrie nicht beeinflusst. Mittels einer Gewichtung der einzelnen Ausschläge an den verschiedenen Sektionen des Leitwerks lassen sich nun die auftretenden Anstellwinkelverteilungen modellieren.</p>
+
+<p><img src="/assets/img/archive/Drallwinkelverteilung_Geometry_b.png" alt="" /></p>
+
+<p>AVL Geometrie-Ansicht mit Auftriebsverteilungen für den Flugzustand “Durchstarten beim Landeanflug, vorderster Schwerpunkt mit max. Schub”, Rumpf als ebene Platte angenähert (Kreuzrumpf)</p>
+
+<p>In der obigen Abbildung ist die Auftriebsverteilung am Beispiel des Durchstartens dargestellt. Die veränderte Anstellwinkelverteilung spiegelt sich am Leitwerk direkt an der Auftriebsverteilung wieder. Im nächsten Abschnitt werden die kritischen Flugfälle (u.a. Durchstarten, One-Engine-Inoperative und Trimmfälle) durchgerechnet, um zunächst eine Abschätzung der resultierenden Ruderwinkel festzustellen und ggf. einen Trend der maximalen Ruderausschläge abzuleiten.</p>
+
+<h2 id="nachrechnung-kritischer-flugfälle">Nachrechnung kritischer Flugfälle</h2>
+
+<p>Für die Nachrechnung der resultierenden Ruderausschläge in den einzelnen Flugfällen wurden die flugfallabhängigen Drallwinkelverteilungen in die AVL-Methode integriert. Aus der Betrachtung der Flugleistung und der Erprobung des Antriebsstrangs wurde eine neuer, optimaler Betriebspunkt gefunden, sodass die neue Reisefluggeschwindigkeit nun bei 155 km/h liegt. In der Flugmechanik resultiert dies in einem neuen Einstellwinkel von Tragfläche und Leitwerk, um Stabilität und Steuerbarkeit in allen relevanten Zulassungsfällen zu gewährleisten. Dieser ist nun zum Optimum verschoben worden, insofern es die flugmechanische Auslegung erlaubt. Ohne Drallwinkelbetrachtung kann ein Einstellwinkel von 3.5° an den Tragflächen und -1° bei dem V-Leitwerk erreicht werden. Bei einer Berücksichtigung von Dralleffekten kann nur eine Einstellwinkelveränderung von 3° an der Tragflächen und gleichzeitiger Änderung des Einstellwinkels am Leitwerk von -0.5° vorgenommen werden.</p>
+
+<p>Beim verwendeten Profil und einer Rudertiefe von 35% nimmt die Ruderwirksamkeit für große Ruderwinkel jenseits von 25° stark ab, sodass effektiv keine Mehrauftrieb, sondern hauptsächlich Widerstand erzeugt wird. Dies hat zur Folge, dass der zusammengesetzte Ruderauschlagwinkel nie über der 25°-Grenze liegen sollte, was hier auch nicht der Fall ist. Zudem liegen auch die einzelnen Ruderwerte für Elevator und Rudder nicht weit über den zuvor festgelegten Maximalwerten von ca. 12° (Elevator) und 15° (Rudder). Mit diesen Werten für die erforderlichen Ruderausschläge kann mit dem aktuellen Stand von Weight &amp; Balance und der Flugleistungsbetrachtung nachgewiesen werden, dass mit der hier verwendeten Methode, die Propeller-Leitwerk-Interaktion abzubilden, die Stabilität und Steuerbarkeit der FVA 30 gegeben ist.</p>
+
+<p>Durch eine Drallwinkelverteilung kann nun eine bessere Abschätzung der auftretenden Ruderwinkel getroffen werden, sodass die real auftretenden Ruderausschlagswinkel geringer ausfallen. Die Methode mit AVL bringt im Rahmen der Propellermodellierung jedoch einige Einschränkungen mit sich, besonders ist eben eine vollständige Modellierung des Propellernachlaufs in Bezug auf die Staudruckänderung nicht abbildbar. Dort kann das Strömungsfeld bzw. der Anströmvektor nicht örtlich modifiziert werden. Eine Zusatzanblasung ist somit nicht abbildbar. Durch die Betrachtung des erhöhten Staudrucks im Propellernachlauf würden sich sogar geringere Abschätzungen der Ruderausschlagwinkel treffen lassen.</p>
+
+<p><strong>Einfluss der Staudruckänderung:</strong> Mit einer Überschlagsrechnung kann leicht gezeigt werden, dass der Staudruck hinter der Propellerebene deutlich höher ist als in der Anströmung des Flugzeugs (quadratischer Zusammenhang des Staudrucks hinter der Propellerebene mit der Strömungsgeschwindigkeit). Im Fall des Durchstartens beläuft sich die Erhöhung des Staudrucks auf fast 60 %. Damit lässt sich die Annahme treffen, dass die Ruder durch einen erhöhten Staudruck auch eine erhöhte Wirksamkeit besitzen, auch wenn ein drallinduzierter Anstellwinkel die Wirksamkeit der Ruder zunächst herabsetzt.</p>
+
+<h2 id="ausblick">Ausblick</h2>
+
+<p>Die Methode zur Berechnung ist in der Umsetzung einer vollständigen Propeller- Leitwerk-Interaktion limitiert, da die Staudruckebene hinter der Propellerebene nicht abgebildet werden kann. Diese gibt jedoch eine Abschätzung zur sicheren Seite, da eben diese Staudruckänderung hinter der Propellerebene nicht ber¨ucksichtigt werden kann und eine erhöhte Ruderwirksamkeit erwartet wird. Mit jetzigem Stand der Weight &amp; Balance und der Flugleistungsbetrachtung ist die FVA 30 in den nachzuweisenden Flugfällen stabil und steuerbar.</p>
+
+<p>Eine Überarbeitung sämtlicher kritischer Daten und Geometrien, die in den Teams verwendet werden, soll jedoch auch in den kommenden Wochen fortgeführt werden. Damit wird sichergestellt, dass zu Beginn der Fertigung keine inkonsistenten Daten verwendet wurden und die Fertigung Anfang/Mitte 2021 zusammen mit dem neu aufgestellten Fertigungs-Team begonnen werden kann. Sobald die Bedingungen (Corona) wieder gegeben sind, um das Windmilling-Verhalten der Propeller zu untersuchen, können Tests auf dem Prüfstand der RWTH oder FH Aachen durchgeführt werden. Sobald also Daten aus den Testläufen vorhanden sind, werden diese ebenfalls in die flugmechanische Betrachtung hinzugezogen, sodass eine numerische Nachrechnung mit allen potentiellen Risiken (Ausfall einer Antriebseinheit inkl. Windmilling bei Schiebeflug) vollständig abgeschlossen werden kann. Zudem wird die Nachweisführung nun mit dem LBA besprochen und parallel erste Materialbeschaffung für das Bruchleitwerk getätigt. Eine ergänzende Betrachtung des Flugverhaltens in Zusammenspiel mit dem Flugleistungsrechner wird im neuen Jahr mittels kombinierter Flugsimulation von (dynamischen) Lastfällen zudem betrachtet werden.</p>
+
+</div>
+
+<div class="field is-grouped is-grouped-multiline">
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/FVA30">
+<span class="tag  is-primary ">
+    FVA30
+</span>
+</a>
+    </div>
+  </div>
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/FVA30aero">
+<span class="tag  is-primary ">
+    FVA30 Aerodynamik
+</span>
+</a>
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+        <footer class="footer">
+    <div class="container">
+        
+        
+        <div class="columns is-multiline">
+            
+        </div>
+        
+
+        <div class="column is-12">
+            <div class="has-text-centered">
+                <p><strong>Folgen auf</strong></p>
+                <div class="buttons is-centered">
+                    <a href="https://www.facebook.com/fva1920/" class="button is-light">
+                        <i class="fab fa-facebook fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.instagram.com/fva1920/" class="button is-light">
+                        <i class="fab fa-instagram fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCTCcUCZQNPcGdRwlTqN_M-Q" class="button is-light">
+                        <i class="fab fa-youtube fa-lg has-text-danger"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/fva-1920/" class="button is-light">
+                        <i class="fab fa-linkedin fa-lg has-text-link"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class="">Theme built by <a href="https://www.csrhymes.com">C.S. Rhymes</a></p>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class=""><a href="/contact/imprint/">Impressum</a> 
+                <a href="/contact/privacy/">Datenschutzerklärung</a>
+                <a href="https://fva.cloud">Intern</a></p>
+            </div>
+    </div>
+</footer>
+
+    
+    <script src="/assets/js/app.js" type="text/javascript"></script><!-- footer scripts --></body>
+</html>

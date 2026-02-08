@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+
+
+
+<html
+ lang="de"
+ class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content=#ffffff>
+    
+    <title>HeSchuLa 2020 - FVA</title>
+    
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="shortcut icon" type="image/png"
+           href="/favicon.png" 
+    />
+    <link rel=preload href="/assets/css/roboto.css" as="style">
+    <link rel=preload href="/assets/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/roboto-v20-latin-ext_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <script src="/assets/js/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/fontawesome.all.min.css">
+    
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="HeSchuLa 2020" />
+<meta name="author" content="Florian Mock" />
+<meta property="og:locale" content="de" />
+<meta name="description" content="Anfang Oktober: die Klausurenphase neigt sich dem Ende entgegen, in den Supermarktregalen steht der erste Spekulatius, das Wetter wird langsam ungemütlich und allzu lange hell ist es auch nicht mehr. Kurzum die Zeit, in der allgemein begonnen wird, sich mit Tee und Decke auf dem heimischen Sofa mental auf den kommenden Winter vorzubereiten. Ein Glück, dass Idaflieger weit davon entfernt sind, sich der Allgemeinheit anzuschließen, und sich stattdessen lieber im strömenden Regen aus ganz Deutschland auf den Weg nach Karlsruhe machen, um dort das von der ansässigen Akaflieg jährlich ausgerichtete Schulungslager zu besuchen." />
+<meta property="og:description" content="Anfang Oktober: die Klausurenphase neigt sich dem Ende entgegen, in den Supermarktregalen steht der erste Spekulatius, das Wetter wird langsam ungemütlich und allzu lange hell ist es auch nicht mehr. Kurzum die Zeit, in der allgemein begonnen wird, sich mit Tee und Decke auf dem heimischen Sofa mental auf den kommenden Winter vorzubereiten. Ein Glück, dass Idaflieger weit davon entfernt sind, sich der Allgemeinheit anzuschließen, und sich stattdessen lieber im strömenden Regen aus ganz Deutschland auf den Weg nach Karlsruhe machen, um dort das von der ansässigen Akaflieg jährlich ausgerichtete Schulungslager zu besuchen." />
+<meta property="og:site_name" content="FVA" />
+<meta property="og:image" content="/assets/img/archive/2_5201941368166942977-03.jpeg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-10-25T12:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="/assets/img/archive/2_5201941368166942977-03.jpeg" />
+<meta property="twitter:title" content="HeSchuLa 2020" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Florian Mock"},"dateModified":"2020-10-25T12:00:00+00:00","datePublished":"2020-10-25T12:00:00+00:00","description":"Anfang Oktober: die Klausurenphase neigt sich dem Ende entgegen, in den Supermarktregalen steht der erste Spekulatius, das Wetter wird langsam ungemütlich und allzu lange hell ist es auch nicht mehr. Kurzum die Zeit, in der allgemein begonnen wird, sich mit Tee und Decke auf dem heimischen Sofa mental auf den kommenden Winter vorzubereiten. Ein Glück, dass Idaflieger weit davon entfernt sind, sich der Allgemeinheit anzuschließen, und sich stattdessen lieber im strömenden Regen aus ganz Deutschland auf den Weg nach Karlsruhe machen, um dort das von der ansässigen Akaflieg jährlich ausgerichtete Schulungslager zu besuchen.","headline":"HeSchuLa 2020","image":"/assets/img/archive/2_5201941368166942977-03.jpeg","mainEntityOfPage":{"@type":"WebPage","@id":"/p=4230&lang=de.html"},"url":"/p=4230&lang=de.html"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- head scripts --></head>
+
+  
+  <body>
+  
+    <nav class="navbar is-primary  is-fixed-top " x-data="{ openNav: false }">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/" class="navbar-item">
+                <img src=/assets/img/fvaLogo.png>
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu" :class="{ 'is-active': openNav }" x-on:click="openNav = !openNav">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu" :class="{ 'is-active': openNav }">
+            <div class="navbar-start">
+                <a href="/" class="navbar-item ">FVA</a>
+                
+                
+                    
+                    <a href="/blog/" class="navbar-item ">News</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/about/" class="navbar-link ">Über uns</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/about/team/" class="navbar-item ">Team</a>
+                            
+                            <a href="/about/workshop/" class="navbar-item ">Werkstatt</a>
+                            
+                            <a href="/about/history/" class="navbar-item ">Geschichte</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/projects/" class="navbar-link ">Projekte</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/projects/fva30/" class="navbar-item ">FVA 30</a>
+                            
+                            <a href="/projects/fva29/" class="navbar-item ">FVA 29</a>
+                            
+                            <a href="/projects/fva24/" class="navbar-item ">FVA 24d</a>
+                            
+                            <a href="/projects/oldprojects/" class="navbar-item ">Ältere Projekte</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <a href="/flying/" class="navbar-item ">Fliegen</a>
+                    
+                
+                    
+                    <a href="/join/" class="navbar-item ">Mitmachen</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/partners/" class="navbar-link ">Partner</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/partners/newpartner/" class="navbar-item ">Partner werden</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/contact/" class="navbar-link ">Kontakt</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/contact/imprint/" class="navbar-item ">Impressum</a>
+                            
+                            <a href="/contact/privacy/" class="navbar-item ">Datenschutz</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                
+            </div>
+                <div class="navbar-end">
+			
+			        
+			        <a class="navbar-item" href="/en/p=4230&lang=de.html">
+                            <span>&nbsp;EN</span>
+                            <span class="icon"><i class="fas fa-globe"></i></span>
+                		</a>
+			
+        	</div>        
+        </div>
+    </div>
+</nav>
+
+    
+        <section class="hero  is-narrow  is-bold is-primary" >
+    <div class="hero-body ">
+        <div class="container">
+            
+            <h1 class="title is-2">HeSchuLa 2020</h1>
+            
+            <p class="subtitle is-3"></p>
+            
+        </div>
+    </div>
+</section>
+    
+    
+
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                
+                <div class="column is-12">
+                    
+                    
+                    
+                    
+                    <div class="content">
+
+    <p>Veröffentlicht am 25.10.2020 von Florian Mock</p>
+
+    <p>Anfang Oktober: die Klausurenphase neigt sich dem Ende entgegen, in den Supermarktregalen steht der erste Spekulatius, das Wetter wird langsam ungemütlich und allzu lange hell ist es auch nicht mehr. Kurzum die Zeit, in der allgemein begonnen wird, sich mit Tee und Decke auf dem heimischen Sofa mental auf den kommenden Winter vorzubereiten. Ein Glück, dass Idaflieger weit davon entfernt sind, sich der Allgemeinheit anzuschließen, und sich stattdessen lieber im strömenden Regen aus ganz Deutschland auf den Weg nach Karlsruhe machen, um dort das von der ansässigen Akaflieg jährlich ausgerichtete Schulungslager zu besuchen.</p>
+
+<p><img src="/assets/img/archive/2_5201941368166942977-03.jpeg" alt="" /></p>
+
+<p>Auch dieses Jahr wollten sich einige FVAler die Gelegenheit nicht entgehen lassen, noch einmal zwei Wochen am Stück jeden Tag mit dem Flieger an den Start zu rollen und von Stahlseilen in die Lüfte gezogen zu werden, um wahlweise ihrer Ausbildung einen großen Schub zu geben oder einige neue Flugzeugmuster im persönlichen Flugbuch eintragen zu können. So begaben sich die ersten vier Flugschüler, zwei Scheinpiloten, ein Fluglehrer, unsere liebevoll „Theo“ genannte DG1000T als Schulungsdoppelsitzer und unsere Hornet pünktlich zum Lagerbeginn nach Karlsruhe. Im Laufe der ersten Woche sollte das FVA Team dann noch durch drei weitere Schüler verstärkt werden.</p>
+
+<p><img src="/assets/img/archive/IMG_20201006_172715_907.jpg" alt="" /></p>
+
+<p>Nachdem man in den letzten Sonnenstrahlen das erste gemeinsame Abendessen zu sich genommen hatte, gab es für alle noch ein großes Flugplatz- und Hygienebriefing, in dem die Besonderheiten des Segelfluggeländes Rheinstetten, sowie der durch Corona bedingte angepasste Ablauf des diesjährigen HeSchuLas besprochen wurden. So war es dieses Jahr leider nicht möglich, in der Werkstatt unserer Freunde und Kollegen zu übernachten, stattdessen durften wir einzeln oder in kleinen Gruppen bei verschiedenen Karlsruher Akafliegern schlafen. Außerdem wurden alle Teilnehmer für die zwei Wochen vier Untergruppen zugeordnet, die dann jeweils eigenständig ihre Starts und das das Zurückholen organisiert, sowie zusammen gegessen haben.</p>
+
+<p>Auf diese Weise ging am folgenden Tag das Fluglager so richtig los: Das Frühstücksteam sorgte dafür, dass es um 8 Uhr Kaffee, frische oder frisch aufgebackene Brötchen und Müsli am Flugplatz gab, um 9 Uhr stand dann das Tagesbriefing an. Ob nun das nicht immer trockene Wetter dafür sorgte, dass sich alle viel bewegten, um sich warm zu halten, oder ob alle trotz manch kalten und nassen Tagen hoch motiviert waren, kann nicht abschließend geklärt werden, möglicherweise sorgte auch die Kombination aus beidem für einen hocheffizienten Flugbetrieb, der an manchen Tagen sogar über 90 Starts erlaubte! Davon profitierten natürlich die Flugschüler sehr, allen voran die vier, denen während des HeSchuLas ihre ersten Alleinflüge gelangen. Zwei davon waren Julia Grünewald und Raphael „Kuli“ Friedrich von der FVA.</p>
+
+<p><img src="/assets/img/archive/IMG_20201006_172715_908.jpg" alt="" /></p>
+
+<p>Wer einmal demonstriert bekommen wollte, was mit einem Segelflugzeug alles möglich ist, dem bot sich außerdem an einigen Tagen die Möglichkeit, das Können von erfahrenen Kunstflugpiloten aus nächster Nähe mitzuerleben. Die Auswirkungen der Schwerelosigkeit, oder der deutlich erhöhten Beschleunigungskräfte, die während Loopings, Rollen oder anderen Figuren auf den Körper wirken, waren für viele mit Sicherheit ein Highlight dieser zwei Wochen.</p>
+
+<p>Da für die FVAler getreu dem Vereinsmotto natürlich nicht nur Fliegen alleine zählt, wurde außerdem an zwei Tagen die geographische Nähe zu Sinsheim und Speyer genutzt, um sich in den dortigen Technikmuseen weiterzubilden. Dabei wurde selbstverständlich den begehbaren Luft- und Raumfahrtexponaten, wie der Concorde und der Tupolev in Sinsheim, oder einer Boeing 747 und dem russische Space Shuttle Buran in Speyer, besondere Aufmerksamkeit zuteil.</p>
+
+<p><img src="/assets/img/archive/20201011_155332710_iOS-1.jpg" alt="" /></p>
+
+<p>Insgesamt lässt sich festhalten, dass alle Mitfahrer eine schöne, erfolgreiche und spannende Zeit im Herbstschulungslager 2020 hatten. Auch für unsere Flugzeuge waren es produktive zwei Wochen. So kam die Hornet insgesamt auf 45, unser Theo sogar auf ganze 137 Starts. Daher bedanken wir uns an dieser Stelle bei unseren Freunden der Akaflieg Karlsruhe, die trotz schwieriger Umstände ein tolles Fluglager organisiert haben, und freuen uns, auch im nächsten Jahr wieder die Möglichkeit eines so gelungenen Saisonabschlusses zu haben.</p>
+
+<p><img src="/assets/img/archive/IMG_2664.png" alt="" /></p>
+
+</div>
+
+<div class="field is-grouped is-grouped-multiline">
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/Fliegen">
+<span class="tag  is-primary ">
+    Fliegen
+</span>
+</a>
+    </div>
+  </div>
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/Fluglager">
+<span class="tag  is-primary ">
+    Fluglager
+</span>
+</a>
+    </div>
+  </div>
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/Idaflieg">
+<span class="tag  is-primary ">
+    Idaflieg
+</span>
+</a>
+    </div>
+  </div>
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/Lehrgang">
+<span class="tag  is-primary ">
+    Lehrgang
+</span>
+</a>
+    </div>
+  </div>
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/Schulung">
+<span class="tag  is-primary ">
+    Schulung
+</span>
+</a>
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+        <footer class="footer">
+    <div class="container">
+        
+        
+        <div class="columns is-multiline">
+            
+        </div>
+        
+
+        <div class="column is-12">
+            <div class="has-text-centered">
+                <p><strong>Folgen auf</strong></p>
+                <div class="buttons is-centered">
+                    <a href="https://www.facebook.com/fva1920/" class="button is-light">
+                        <i class="fab fa-facebook fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.instagram.com/fva1920/" class="button is-light">
+                        <i class="fab fa-instagram fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCTCcUCZQNPcGdRwlTqN_M-Q" class="button is-light">
+                        <i class="fab fa-youtube fa-lg has-text-danger"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/fva-1920/" class="button is-light">
+                        <i class="fab fa-linkedin fa-lg has-text-link"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class="">Theme built by <a href="https://www.csrhymes.com">C.S. Rhymes</a></p>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class=""><a href="/contact/imprint/">Impressum</a> 
+                <a href="/contact/privacy/">Datenschutzerklärung</a>
+                <a href="https://fva.cloud">Intern</a></p>
+            </div>
+    </div>
+</footer>
+
+    
+    <script src="/assets/js/app.js" type="text/javascript"></script><!-- footer scripts --></body>
+</html>

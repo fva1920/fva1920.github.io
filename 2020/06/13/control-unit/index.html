@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+
+
+
+<html
+ lang="de"
+ class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content=#ffffff>
+    
+    <title>Steuergerät und HMI - FVA</title>
+    
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="shortcut icon" type="image/png"
+           href="/favicon.png" 
+    />
+    <link rel=preload href="/assets/css/roboto.css" as="style">
+    <link rel=preload href="/assets/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/roboto-v20-latin-ext_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <script src="/assets/js/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/fontawesome.all.min.css">
+    
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Steuergerät und HMI" />
+<meta name="author" content="FVA" />
+<meta property="og:locale" content="de" />
+<meta name="description" content="Die Systemarchitektur der FVA-30 ist eine kontinuierliche Entwicklung, die getrieben ist von den Anforderungen der verschiedenen Komponenten des Flugzeugs. Wichtig für die Auslegung ist nicht nur der elektrische Antriebsstrang, sondern auch mechanische Baugruppen wie die Trimmung, Avionik und Beleuchtung des Flugzeugs. Um alle Anforderungen zu erfüllen ist es wichtig die verschiedenen Schnittstellen frühzeitig zu kennen und zu implementieren, sodass bei einer Änderung die Auswirkungen auf die Systemarchitektur zurückverfolgt werden können." />
+<meta property="og:description" content="Die Systemarchitektur der FVA-30 ist eine kontinuierliche Entwicklung, die getrieben ist von den Anforderungen der verschiedenen Komponenten des Flugzeugs. Wichtig für die Auslegung ist nicht nur der elektrische Antriebsstrang, sondern auch mechanische Baugruppen wie die Trimmung, Avionik und Beleuchtung des Flugzeugs. Um alle Anforderungen zu erfüllen ist es wichtig die verschiedenen Schnittstellen frühzeitig zu kennen und zu implementieren, sodass bei einer Änderung die Auswirkungen auf die Systemarchitektur zurückverfolgt werden können." />
+<meta property="og:site_name" content="FVA" />
+<meta property="og:image" content="/assets/img/archive/baseline-s-rear-default-2.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-06-13T12:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="/assets/img/archive/baseline-s-rear-default-2.jpg" />
+<meta property="twitter:title" content="Steuergerät und HMI" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"FVA"},"dateModified":"2020-06-13T12:00:00+00:00","datePublished":"2020-06-13T12:00:00+00:00","description":"Die Systemarchitektur der FVA-30 ist eine kontinuierliche Entwicklung, die getrieben ist von den Anforderungen der verschiedenen Komponenten des Flugzeugs. Wichtig für die Auslegung ist nicht nur der elektrische Antriebsstrang, sondern auch mechanische Baugruppen wie die Trimmung, Avionik und Beleuchtung des Flugzeugs. Um alle Anforderungen zu erfüllen ist es wichtig die verschiedenen Schnittstellen frühzeitig zu kennen und zu implementieren, sodass bei einer Änderung die Auswirkungen auf die Systemarchitektur zurückverfolgt werden können.","headline":"Steuergerät und HMI","image":"/assets/img/archive/baseline-s-rear-default-2.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"/2020/06/13/control-unit/"},"url":"/2020/06/13/control-unit/"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- head scripts --></head>
+
+  
+  <body>
+  
+    <nav class="navbar is-primary  is-fixed-top " x-data="{ openNav: false }">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/" class="navbar-item">
+                <img src=/assets/img/fvaLogo.png>
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu" :class="{ 'is-active': openNav }" x-on:click="openNav = !openNav">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu" :class="{ 'is-active': openNav }">
+            <div class="navbar-start">
+                <a href="/" class="navbar-item ">FVA</a>
+                
+                
+                    
+                    <a href="/blog/" class="navbar-item ">News</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/about/" class="navbar-link ">Über uns</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/about/team/" class="navbar-item ">Team</a>
+                            
+                            <a href="/about/workshop/" class="navbar-item ">Werkstatt</a>
+                            
+                            <a href="/about/history/" class="navbar-item ">Geschichte</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/projects/" class="navbar-link ">Projekte</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/projects/fva30/" class="navbar-item ">FVA 30</a>
+                            
+                            <a href="/projects/fva29/" class="navbar-item ">FVA 29</a>
+                            
+                            <a href="/projects/fva24/" class="navbar-item ">FVA 24d</a>
+                            
+                            <a href="/projects/oldprojects/" class="navbar-item ">Ältere Projekte</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <a href="/flying/" class="navbar-item ">Fliegen</a>
+                    
+                
+                    
+                    <a href="/join/" class="navbar-item ">Mitmachen</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/partners/" class="navbar-link ">Partner</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/partners/newpartner/" class="navbar-item ">Partner werden</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/contact/" class="navbar-link ">Kontakt</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/contact/imprint/" class="navbar-item ">Impressum</a>
+                            
+                            <a href="/contact/privacy/" class="navbar-item ">Datenschutz</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                
+            </div>
+                <div class="navbar-end">
+			
+			        
+			        <a class="navbar-item" href="/en/2020/06/13/control-unit/">
+                            <span>&nbsp;EN</span>
+                            <span class="icon"><i class="fas fa-globe"></i></span>
+                		</a>
+			
+        	</div>        
+        </div>
+    </div>
+</nav>
+
+    
+        <section class="hero  is-narrow  is-bold is-primary" >
+    <div class="hero-body ">
+        <div class="container">
+            
+            <h1 class="title is-2">Steuergerät und HMI</h1>
+            
+            <p class="subtitle is-3"></p>
+            
+        </div>
+    </div>
+</section>
+    
+    
+
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                
+                <div class="column is-12">
+                    
+                    
+                    
+                    
+                    <div class="content">
+
+    <p>Veröffentlicht am 13.06.2020 von FVA</p>
+
+    <p>Die Systemarchitektur der FVA-30 ist eine kontinuierliche Entwicklung, die getrieben ist von den Anforderungen der verschiedenen Komponenten des Flugzeugs. Wichtig für die Auslegung ist nicht nur der elektrische Antriebsstrang, sondern auch mechanische Baugruppen wie die Trimmung, Avionik und Beleuchtung des Flugzeugs. Um alle Anforderungen zu erfüllen ist es wichtig die verschiedenen Schnittstellen frühzeitig zu kennen und zu implementieren, sodass bei einer Änderung die Auswirkungen auf die Systemarchitektur zurückverfolgt werden können.</p>
+
+<p>Neben der entwicklungsbezogenen Auslegung muss die Sicherheit des Flugzeugs immer an erster Stelle stehen. Die Systemarchitektur soll daher auch die Möglichkeit bieten, Fehler systematisch zurückverfolgen zu können.</p>
+
+<h2 id="auswahl-des-steuergeräts">Auswahl des Steuergeräts</h2>
+
+<p>Um eine Grundlage für die Bewertung und Auslegung zu schaffen wurde eine schematische Skizze des Systems angelegt. Diese beinhaltet alle notwendigen elektrischen Komponenten und deren Verbindung zueinander. Die konkrete Auswahl von einfach erhältlichen Komponenten wie z.B Widerständen, LEDs und diversen Signalleitungen wurde hierbei in den Hintergrund gestellt. Priorisiert wurde dagegen die Auswahl der Komponenten mit komplexen Schnittstellen wie dem Steuergerät. Die Anforderungen an das Steuergerät wurden anhand des Systemplans abgeleitet und an potentielle Firmen weitergeleitet.</p>
+
+<p>Folgende Tabelle gibt eine Übersicht über die Steuergerät-Anforderungen:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>HERKUNFT</th>
+      <th>ANFORDERUNG</th>
+      <th>WERT</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Sicherheit</td>
+      <td>Separate CAN-Busse</td>
+      <td>3</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Systemintegration</td>
+      <td>I/O Anschlüsse</td>
+      <td>30</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Systemintegration</td>
+      <td>Analoge Eingänge</td>
+      <td>12</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Systemintegration</td>
+      <td>Analoge Ausgänge</td>
+      <td>8</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Systemintegration</td>
+      <td>Eingangsspannung</td>
+      <td>12V</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Auswertung</td>
+      <td>Logging von Flugdaten</td>
+      <td>-</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>Flugmechanik</td>
+      <td>Gewicht</td>
+      <td>max. 1,5 kg</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Nach der Eingrenzung der Anforderungen konnten wir mehrere Firmen kontaktieren und sowohl Beratung als auch Angebote einholen. Schlussendlich überzeugte das Steuergerät Baseline der Firma Speedgoat, das durch die flexibel belegbaren I/O-Erweiterungen optimal an unsere Bedürfnisse angepasst werden konnte.</p>
+
+<p><img src="/assets/img/archive/baseline-s-rear-default-2.jpg" alt="" /></p>
+
+<p>Speedgoat Baseline real-time target machine</p>
+
+<p>Das Baseline Steuergerät hat als Hauptrecheneinheit eine Intel-Atom CPU verbaut der einen erweiterten Temperaturbereich von -40 °C bis 85 °C besitzt. Versorgt wird das Steuergerät mit 9-36 VDC und verbraucht 36W.
+Das Gewicht beträgt 1.1 kg in der von uns gewünschten Konfiguration.
+Für Loggingzwecke ist eine 256GB SSD verbaut, die die Standardfestplatte mit einer Größe von 32GB ersetzt.Weiterhin sind die Erweiterungsmodule IO397 (3-mal) und IO614 (1-mal) verbaut. Somit verfügt das Steuergerät 4 seperate CAN-Anschlüsse, 42 IO-Anschlüsse (3.3V/5V), 12 analoge Eingänge und 12 analoge Ausgänge.</p>
+
+<p>Als weiteres Plus konnten wir die Firma Speedgoat als neuen Projektpartner gewinnen. Besonders die Einarbeitung in die komplexe Software, langfristiger Support und Änderungen an der Hardware-Ausstattung werden uns somit erleichtert.</p>
+
+<h2 id="konzeption--entwicklung-der-anzeigeeinheit">Konzeption &amp; Entwicklung der Anzeigeeinheit</h2>
+
+<p>Zur Beobachtung der technischen Parameter des Antriebsstrangs ist eine Anzeigeeinheit aus zwei unabhängigen Elementen geplant – einer Gruppe Kontrollleuchten und einer digitalen Anzeigeeinheit.</p>
+
+<p>Die Kontrollleuchten werden direkt von den entsprechenden Steuergeräten angesteuert, in denen eine Fehlfunktion zuerst wahrnehmbar wird – zum Beispiel die Überschreitung eines Grenzwertes bei einem von jenem Steuergerät erfasstem Messwert.</p>
+
+<p>Die digitale Anzeigeeinheit besteht aus einem Einplatinencomputer mit entsprechender Trägerplatine, Monitor, Protokolldatenspeicher und Eingabegeräten. Bei dem Monitor und den Eingabegeräten handelt es sich um Hardware, die von SteFly – Segelflugcomputern übernommen wird.
+Der Einplatinencomputer (Modellbezeichnung „Apalis iMX6 Quad 2GB Industrial Temperature“) ist ein Gerät von Toradex, einem Hersteller für Einplatinencomputer, dessen Geräte der gewählten Produktfamilie laut eigener Angabe bereits in der Luft- und Raumfahrtindustrie verwendet werden. Der Einplatinencomputer ist laut Hersteller für einen Temperaturbereich von -40°C bis +85°C zugelassen und wurde nach Norm EN 60068-2-6 auf Widerstandsfähigkeit gegen Schwingungen bzw. nach EN 60068-2-27 auf Widerstandsfähigkeit gegen Schock (50g / 20ms) geprüft.
+Der Logdatenspeicher ist eine handelsübliche SSD im mSATA-Format.</p>
+
+<p>Die einzelnen Elemente werden über die Trägerplatine (auch von Toradex; Modellbezeichnung „Ixora Carrier Board V1.2A“) verbunden. Die Trägerplatine beinhaltet einen mSATA-Anschluss für den Logdatenspeicher, LVDS für den Monitor, USB für das Eingabegerät, Abwärtswandler für die Stromversorgung der einzelnen Elemente, sowie einen CAN Bus-Transceiver, über welchen der Einplatinencomputer die Parameter aus den entsprechenden Steuergeräten empfängt.</p>
+
+<p><img src="/assets/img/archive/toradex_imx6_carrier.jpg" alt="" /></p>
+
+<p>Toradex Carrier Board (links) und Einplatinencomputer Apalis iMX6 (rechts)</p>
+
+<p>Der grundlegende Aufbau der verwendeten Software ist vergleichbar mit dem Aufbau der Software, wie sie in OpenVario-basierten Segelflugcomputern verwendet wird. Es handelt sich hierbei um ein auf OpenEmbedded basierendes Betriebssystem, welches in einer hardwarespezifischen Ausführung und zusammen mit anwendungsspezifischer Software die Firmware des Einplatinencomputer bildet. Die Kommunikation mit der Hardware (CAN Bus – Empfänger, Ansteuerung für Monitor, Eingabegerät und Protokolldatenspeicher) als auch entsprechende Funktionen (Darstellung von Text und zweidimensionalen geometrischen Formen, Aufbereitung der Eingabe vom Eingabegerät und CAN Bus) werden der eigens geschriebenen Software vom Betriebssystem bereitgestellt.</p>
+
+<p>Die eigens entwickelte Software hat die Aufgabe, die empfangenen Parameter in eine lesbare grafische Form aufzuarbeiten.
+Die Software liest die über CAN Bus empfangenen Parameter aus, und wandelt diese in entsprechende geometrische Formen und Schriftzüge um, die die angezeigten Parameter darstellen sollen. Hierbei wird berücksichtigt, welche Parameter gerade anzuzeigen sind – der Nutzer hat die Möglichkeit, sich einen Teil der anzuzeigenden Parameter auszusuchen (wichtige Parameter, wie zum Beispiel der Akkuinhalt, werden immer angezeigt). Optional werden die Parameter auf dem Protokolldatenspeicher abgespeichert. Die Menge der geometrischen Formen und Schriftzüge wird zum Anzeigen zurück ans Betriebssystem „übergeben“.</p>
+
+<h2 id="ausblick">Ausblick</h2>
+
+<p>Im den kommenden Monaten werden wir die Auslegung und Komponentenauswahl final abschließen und uns auf die Systemintegration, sowie die aufgrund der äußeren Umstände (Covid-19) verschobenen Tests fokussieren. Gleich zu Beginn des neuen Semesters sind die Motorentestläufe beim Institut für Elektrische Maschinen an der RWTH Aachen geplant. Anschließend soll nach dem Abschluss der Planungen für den “Ironbird” (vollständiger Antriebsstrangaufbau für realitätsnahe Bodentests) selbiger in unserer Werkstatt entstehen. In diesem Rahmen werden dann unsere Subsysteme wie das Motor/Inverter-System oder die Anzeigeeinheit dort integriert und in Absprache mit dem LBA getestet.</p>
+
+
+</div>
+
+<div class="field is-grouped is-grouped-multiline">
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/FVA30">
+<span class="tag  is-primary ">
+    FVA30
+</span>
+</a>
+    </div>
+  </div>
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/FVA30power">
+<span class="tag  is-primary ">
+    FVA30 Antriebsstrang
+</span>
+</a>
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+        <footer class="footer">
+    <div class="container">
+        
+        
+        <div class="columns is-multiline">
+            
+        </div>
+        
+
+        <div class="column is-12">
+            <div class="has-text-centered">
+                <p><strong>Folgen auf</strong></p>
+                <div class="buttons is-centered">
+                    <a href="https://www.facebook.com/fva1920/" class="button is-light">
+                        <i class="fab fa-facebook fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.instagram.com/fva1920/" class="button is-light">
+                        <i class="fab fa-instagram fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCTCcUCZQNPcGdRwlTqN_M-Q" class="button is-light">
+                        <i class="fab fa-youtube fa-lg has-text-danger"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/fva-1920/" class="button is-light">
+                        <i class="fab fa-linkedin fa-lg has-text-link"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class="">Theme built by <a href="https://www.csrhymes.com">C.S. Rhymes</a></p>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class=""><a href="/contact/imprint/">Impressum</a> 
+                <a href="/contact/privacy/">Datenschutzerklärung</a>
+                <a href="https://fva.cloud">Intern</a></p>
+            </div>
+    </div>
+</footer>
+
+    
+    <script src="/assets/js/app.js" type="text/javascript"></script><!-- footer scripts --></body>
+</html>

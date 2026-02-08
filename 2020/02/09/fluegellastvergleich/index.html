@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+
+
+
+<html
+ lang="de"
+ class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content=#ffffff>
+    
+    <title>Flügellastvergleich mit dem e-Genius I - FVA</title>
+    
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="shortcut icon" type="image/png"
+           href="/favicon.png" 
+    />
+    <link rel=preload href="/assets/css/roboto.css" as="style">
+    <link rel=preload href="/assets/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/roboto-v20-latin-ext_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <script src="/assets/js/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/fontawesome.all.min.css">
+    
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Flügellastvergleich mit dem e-Genius I" />
+<meta name="author" content="FVA" />
+<meta property="og:locale" content="de" />
+<meta name="description" content="Um mit der Planung der Flügelfertigung beginnen zu können, lag der Fokus im Bereich Struktur zuletzt auf dem Flügellastvergleich zwischen FVA-30 und dem e-Genius. Das Ziel des Flügellastvergleichs ist die Prüfung der Wiederverwendbarkeit der Flügelstruktur des e-Genius für die FVA-30. Neben kleineren Verbesserungen, wie einer präziseren Massenverteilung des Flügels, wurde unser Lastrechner um diverse Massenkonfigurationen für die verschiedenen Betankungsmöglichkeiten erweitert. Für den Lastvergleich wurde eine Analyse der kritischen Lastfälle und Massekonfigurationen sowie der im Vergleich zum e-Genius höheren Schnittlasten durchgeführt." />
+<meta property="og:description" content="Um mit der Planung der Flügelfertigung beginnen zu können, lag der Fokus im Bereich Struktur zuletzt auf dem Flügellastvergleich zwischen FVA-30 und dem e-Genius. Das Ziel des Flügellastvergleichs ist die Prüfung der Wiederverwendbarkeit der Flügelstruktur des e-Genius für die FVA-30. Neben kleineren Verbesserungen, wie einer präziseren Massenverteilung des Flügels, wurde unser Lastrechner um diverse Massenkonfigurationen für die verschiedenen Betankungsmöglichkeiten erweitert. Für den Lastvergleich wurde eine Analyse der kritischen Lastfälle und Massekonfigurationen sowie der im Vergleich zum e-Genius höheren Schnittlasten durchgeführt." />
+<meta property="og:site_name" content="FVA" />
+<meta property="og:image" content="/assets/img/archive/Lastvergleich.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-02-09T12:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="/assets/img/archive/Lastvergleich.jpg" />
+<meta property="twitter:title" content="Flügellastvergleich mit dem e-Genius I" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"FVA"},"dateModified":"2020-02-09T12:00:00+00:00","datePublished":"2020-02-09T12:00:00+00:00","description":"Um mit der Planung der Flügelfertigung beginnen zu können, lag der Fokus im Bereich Struktur zuletzt auf dem Flügellastvergleich zwischen FVA-30 und dem e-Genius. Das Ziel des Flügellastvergleichs ist die Prüfung der Wiederverwendbarkeit der Flügelstruktur des e-Genius für die FVA-30. Neben kleineren Verbesserungen, wie einer präziseren Massenverteilung des Flügels, wurde unser Lastrechner um diverse Massenkonfigurationen für die verschiedenen Betankungsmöglichkeiten erweitert. Für den Lastvergleich wurde eine Analyse der kritischen Lastfälle und Massekonfigurationen sowie der im Vergleich zum e-Genius höheren Schnittlasten durchgeführt.","headline":"Flügellastvergleich mit dem e-Genius I","image":"/assets/img/archive/Lastvergleich.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"/2020/02/09/fluegellastvergleich/"},"url":"/2020/02/09/fluegellastvergleich/"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- head scripts --></head>
+
+  
+  <body>
+  
+    <nav class="navbar is-primary  is-fixed-top " x-data="{ openNav: false }">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/" class="navbar-item">
+                <img src=/assets/img/fvaLogo.png>
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu" :class="{ 'is-active': openNav }" x-on:click="openNav = !openNav">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu" :class="{ 'is-active': openNav }">
+            <div class="navbar-start">
+                <a href="/" class="navbar-item ">FVA</a>
+                
+                
+                    
+                    <a href="/blog/" class="navbar-item ">News</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/about/" class="navbar-link ">Über uns</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/about/team/" class="navbar-item ">Team</a>
+                            
+                            <a href="/about/workshop/" class="navbar-item ">Werkstatt</a>
+                            
+                            <a href="/about/history/" class="navbar-item ">Geschichte</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/projects/" class="navbar-link ">Projekte</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/projects/fva30/" class="navbar-item ">FVA 30</a>
+                            
+                            <a href="/projects/fva29/" class="navbar-item ">FVA 29</a>
+                            
+                            <a href="/projects/fva24/" class="navbar-item ">FVA 24d</a>
+                            
+                            <a href="/projects/oldprojects/" class="navbar-item ">Ältere Projekte</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <a href="/flying/" class="navbar-item ">Fliegen</a>
+                    
+                
+                    
+                    <a href="/join/" class="navbar-item ">Mitmachen</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/partners/" class="navbar-link ">Partner</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/partners/newpartner/" class="navbar-item ">Partner werden</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/contact/" class="navbar-link ">Kontakt</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/contact/imprint/" class="navbar-item ">Impressum</a>
+                            
+                            <a href="/contact/privacy/" class="navbar-item ">Datenschutz</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                
+            </div>
+                <div class="navbar-end">
+			
+			        
+			        <a class="navbar-item" href="/en/2020/02/09/fluegellastvergleich/">
+                            <span>&nbsp;EN</span>
+                            <span class="icon"><i class="fas fa-globe"></i></span>
+                		</a>
+			
+        	</div>        
+        </div>
+    </div>
+</nav>
+
+    
+        <section class="hero  is-narrow  is-bold is-primary" >
+    <div class="hero-body ">
+        <div class="container">
+            
+            <h1 class="title is-2">Flügellastvergleich mit dem e-Genius I</h1>
+            
+            <p class="subtitle is-3"></p>
+            
+        </div>
+    </div>
+</section>
+    
+    
+
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                
+                <div class="column is-12">
+                    
+                    
+                    
+                    
+                    <div class="content">
+
+    <p>Veröffentlicht am 9.02.2020 von FVA</p>
+
+    <p>Um mit der Planung der Flügelfertigung beginnen zu können, lag der Fokus im Bereich Struktur zuletzt auf dem Flügellastvergleich zwischen FVA-30 und dem e-Genius. Das Ziel des Flügellastvergleichs ist die Prüfung der Wiederverwendbarkeit der Flügelstruktur des e-Genius für die FVA-30. Neben kleineren Verbesserungen, wie einer präziseren Massenverteilung des Flügels, wurde unser Lastrechner um diverse Massenkonfigurationen für die verschiedenen Betankungsmöglichkeiten erweitert. Für den Lastvergleich wurde eine Analyse der kritischen Lastfälle und Massekonfigurationen sowie der im Vergleich zum e-Genius höheren Schnittlasten durchgeführt.</p>
+
+<p>Aus flugmechanischen Gründen wurde entschieden die Flügel um 120 mm in Richtung des Leitwerks zu verschieben, woraus sich eine veränderte Leitwerksgröße ergibt. Die neuen Geometrieparameter sowie aktuelle Einzelmassen der verschiedenen Systemkomponenten wurden aktualisiert. Weiterhin mussten die verschiedenen Betankungs- und Zuladungsmöglichkeiten der FVA-30 eingepflegt werden. Dazu sind zu den schon vorhandenen vier Massekonfigurationen weitere acht hinzugefügt worden. Diese berücksichtigen den reinen Batterieflug ohne Treibstoff, den Betrieb mit dem in Flügeltanks gelagerten Benzin sowie den Betrieb mit dem im Wingpod gelagerten Erdgas. Kombinationen aus einem oder zwei Piloten sowie der zeitgleiche Betrieb mit beiden Treibstoffarten wurden ebenfalls beigefügt. Bei der Auswahl der Massenkonfigurationen wurden sämtliche Zuladungsmöglichkeiten berücksichtigt, wobei die Maximalmasse von 903 kg nicht überschritten wird. Zusätzlich wurden kleinere Verbesserungen, wie eine exaktere Masseverteilung des Flügels in Spannweitenrichtung eingefügt, um die entlastende Wirkung der Flügelmasse auf die Struktur genauer abbilden zu können. Das führt zu realistischeren Absolutwerten, welche im Falle einer Neudimensionierung der Rippen oder Flügelschale und Holm benötigt werden.</p>
+
+<h2 id="schnittlasten-des-fva-30-flügels">Schnittlasten des FVA 30 Flügels</h2>
+
+<p>Der Lastrechner bestimmt die auf die Struktur wirkenden Kräfte und Momente in Form von Schnittlasten in den drei Koordinatenrichtungen x, y und z. Die in der unteren Abbildung dargestellten Diagramme zeigen die aktuellen Schnittlasten des FVA-30 Flügels in Spannweitenrichtung bezogen auf die Flügelvorderkante. Zu sehen sind die Schnittlastverläufe sämtlicher Lastfälle für die Massekonfiguration Batterieflug mit zwei Piloten (leerer Flügeltank &amp; ohne Wingpod). Die Gesamtmasse in dieser Konfiguration beträgt 837 kg.</p>
+
+<p><img src="/assets/img/archive/Schnittlasten_no_fuel.png" alt="" /></p>
+
+<p>Schnittlasten des FVA-30 Flügels – Massenkonfiguration mit zwei Piloten (leerer Flügeltank, ohne Wingpod)</p>
+
+<p>Der kritische Lastfall auf den Biegemomentenverlauf Mx (Schlagrichtung) scheinen positive und negative Böen bei der Bemessungsgeschwindigkeit von 61 m/s sowohl in positiver, als auch in negativer Richtung zu sein. Der dimensionierende Fall des Verlaufs des Torsionsmomentes My scheint der Lastfall mit vollem Querruderausschlag in positiver und negativer Richtung bei der Manövergeschwindigkeit von 56.63 m/s zu sein. Im Falle des Biegememontes in Flügel-Schwenkrichtung Mz scheint in negativer Richtung eine nach oben gerichtete Böe bei der Bemessungsgeschwindigkeit der kritische Lastfall zu sein. In positiver Richtung zeigt sich als dimensionierende Fall allerdings der Querruderausschlag bei Manövergeschwindigkeit.</p>
+
+<h2 id="einfluss-der-massenkonfiguration">Einfluss der Massenkonfiguration</h2>
+
+<p>Zum Vergleich ist in der folgenden Abbildung eine Massenkonfiguration mit befüllten Flügeltanks und Wingpods dargestellt. Die Gesamtmasse dieser Konfiguration beträgt 839 kg und ist somit vergleichbar mit der oben dargestellten. In dem Schnittkraftverlauf in y-Richtung ist eine lokale Abnahme der Kraft zu erkennen, was eine entlastende Wirkung der Flügeltanks und Wingpods auf die Flügelstruktur aufzeigt. Das Biegememoment Mx an der Flügelwurzel ist hier sowohl in positiver, als auch in negativer Richtung um etwa 10 % geringer.</p>
+
+<p><img src="/assets/img/archive/Schnittlasten_fuel_1pilot.png" alt="" /></p>
+
+<p>Schnittlasten des FVA-30 Flügels – Massenkonfiguration mit einem Pilot und befülltem Gas- und Flügeltank</p>
+
+<p>Die Schnittlasten der mit 903 kg voll beladenen Konfigurationen zeigen, im Vergleich zu einer geringeren Gesamtmasse, erhöhte Schnittlasten in allen Richtungen auf und sind somit der dimensionierende Faktor.</p>
+
+<h2 id="flügellastvergleich">Flügellastvergleich</h2>
+
+<p>Zum Vergleich der Flügellasten von FVA-30 und e-Genius werden die Schnittlasten in der Mitte des Flügels (y = 0 m) und an der Trennstelle von Innen- und Außenflügel (y = 3,6 m) betrachtet. Dafür werden die Umhüllenden sämtlicher Lasten in den beiden Schnitten, wie in unterer Abbildung dargestellt, verglichen. Die Bereiche, in denen die FVA-30 höhere Lasten aufweist, als der e-Genius, sind rot markiert. Zu erkennen ist, dass die Lasten der FVA-30 sowohl in der Flügelmitte, als auch an der Flügel-Trennstelle vereinzelt erhöht sind. An diesen Stellen sind die Lasten zwischen 4 – 12 % höher.</p>
+
+<p><img src="/assets/img/archive/Lastvergleich.jpg" alt="" /></p>
+
+<p>Vergleich der Schnittlasten von FVA 30 und e-Genius in der Mitte des Flügels und der Flügel-Trennstelle</p>
+
+<p>Gründe für die Abweichungen sind zum einen die, verglichen zum e-Genius, höheren Massen der Antriebe an den Leitwerksspitzen. Diese liegen weit von der Schwerpunktsachse entfernt und erhöhen die Rotationsträgheit, was zu erhöhten Biegemomenten bei Rollmanövern führt. Zum anderen führt die Zuladung durch den Flügeltank und Wingpod in bestimmten Lastfällen zu einer Erhöhung der Lasten. Weiteren Einfluss auf die Schnittlasten hat die Flügelverschiebung, welche höhere Trimmkräfte nach sich zieht. Unterschiede in den für die Flügel kritische Lastfälle ist nicht zu beobachten. Eine exakte Auswertung und Validierung der Ergebnisse und der Einflussfaktoren muss noch erfolgen.</p>
+
+<h2 id="ausblick">Ausblick</h2>
+
+<p>Um den Lastvergleich abschließen und mit der Flügelfertigung beginnen zu können, muss zum einen die Lastfallliste um die Wölbklappe in Landekonfiguration sowie um das Ausfahren der Bremsklappen erweitert werden. Anschließend sollen die Ergebnisse eingehend ausgewertet und validiert werden, bevor entschieden werden kann, ob die Flügel des e-Genius für die FVA 30 ohne Verstärkungsmaßnahmen verwendet werden können.</p>
+
+<p>Weiterhin müssen die Wurzelrippe und Rippen im Innenflügel neu dimensioniert werden, da durch diese Treibstoffrohre und -schläuche geführt werden sollen.</p>
+
+<p>Abschließend muss für die Zulassung durch das LBA sowie für weitere Dimensionierungsarbeiten, wie der Leitwerks- und Rumpfdimensionierung, ein finaler Lastenbericht mit der Darstellung der Ergebnisse erstellt werden.</p>
+
+</div>
+
+<div class="field is-grouped is-grouped-multiline">
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/FVA30">
+<span class="tag  is-primary ">
+    FVA30
+</span>
+</a>
+    </div>
+  </div>
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/FVA30struct">
+<span class="tag  is-primary ">
+    FVA30 Struktur
+</span>
+</a>
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+        <footer class="footer">
+    <div class="container">
+        
+        
+        <div class="columns is-multiline">
+            
+        </div>
+        
+
+        <div class="column is-12">
+            <div class="has-text-centered">
+                <p><strong>Folgen auf</strong></p>
+                <div class="buttons is-centered">
+                    <a href="https://www.facebook.com/fva1920/" class="button is-light">
+                        <i class="fab fa-facebook fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.instagram.com/fva1920/" class="button is-light">
+                        <i class="fab fa-instagram fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCTCcUCZQNPcGdRwlTqN_M-Q" class="button is-light">
+                        <i class="fab fa-youtube fa-lg has-text-danger"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/fva-1920/" class="button is-light">
+                        <i class="fab fa-linkedin fa-lg has-text-link"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class="">Theme built by <a href="https://www.csrhymes.com">C.S. Rhymes</a></p>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class=""><a href="/contact/imprint/">Impressum</a> 
+                <a href="/contact/privacy/">Datenschutzerklärung</a>
+                <a href="https://fva.cloud">Intern</a></p>
+            </div>
+    </div>
+</footer>
+
+    
+    <script src="/assets/js/app.js" type="text/javascript"></script><!-- footer scripts --></body>
+</html>

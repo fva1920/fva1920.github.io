@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+
+
+
+<html
+ lang="de"
+ class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content=#ffffff>
+    
+    <title>Konstruktion des V-Leitwerks der FVA 30 - FVA</title>
+    
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="shortcut icon" type="image/png"
+           href="/favicon.png" 
+    />
+    <link rel=preload href="/assets/css/roboto.css" as="style">
+    <link rel=preload href="/assets/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/roboto-v20-latin-ext_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <script src="/assets/js/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/fontawesome.all.min.css">
+    
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Konstruktion des V-Leitwerks der FVA 30" />
+<meta name="author" content="Emil Pluta" />
+<meta property="og:locale" content="de" />
+<meta name="description" content="Konzeptfindung im Rahmen einer Bachelorarbeit" />
+<meta property="og:description" content="Konzeptfindung im Rahmen einer Bachelorarbeit" />
+<meta property="og:site_name" content="FVA" />
+<meta property="og:image" content="/assets/img/archive/Abnehmbar_00.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-10-18T12:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="/assets/img/archive/Abnehmbar_00.png" />
+<meta property="twitter:title" content="Konstruktion des V-Leitwerks der FVA 30" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Emil Pluta"},"dateModified":"2019-10-18T12:00:00+00:00","datePublished":"2019-10-18T12:00:00+00:00","description":"Konzeptfindung im Rahmen einer Bachelorarbeit","headline":"Konstruktion des V-Leitwerks der FVA 30","image":"/assets/img/archive/Abnehmbar_00.png","mainEntityOfPage":{"@type":"WebPage","@id":"/p=3887&lang=de.html"},"url":"/p=3887&lang=de.html"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- head scripts --></head>
+
+  
+  <body>
+  
+    <nav class="navbar is-primary  is-fixed-top " x-data="{ openNav: false }">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/" class="navbar-item">
+                <img src=/assets/img/fvaLogo.png>
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu" :class="{ 'is-active': openNav }" x-on:click="openNav = !openNav">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu" :class="{ 'is-active': openNav }">
+            <div class="navbar-start">
+                <a href="/" class="navbar-item ">FVA</a>
+                
+                
+                    
+                    <a href="/blog/" class="navbar-item ">News</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/about/" class="navbar-link ">Über uns</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/about/team/" class="navbar-item ">Team</a>
+                            
+                            <a href="/about/workshop/" class="navbar-item ">Werkstatt</a>
+                            
+                            <a href="/about/history/" class="navbar-item ">Geschichte</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/projects/" class="navbar-link ">Projekte</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/projects/fva30/" class="navbar-item ">FVA 30</a>
+                            
+                            <a href="/projects/fva29/" class="navbar-item ">FVA 29</a>
+                            
+                            <a href="/projects/fva24/" class="navbar-item ">FVA 24d</a>
+                            
+                            <a href="/projects/oldprojects/" class="navbar-item ">Ältere Projekte</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <a href="/flying/" class="navbar-item ">Fliegen</a>
+                    
+                
+                    
+                    <a href="/join/" class="navbar-item ">Mitmachen</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/partners/" class="navbar-link ">Partner</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/partners/newpartner/" class="navbar-item ">Partner werden</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/contact/" class="navbar-link ">Kontakt</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/contact/imprint/" class="navbar-item ">Impressum</a>
+                            
+                            <a href="/contact/privacy/" class="navbar-item ">Datenschutz</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                
+            </div>
+                <div class="navbar-end">
+			
+			        
+			        <a class="navbar-item" href="/en/p=3887&lang=de.html">
+                            <span>&nbsp;EN</span>
+                            <span class="icon"><i class="fas fa-globe"></i></span>
+                		</a>
+			
+        	</div>        
+        </div>
+    </div>
+</nav>
+
+    
+        <section class="hero  is-narrow  is-bold is-primary" >
+    <div class="hero-body ">
+        <div class="container">
+            
+            <h1 class="title is-2">Konstruktion des V-Leitwerks der FVA 30</h1>
+            
+            <p class="subtitle is-3"></p>
+            
+        </div>
+    </div>
+</section>
+    
+    
+
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                
+                <div class="column is-12">
+                    
+                    
+                    
+                    
+                    <div class="content">
+
+    <p>Veröffentlicht am 18.10.2019 von Emil Pluta</p>
+
+    <p>Konzeptfindung im Rahmen einer Bachelorarbeit</p>
+
+<p>Die Konfiguration der FVA 30 basiert auf einem besonderen, aber nicht einzigartigen Konzept. So haben bereits andere Konstrukteure wie Prof. Rochelt von einem V-Leitwerk und Antrieben an den Leitwerksenden Gebrauch gemacht. Auch ist infolge der strukturellen Übernahme der Tragflächen und des Großteils des Rumpfes eine unverkennbare Ähnlichkeit zum e-Genius gegeben. Dennoch besitzt die FVA 30 einige Besonderheiten, die ihren Ursprung in der individuellen Optimierung unterschiedlicher Baugruppen haben, wie z.B. die Antriebsposition an den Enden der V-Leitwerkshälften.<br />
+Das V-Leitwerk der FVA 30 ist im Rahmen einer Studienarbeit aerodynamisch ausgelegt und numerisch berechnet worden. Auf Basis der Auslegungsergebnisse wurde in der hier beschriebenen Bachelorarbeit die lasttragende Struktur konstruiert.</p>
+
+<p><img src="/assets/img/archive/Abnehmbar_00.png" alt="" /></p>
+
+<p>Hierzu wurde das in der Allgemeinen Luftfahrt besondere Leitwerkskonzept mit zwei an den V-Leitwerksenden positionierten Triebwerken dahingehend untersucht, wie trotz des langen Hebelarms in Form der Rumpfröhre sowie der großen Massen- und Trägheitskräfte ein Strukturkonzept entworfen werden kann, das auch hinsichtlich weiterer Anforderungen wie z.B. Fertigungskosten oder Wartungsfreundlichkeit eine optimale Lösungsalternative repräsentiert.</p>
+
+<p>Auf Basis der Erkenntnisse werden die Aufgaben der Leitwerksstruktur charakterisiert und Anforderungen an die lasttragende Struktur abgeleitet. Anhand derer werden im Folgenden Lösungsideen entwickelt. Die zwei Konzepte mit den besten quantifizierten Bewertungen werden daraufhin einer Detaillierung unterzogen. Neben einer groben Dimensionierung und Vorauslegung mithilfe zweier Toolboxen werden außerdem die Anbindung an den Rumpf sowie die Integration des Triebwerks und der Subsysteme konkretisiert.</p>
+
+<p><img src="/assets/img/archive/BA-Berechnung-Toolbox.png" alt="" /></p>
+
+<p>Schema der Berechnungen zur Vordimensionierung mit der Aircraft Structure Design Toolbox von meinem Betreuer M. Nuño vom SLA</p>
+
+<p>Mit den Ergebnissen der Arbeit soll nun in einer Masterarbeit die Detailauslegung erfolgen, sodass an deren Ende Belegepläne und Fertigungszeichnungen existieren, um mit dem Bau zu beginnen.<br />
+In der Ausarbeitung wurde deutlich, dass ein abnehmbares Leitwerk zu bevorzugen sei. Dadurch wird die Transportierbarkeit vereinfacht. Die Anbindung an den Rumpf wird dabei durch ein intelligentes Buchsen-Bolzen-System hergestellt, sodass das empfindliche Schwingungsverhalten unter Kontrolle bleibt.</p>
+
+<p><img src="/assets/img/archive/Variante_Einzeln_Montage.png" alt="" /></p>
+
+<p>Mögliche Verbindung zweier Leitwerkshälfte mit der Rumpfröhre. Die Holmstummel werden in die Rumpfröhre eingeschoben und der Stirnbolzen in einer Buchse im gegenüberliegenden Spant versenkt. Die Querkraftbolzen am Leitwerksansatz der Rumpfröhre gleiten in die Buchsen der Leitwerkswurzelrippe. Die Ruderansteuerung wird automatisch realisiert (blauer Pfeil) und die Leitwerke durch einen Bolzen gesichert (oranger Pfeil).</p>
+
+<p>Die Ergebnisse dieser Arbeit zeigen, dass auch für die Umsetzung alternativer Strukturkonzepte auf erfolgreiche Konstruktionen zurückgegriffen werden kann. Die Krafteinleitung der Trennstelle ist in Anlehnung an die Montage der von Glasflügel-Tragflächen konzipiert. Diese Krafteinleitung bereitet jedoch auch konstruktive Schwierigkeiten. Für beide Konzepte müssen die großen Biegemomente der Wurzelrippe aufgenommen und in die Rumpfröhre übertragen werden. Der dortige Querschnitt ist dafür vergleichsweise gering, was geringe Hebelarme bei großen Belastungen zur Folge hat. Reicht der Rumpfröhren-Durchmesser oder muss die Form modifiziert und vergrößert werden? Können die Buchsen und Bolzen gemäß der optimalen Integrationsposition eingebaut werden? Diese Fragen können hier nicht beantwortet werden.<br />
+An dieser Stelle kann mithin das Konzept D „Doppeldurchgangsholm“ als geringfügig geeigneter herausgestellt werden. Die nachteilige Situation in der Fertigung zur Ausrichtung des Durchgangsholms wird durch die günstigere Krafteinleitung, die vermutlich reduzierte Masse aufgrund ebendieses Holms und durch die vergleichsweise simple Montage kompensiert.</p>
+
+<p><img src="/assets/img/archive/Bildschirmfoto-2019-10-18-um-10.51.51.png" alt="" /></p>
+
+<p>Unter Anforderungen an die Konstruktion wurden auch die Massen in Betracht gezogen</p>
+
+</div>
+
+<div class="field is-grouped is-grouped-multiline">
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/FVA30">
+<span class="tag  is-primary ">
+    FVA30
+</span>
+</a>
+    </div>
+  </div>
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/Bauen">
+<span class="tag  is-primary ">
+    Bauen
+</span>
+</a>
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+        <footer class="footer">
+    <div class="container">
+        
+        
+        <div class="columns is-multiline">
+            
+        </div>
+        
+
+        <div class="column is-12">
+            <div class="has-text-centered">
+                <p><strong>Folgen auf</strong></p>
+                <div class="buttons is-centered">
+                    <a href="https://www.facebook.com/fva1920/" class="button is-light">
+                        <i class="fab fa-facebook fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.instagram.com/fva1920/" class="button is-light">
+                        <i class="fab fa-instagram fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCTCcUCZQNPcGdRwlTqN_M-Q" class="button is-light">
+                        <i class="fab fa-youtube fa-lg has-text-danger"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/fva-1920/" class="button is-light">
+                        <i class="fab fa-linkedin fa-lg has-text-link"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class="">Theme built by <a href="https://www.csrhymes.com">C.S. Rhymes</a></p>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class=""><a href="/contact/imprint/">Impressum</a> 
+                <a href="/contact/privacy/">Datenschutzerklärung</a>
+                <a href="https://fva.cloud">Intern</a></p>
+            </div>
+    </div>
+</footer>
+
+    
+    <script src="/assets/js/app.js" type="text/javascript"></script><!-- footer scripts --></body>
+</html>

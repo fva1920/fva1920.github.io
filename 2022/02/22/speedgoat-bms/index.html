@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+
+
+
+
+<html
+ lang="de"
+ class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content=#ffffff>
+    
+    <title>Battery Management System Integration into an Electronic Control Module for a Hybrid Electric Aircraft - FVA</title>
+    
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="shortcut icon" type="image/png"
+           href="/favicon.png" 
+    />
+    <link rel=preload href="/assets/css/roboto.css" as="style">
+    <link rel=preload href="/assets/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/roboto-v20-latin-ext_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <script src="/assets/js/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/fontawesome.all.min.css">
+    
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Battery Management System Integration into an Electronic Control Module for a Hybrid Electric Aircraft" />
+<meta name="author" content="Eric Kortemeier" />
+<meta property="og:locale" content="de" />
+<meta name="description" content="Dieses Paper wurde auf Englisch verfasst, der Reichweite halber wird aus auch hier im deutschsprachigen Teil veröffentlicht." />
+<meta property="og:description" content="Dieses Paper wurde auf Englisch verfasst, der Reichweite halber wird aus auch hier im deutschsprachigen Teil veröffentlicht." />
+<meta property="og:site_name" content="FVA" />
+<meta property="og:image" content="/assets/img/articles/2022-02-22-speedgoat-bms/Berge1.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-02-22T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="/assets/img/articles/2022-02-22-speedgoat-bms/Berge1.jpg" />
+<meta property="twitter:title" content="Battery Management System Integration into an Electronic Control Module for a Hybrid Electric Aircraft" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Eric Kortemeier"},"dateModified":"2022-02-22T00:00:00+00:00","datePublished":"2022-02-22T00:00:00+00:00","description":"Dieses Paper wurde auf Englisch verfasst, der Reichweite halber wird aus auch hier im deutschsprachigen Teil veröffentlicht.","headline":"Battery Management System Integration into an Electronic Control Module for a Hybrid Electric Aircraft","image":"/assets/img/articles/2022-02-22-speedgoat-bms/Berge1.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"/2022/02/22/speedgoat-bms/"},"url":"/2022/02/22/speedgoat-bms/"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- head scripts --></head>
+
+  
+  <body>
+  
+    <nav class="navbar is-primary  is-fixed-top " x-data="{ openNav: false }">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/" class="navbar-item">
+                <img src=/assets/img/fvaLogo.png>
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu" :class="{ 'is-active': openNav }" x-on:click="openNav = !openNav">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu" :class="{ 'is-active': openNav }">
+            <div class="navbar-start">
+                <a href="/" class="navbar-item ">FVA</a>
+                
+                
+                    
+                    <a href="/blog/" class="navbar-item ">News</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/about/" class="navbar-link ">Über uns</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/about/team/" class="navbar-item ">Team</a>
+                            
+                            <a href="/about/workshop/" class="navbar-item ">Werkstatt</a>
+                            
+                            <a href="/about/history/" class="navbar-item ">Geschichte</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/projects/" class="navbar-link ">Projekte</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/projects/fva30/" class="navbar-item ">FVA 30</a>
+                            
+                            <a href="/projects/fva29/" class="navbar-item ">FVA 29</a>
+                            
+                            <a href="/projects/fva24/" class="navbar-item ">FVA 24d</a>
+                            
+                            <a href="/projects/oldprojects/" class="navbar-item ">Ältere Projekte</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <a href="/flying/" class="navbar-item ">Fliegen</a>
+                    
+                
+                    
+                    <a href="/join/" class="navbar-item ">Mitmachen</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/partners/" class="navbar-link ">Partner</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/partners/newpartner/" class="navbar-item ">Partner werden</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/contact/" class="navbar-link ">Kontakt</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/contact/imprint/" class="navbar-item ">Impressum</a>
+                            
+                            <a href="/contact/privacy/" class="navbar-item ">Datenschutz</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                
+            </div>
+                <div class="navbar-end">
+			
+			        
+			        <a class="navbar-item" href="/en/2022/02/22/speedgoat-bms/">
+                            <span>&nbsp;EN</span>
+                            <span class="icon"><i class="fas fa-globe"></i></span>
+                		</a>
+			
+        	</div>        
+        </div>
+    </div>
+</nav>
+
+    
+        <section class="hero  is-narrow  is-bold is-primary" >
+    <div class="hero-body ">
+        <div class="container">
+            
+            <h1 class="title is-2">Battery Management System Integration into an Electronic Control Module for a Hybrid Electric Aircraft</h1>
+            
+            <p class="subtitle is-3"></p>
+            
+        </div>
+    </div>
+</section>
+    
+    
+
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                
+                <div class="column is-12">
+                    
+                    
+                    
+                    
+                    <div class="content">
+
+    <p>Veröffentlicht am 22.02.2022 von Eric Kortemeier</p>
+
+    <p><em>Dieses Paper wurde auf Englisch verfasst, der Reichweite halber wird aus auch hier im deutschsprachigen Teil veröffentlicht.</em></p>
+
+<h2 id="abstract">Abstract</h2>
+<p>During development of the powertrain, engineers face the challenge of designing an electronic control module (ECM) for reliable data processing, so that pilots can monitor and control the drivetrain. In electric aircraft, data to monitor the powertrain must be displayed in the cockpit and pilot control commands have to be processed into motor commands to control the engine. The aircraft battery is supervised by a battery management system (BMS), which collects the battery data and controls the powerlines. This article focuses on BMS integration into the ECM of the FVA 30 hybrid electric motor glider using a Speedgoat real-time target machine.</p>
+
+<h2 id="fva-30">FVA 30</h2>
+<p>The aircraft features two electric motors at the tail
+(Fig. 1). A high voltage lithium-ion battery pack
+directly behind the canopy provides enough energy
+for short flights powered exclusively by the battery. The fuselage contains two inverters to supply
+the engines with AC voltage. As a hybrid electric
+aircraft, an additional generator and inverter connected to a propulsion engine charges the battery
+during the flight. This combination of a highly efficient electric powertrain with fuel as an energy
+source enables long flights with a range of up to
+650km. (Fig. 2) [4]</p>
+
+<h4 id="figure-1-fva-30-design">Figure 1: FVA 30 design</h4>
+<p><img src="/assets/img/articles/2022-02-22-speedgoat-bms/FVA30_3perspectives.png" alt="" /></p>
+
+<h2 id="electronic-control-module">Electronic Control Module</h2>
+<p>In the trial phase, the ECM consists of a Speedgoat Baseline real-time target machine and is programmed with Simulink. This enables rapid testing opportunities through a user-friendly interface. The ECM manages the data acquisition, signal generation and engine control. With 4 CAN Ports the Speedgoat IO614 module ensures robust serial communication managed by the ECM. An additional Speedgoat IO397 module for analog and digital signals offers further possibilities to communicate with sensors and actuators, such as cooling pumps. An important part of the ECM is the communication with the BMS. Safety critical data must be evaluated and the ECM must check the system state of the BMS. In order to monitor the connection, the ECM sends periodic commands via a CAN bus. While the battery contactors are closed, high voltages are applied to the drivetrain of the aircraft to achieve the necessary power requirements. In case of deviations from the recommended values, the ECM should immediately open the battery contactor to maintain safe flight conditions. On the other hand, loss of power during operation endangers the flight conditions. Therefore, oversensitive safety conditions should be avoided. As a solution, an operation management system for the electric powertrain was developed.</p>
+
+<h4 id="figure-2-fva-30-factsheet">Figure 2: FVA 30 factsheet</h4>
+<p><img src="/assets/img/articles/2022-02-22-speedgoat-bms/FVA30_facts.jpg" alt="" /></p>
+
+<h4 id="figure-3-battery-submodule-in-front-of-the-speedgoat-baseline-real-time-target-machine">Figure 3: Battery submodule in front of the Speedgoat Baseline real-time target machine</h4>
+<p><img src="/assets/img/articles/2022-02-22-speedgoat-bms/BMS_Speedgoat.jpg" alt="" /></p>
+
+<h4 id="figure-4-simulink-model-of-the-ecm">Figure 4: Simulink model of the ECM</h4>
+<p><img src="/assets/img/articles/2022-02-22-speedgoat-bms/ECM.PNG" alt="" /></p>
+
+<h2 id="display-unit">Display Unit</h2>
+<p>The pilot must supervise all relevant data of the
+drivetrain. For this purpose, the FVA 30-Team is
+developing a display unit, which will be supplied
+with information directly from the Speedgoat ECM
+via CAN communication. The inverter provides
+data about the rotational speed, the system status
+and the status of the engine. Data about the actual power, battery voltage and the state of charge
+(SOC) will be sent by the battery management system. [1]</p>
+
+<h4 id="figure-5-statemachine-for-operation-managemant-of-the-bms">Figure 5: Statemachine for operation managemant of the BMS</h4>
+<p><img src="/assets/img/articles/2022-02-22-speedgoat-bms/FVA30_statemachine.PNG" alt="" /></p>
+
+<h2 id="battery-management-system">Battery Management System</h2>
+<p>The FVA 30 uses a modular open source BMS development platform called foxBMS developed by
+the Fraunhofer Institute for Integrated Systems and
+Device Technology (IISB). The foxBMS builds a
+state-of-the-art control unit for a lithium-ion battery. The LTC6813-1 multi-cell battery stack monitor measures 12 voltages and 8 temperatures via
+a negative temperature coefficient thermistor (EPCOS B57861S). A current sensor, a DC fuse and an
+insulation device, which measures the resistance between the HV-system and the aircraft ground completes the BMS. The current flow out of the high
+voltage battery is switched on and off by electronic
+contactors in both plus and minus power lines. Additionally, a pre-charge resistor is connected by a
+third contactor to restrict inrush currents. Different system states consider the status of the contactors and define the boundaries for temperature,
+voltage and current. After the software is reset, the
+BMS starts in the ’uninitialized’ state and switches
+to the ’idle’ state. When a request is received for
+the ’standby’ state, the BMS checks all the subsystems and updates its state to ’standby’. A subsequent request for the ’normal’ state will cause the
+BMS to switch to the ’precharge’ state and the minus and precharge contactor to close. After the
+precharge process the load voltage equals the battery voltage and the plus contactor is closed. The
+precharge power line is opened again and the BMS
+state machine changes to the ’normal’ state. If
+any cyclic checks of the monitored parameters fail,
+the BMS assumes the ’error’ state and immediately
+opens all the contactors. The foxBMS platform includes three safety steps listed below in ascending
+order of importance.</p>
+<ul>
+ <li>MOL - Maximum Operating Limit</li>
+ <li>RSL - Recommended Safety Limit</li>
+ <li>MSL - Maximum Safety Limit</li>
+</ul>
+<p>While MOL and RSL violations represent warnings
+to inform the pilot, a MSL failure will habe an impact on the BMS state machine. For communication with the BMS, a CAN interface is implemented
+in the foxBMS platform, which offers two functions:
+request the BMS states, and read the BMS measurement and status information. Fixed CAN identifiers for transmitted and received messages enables a robust serial communication between the
+BMS and ECM. [2]</p>
+
+<h2 id="operation-management">Operation management</h2>
+
+<p>The operation management of the FVA 30 ECM
+is structured with a Simulink Stateflow state machine. The functional purpose is to calculate the
+system state to control the state of the BMS,
+inverter and motor, based on the data received.
+The implementation presented in this whitepaper
+refers only to the BMS and therefore to the switching states of the contactors. Figure 4 shows the
+Stateflow block on the left and the communication subsystem for the Speedgoat IO614 module
+on the right. The ’bms state request’ output signal of the ECM state machine is connected to the
+communication subsystems and sent to the BMS via the CAN bus. The information received from the bus is packed into the ‘bms_status’ output signal from the communication subsystem. This is split into four signals for the contactor states and the ‘general_error’ signal containing BMS error occurrences. Before the error signal is fed back to the statemachine, an additional signal is added by an OR-operator to simulate errors.
+Also the
+contactor status signals are captured by an ORoperator and transmitted to the ’hv system’ input
+of the statemachine. Figure 5 shows the states
+and transitions of the ECM. In ’Standby’ state
+the high voltage part of the powertrain is separated. When normal mode is enabled, the ECM
+assumes the ’Precharge’ state and sends a request
+to the BMS to close the precharge and minus contactor. If the precharge process is completed the
+BMS closes the main contactors and sets the system state to ’Flight’. Each system state sets the
+’bms state request’ variable to the corresponding
+request number for the foxBMS displayed in Table 1.</p>
+
+<h4 id="table-1-connection-between-bms-state-and-request-value-source-fraunhofer-iisb-3">Table 1: Connection between BMS state and request value (Source: Fraunhofer IISB, [3])</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Requested BMS state</th>
+      <th>Contactors</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>No request</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Normal</td>
+      <td>Closed</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Charge</td>
+      <td>Closed</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>Standby</td>
+      <td>Open</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In case of errors, the system state assumes the
+’cont closed’ substate of the ’Error’ state and requests the BMS to open the contactors. If all the
+contactors are open, the sub state switches and terminates further requests for the BMS state. Fixing
+and acknowledging the fault sets the state back to
+’Standby’. To meet the challenges stated above, an
+additional safety state is implemented if the ’Flight’
+state switches to the ’Error’ state (see Fig. 5). This
+prevents powerloss during critical moments of the
+flight and can be separately enabled or disabled using the input ’safety override’. [4]</p>
+
+<h4 id="figure-6-simulink-real-time-explorer-instrument-panel">Figure 6: Simulink real-time explorer instrument panel</h4>
+<p><img src="/assets/img/articles/2022-02-22-speedgoat-bms/slrt_cockpit_2.PNG" alt="" /></p>
+
+<h2 id="validation-with-simulink-realtime-explorer">Validation with Simulink RealTime Explorer</h2>
+<p>Realistic conditions must be achieved to test and
+validate the functionality of the BMS. While conventional software projects can be tested in a simulation environment on the development PC, for
+the ECM, fast processing of the data and the interaction of individual communication modules are of
+prime importance. The validation must therefore
+be done in real-time directly on the target hardware. The Speedgoat target machine supports fast
+building and uploads of Simulink models, which enables cyclic checks of individual work steps. This
+facilitates the software development and prevents
+bugs. A Simulink Real-Time Explorer Instrument
+Panel was built (represented in Figure 6) to generate different scenarios for the FVA 30 ECM. Separate user interfaces for the pilot and the developer
+show the cockpit parameters displayed. With access to internal signals while the model is running
+on the Speedgoat target machine, the ECM states
+can all be verified to validate expected system behavior. Fault reactions are also tested by introducing simulated errors into the system.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>The battery management system features multiple
+safety functions and is therefore an important part
+of the electrical powertrain. Given the stringent demands of the aviation sector, flawless functionality
+is an absolute must. Consequently, reliable communication between the ECM and the BMS is of the
+utmost priority. The real-time tests of the control
+unit for the battery management system showed
+good interaction of both components and suggest
+that the ECM presented is reliable for aeronautics
+applications. Using a Speedgoat real-time target
+machine an individual module of the aircraft drivetrain was developed and validated. The test bench
+built can be quickly adapted for upcoming changes
+and will subsequently be extended to include the
+FVA 30 inverter and motor.</p>
+
+<h2 id="software">Software</h2>
+<ul>
+ <li>Matlab® &amp; Simulink®</li>
+ <li>Matlab Coder™</li>
+ <li>Simulink Real Time™</li>
+ <li>Simulink Coder™</li>
+ <li>Simulink Stateflow™</li>
+ <li>Speedgoat I/O Blockset</li>
+</ul>
+
+<h2 id="references">References</h2>
+<ol>
+ <li>EASA: <i>Special Condition - CS-22 - Installation of electric propulsion units in powered sailplanes: SC-22.2014-01.</i>  <b><a href="https://www.easa.europa.eu/downloads/16912/en">https://www.easa.europa.eu/downloads/16912/en</a> .</b> Version: 14.11.2014</li>
+ <li>Fraunhofer IISB: <i>The foxBMS Documentation.</i> <b><a href="https://iisb-foxbms.iisb.fraunhofer.de/foxbms/gen1/docs/html/latest/">https://iisb-foxbms.iisb.fraunhofer.de/foxbms/gen1/docs/html/latest/</a> .</b> Version: 31.01.2022</li>
+ <li>Fraunhofer IISB: <i>The foxBMS Documentation, 7. Communicating with foxBMS.</i> <b><a href="https://iisb-foxbms.iisb.fraunhofer.de/foxbms/gen1/docs/html/latest/getting_started/communicating/communicating.html">https://iisb-foxbms.iisb.fraunhofer.de/foxbms/gen1/docs/html/latest/getting_started/communicating/communicating.html</a> .</b> Version: 31.01.2022</li>
+ <li>Moxter, T. ; Enders, W. ; Kelm, B. ; Scholjegerdes, M. ; Koch, C. ; Garbade, M. ; Dahmann, P.:<i>Investigation of Alternative Propulsion Concepts for Small Aircraft with the Hybrid Electric Motor Glider FVA 30</i></li>
+</ol>
+
+</div>
+
+<div class="field is-grouped is-grouped-multiline">
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/FVA30">
+<span class="tag  is-primary ">
+    FVA30
+</span>
+</a>
+    </div>
+  </div>
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/Forschen">
+<span class="tag  is-primary ">
+    Forschen
+</span>
+</a>
+    </div>
+  </div>
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/Projekt">
+<span class="tag  is-primary ">
+    Projekt
+</span>
+</a>
+    </div>
+  </div>
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/Bauen">
+<span class="tag  is-primary ">
+    Bauen
+</span>
+</a>
+    </div>
+  </div>
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/Kooperation">
+<span class="tag  is-primary ">
+    Kooperation
+</span>
+</a>
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+        <footer class="footer">
+    <div class="container">
+        
+        
+        <div class="columns is-multiline">
+            
+        </div>
+        
+
+        <div class="column is-12">
+            <div class="has-text-centered">
+                <p><strong>Folgen auf</strong></p>
+                <div class="buttons is-centered">
+                    <a href="https://www.facebook.com/fva1920/" class="button is-light">
+                        <i class="fab fa-facebook fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.instagram.com/fva1920/" class="button is-light">
+                        <i class="fab fa-instagram fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCTCcUCZQNPcGdRwlTqN_M-Q" class="button is-light">
+                        <i class="fab fa-youtube fa-lg has-text-danger"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/fva-1920/" class="button is-light">
+                        <i class="fab fa-linkedin fa-lg has-text-link"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class="">Theme built by <a href="https://www.csrhymes.com">C.S. Rhymes</a></p>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class=""><a href="/contact/imprint/">Impressum</a> 
+                <a href="/contact/privacy/">Datenschutzerklärung</a>
+                <a href="https://fva.cloud">Intern</a></p>
+            </div>
+    </div>
+</footer>
+
+    
+    <script src="/assets/js/app.js" type="text/javascript"></script><!-- footer scripts --></body>
+</html>

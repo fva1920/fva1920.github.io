@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+
+
+
+<html
+ lang="en"
+ class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content=#ffffff>
+    
+    <title>System Diagram - FVA</title>
+    
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="shortcut icon" type="image/png"
+           href="/favicon.png" 
+    />
+    <link rel=preload href="/assets/css/roboto.css" as="style">
+    <link rel=preload href="/assets/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/roboto-v20-latin-ext_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <script src="/assets/js/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/fontawesome.all.min.css">
+    
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="System Diagram" />
+<meta name="author" content="Moritz Scholjegerdes" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="The FVA-30 is designed as a hybrid-electric powered glider for medium-range flights (600-800 km), with the range extender (REX) providing the power required in cruise flight (optimum operating point). The battery is used here to cover power peaks in the flight profile (takeoff, climb, possibly through takeoff maneuvers) and buffer power fluctuations in cruise flight. In the first expansion phase, however, the certification of an all-electric prototype is initially planned, which will allow autonomous takeoff, climbing to 1000 m altitude (above ground) and a 15-minute cruise flight under pessimistic conditions." />
+<meta property="og:description" content="The FVA-30 is designed as a hybrid-electric powered glider for medium-range flights (600-800 km), with the range extender (REX) providing the power required in cruise flight (optimum operating point). The battery is used here to cover power peaks in the flight profile (takeoff, climb, possibly through takeoff maneuvers) and buffer power fluctuations in cruise flight. In the first expansion phase, however, the certification of an all-electric prototype is initially planned, which will allow autonomous takeoff, climbing to 1000 m altitude (above ground) and a 15-minute cruise flight under pessimistic conditions." />
+<meta property="og:site_name" content="FVA" />
+<meta property="og:image" content="/en/assets/img/archive/Systemplan.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-09-14T12:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="/en/assets/img/archive/Systemplan.png" />
+<meta property="twitter:title" content="System Diagram" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Moritz Scholjegerdes"},"dateModified":"2019-09-14T12:00:00+00:00","datePublished":"2019-09-14T12:00:00+00:00","description":"The FVA-30 is designed as a hybrid-electric powered glider for medium-range flights (600-800 km), with the range extender (REX) providing the power required in cruise flight (optimum operating point). The battery is used here to cover power peaks in the flight profile (takeoff, climb, possibly through takeoff maneuvers) and buffer power fluctuations in cruise flight. In the first expansion phase, however, the certification of an all-electric prototype is initially planned, which will allow autonomous takeoff, climbing to 1000 m altitude (above ground) and a 15-minute cruise flight under pessimistic conditions.","headline":"System Diagram","image":"/en/assets/img/archive/Systemplan.png","mainEntityOfPage":{"@type":"WebPage","@id":"/en/2019/09/14/systemplan/"},"url":"/en/2019/09/14/systemplan/"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- head scripts --></head>
+
+  
+  <body>
+  
+    <nav class="navbar is-primary  is-fixed-top " x-data="{ openNav: false }">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/en/" class="navbar-item">
+                <img src=/assets/img/fvaLogo.png>
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu" :class="{ 'is-active': openNav }" x-on:click="openNav = !openNav">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu" :class="{ 'is-active': openNav }">
+            <div class="navbar-start">
+                <a href="/en/" class="navbar-item ">FVA</a>
+                
+                
+                    
+                    <a href="/en/blog/" class="navbar-item ">News</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/en/about/" class="navbar-link ">About</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/en/about/team/" class="navbar-item ">Team</a>
+                            
+                            <a href="/en/about/workshop/" class="navbar-item ">Workshop</a>
+                            
+                            <a href="/en/about/history/" class="navbar-item ">History</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/en/projects/" class="navbar-link ">Projects</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/en/projects/fva30/" class="navbar-item ">FVA 30</a>
+                            
+                            <a href="/en/projects/fva29/" class="navbar-item ">FVA 29</a>
+                            
+                            <a href="/en/projects/fva24/" class="navbar-item ">FVA 24d</a>
+                            
+                            <a href="/en/projects/oldprojects/" class="navbar-item ">Older Projects</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <a href="/en/flying/" class="navbar-item ">Fly</a>
+                    
+                
+                    
+                    <a href="/en/join/" class="navbar-item ">Join</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/en/partners/" class="navbar-link ">Partners</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/en/partners/newpartner/" class="navbar-item ">Become a partner!</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/en/contact/" class="navbar-link ">Contact</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/en/contact/imprint/" class="navbar-item ">Imprint</a>
+                            
+                            <a href="/en/contact/privacy/" class="navbar-item ">Privacy</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                
+            </div>
+                <div class="navbar-end">
+			
+				
+			  	<a class="navbar-item" href="/2019/09/14/systemplan/">
+                            <span>&nbsp;DE</span>
+                    		<span class="icon"><i class="fas fa-globe"></i></span>
+        			</a>
+			
+        	</div>        
+        </div>
+    </div>
+</nav>
+
+    
+        <section class="hero  is-narrow  is-bold is-primary" >
+    <div class="hero-body ">
+        <div class="container">
+            
+            <h1 class="title is-2">System Diagram</h1>
+            
+            <p class="subtitle is-3"></p>
+            
+        </div>
+    </div>
+</section>
+    
+    
+
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                
+                <div class="column is-12">
+                    
+                    
+                    
+                    
+                    <div class="content">
+
+    <p>Published: 14.09.2019 by Moritz Scholjegerdes</p>
+
+    <p>The FVA-30 is designed as a hybrid-electric powered glider for medium-range flights (600-800 km), with the range extender (REX) providing the power required in cruise flight (optimum operating point). The battery is used here to cover power peaks in the flight profile (takeoff, climb, possibly through takeoff maneuvers) and buffer power fluctuations in cruise flight. In the first expansion phase, however, the certification of an all-electric prototype is initially planned, which will allow autonomous takeoff, climbing to 1000 m altitude (above ground) and a 15-minute cruise flight under pessimistic conditions.</p>
+
+<h2 id="realization-phase-i-battery-electric-prototype">Realization phase I: Battery-electric prototype</h2>
+
+<p>For the battery-electric prototype, we will initially use the simplest possible system architecture and then systematically increase the complexity with time and experience. For this purpose, we will firmly connect each inverter to a battery and thus leave the drives of the left and right side completely separated from each other (see figure below). Furthermore we want to do without an additional control to the one in the inverters in the beginning by controlling the inverters directly and only via the thrust levers. The control unit in the cockpit should only serve to display information and not be relevant to the system. However, due to the separation of the drive trains, one isolation monitor per battery is required compared to the Phase II system plan (see next section). The DC-DC converter between HV and LV level is to be omitted in the first expansion stage of the FVA-30 and replaced by a larger low-voltage battery, which is why each drive side is to get its own 12 V LiFePo battery.</p>
+
+<p><img src="/assets/img/archive/Systemplan.png" alt="" /></p>
+
+<p>System plan of the drive train of the battery-electric prototype (phase I)</p>
+
+<p>The planned redundancy in the powertrain is also reflected by the division of the battery system into two independent parallel battery systems, each with its own BMS. The coupling of the two HV-DC strings planned in the second expansion phase thus allows both motors to be operated in the event of a one-sided battery failure (see battery tests, redundancy case).</p>
+
+<h2 id="realization-phase-ii-hybrid-electric-operation">Realization phase II: Hybrid-electric operation</h2>
+
+<p>In hybrid-electric operation, the range extender feeds the power required for cruise flight via an AC/DC converter into the DC link, whose voltage is regulated to the battery voltage in pure REX operation. The powertrains coupled via the power distribution unit are additionally connected via a DC/DC converter to the 12 V on-board power system to supply the on-board electronics and avionics, so that the latter only has to fall back on the downsized backup LV battery in an emergency. An insulation monitor is used to monitor the insulation status of the two HV batteries.</p>
+
+<p><img src="/assets/img/archive/02_BSB_Systemarchitektur_RevI.png" alt="" /></p>
+
+<p>Rough system plan for hybrid-electric operation (phase II)</p>
+
+<p>Outlook: A detailed system plan is currently being developed, including signal flows and control electronics.</p>
+
+</div>
+
+<div class="field is-grouped is-grouped-multiline">
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/en/tags/FVA30">
+<span class="tag  is-primary ">
+    FVA30
+</span>
+</a>
+    </div>
+  </div>
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/en/tags/FVA30rex">
+<span class="tag  is-primary ">
+    FVA30 Range Extender
+</span>
+</a>
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+        <footer class="footer">
+    <div class="container">
+        
+        
+        <div class="columns is-multiline">
+            
+        </div>
+        
+
+        <div class="column is-12">
+            <div class="has-text-centered">
+                <p><strong>Follow</strong></p>
+                <div class="buttons is-centered">
+                    <a href="https://www.facebook.com/fva1920/" class="button is-light">
+                        <i class="fab fa-facebook fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.instagram.com/fva1920/" class="button is-light">
+                        <i class="fab fa-instagram fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCTCcUCZQNPcGdRwlTqN_M-Q" class="button is-light">
+                        <i class="fab fa-youtube fa-lg has-text-danger"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/fva-1920/" class="button is-light">
+                        <i class="fab fa-linkedin fa-lg has-text-link"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class="">Theme built by <a href="https://www.csrhymes.com">C.S. Rhymes</a></p>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class=""><a href="/en/contact/imprint/">Impressum</a> 
+                <a href="/en/contact/privacy/">Datenschutzerklärung</a>
+                <a href="https://fva.cloud">Intern</a></p>
+            </div>
+    </div>
+</footer>
+
+    
+    <script src="/assets/js/app.js" type="text/javascript"></script><!-- footer scripts --></body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+
+
+
+<html
+ lang="de"
+ class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content=#ffffff>
+    
+    <title>Motorprüfläufe: Zulassungsnormen und Testauslegung - FVA</title>
+    
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="shortcut icon" type="image/png"
+           href="/favicon.png" 
+    />
+    <link rel=preload href="/assets/css/roboto.css" as="style">
+    <link rel=preload href="/assets/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/roboto-v20-latin-ext_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <script src="/assets/js/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/fontawesome.all.min.css">
+    
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Motorprüfläufe: Zulassungsnormen und Testauslegung" />
+<meta name="author" content="FVA" />
+<meta property="og:locale" content="de" />
+<meta name="description" content="Zur Vorbereitung der Motorläufe für den verwendeten EMRAX 228 HV haben wir uns an den Zulassungsvorschriften der JAR 22 (Abschnitt H Unterabschnitt Prüfstandläufe) orientiert und anschließend dem LBA einen Vorschlag für unser Vorgehen bei den Motorläufen gemacht. Dieser Vorschlag wurde für den batterieelektrischen Prototypen vom LBA abgesegnet." />
+<meta property="og:description" content="Zur Vorbereitung der Motorläufe für den verwendeten EMRAX 228 HV haben wir uns an den Zulassungsvorschriften der JAR 22 (Abschnitt H Unterabschnitt Prüfstandläufe) orientiert und anschließend dem LBA einen Vorschlag für unser Vorgehen bei den Motorläufen gemacht. Dieser Vorschlag wurde für den batterieelektrischen Prototypen vom LBA abgesegnet." />
+<meta property="og:site_name" content="FVA" />
+<meta property="og:image" content="/assets/img/archive/emrax_228.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-05-14T12:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="/assets/img/archive/emrax_228.jpg" />
+<meta property="twitter:title" content="Motorprüfläufe: Zulassungsnormen und Testauslegung" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"FVA"},"dateModified":"2020-05-14T12:00:00+00:00","datePublished":"2020-05-14T12:00:00+00:00","description":"Zur Vorbereitung der Motorläufe für den verwendeten EMRAX 228 HV haben wir uns an den Zulassungsvorschriften der JAR 22 (Abschnitt H Unterabschnitt Prüfstandläufe) orientiert und anschließend dem LBA einen Vorschlag für unser Vorgehen bei den Motorläufen gemacht. Dieser Vorschlag wurde für den batterieelektrischen Prototypen vom LBA abgesegnet.","headline":"Motorprüfläufe: Zulassungsnormen und Testauslegung","image":"/assets/img/archive/emrax_228.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"/2020/05/14/engine-tests/"},"url":"/2020/05/14/engine-tests/"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- head scripts --></head>
+
+  
+  <body>
+  
+    <nav class="navbar is-primary  is-fixed-top " x-data="{ openNav: false }">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/" class="navbar-item">
+                <img src=/assets/img/fvaLogo.png>
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu" :class="{ 'is-active': openNav }" x-on:click="openNav = !openNav">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu" :class="{ 'is-active': openNav }">
+            <div class="navbar-start">
+                <a href="/" class="navbar-item ">FVA</a>
+                
+                
+                    
+                    <a href="/blog/" class="navbar-item ">News</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/about/" class="navbar-link ">Über uns</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/about/team/" class="navbar-item ">Team</a>
+                            
+                            <a href="/about/workshop/" class="navbar-item ">Werkstatt</a>
+                            
+                            <a href="/about/history/" class="navbar-item ">Geschichte</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/projects/" class="navbar-link ">Projekte</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/projects/fva30/" class="navbar-item ">FVA 30</a>
+                            
+                            <a href="/projects/fva29/" class="navbar-item ">FVA 29</a>
+                            
+                            <a href="/projects/fva24/" class="navbar-item ">FVA 24d</a>
+                            
+                            <a href="/projects/oldprojects/" class="navbar-item ">Ältere Projekte</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <a href="/flying/" class="navbar-item ">Fliegen</a>
+                    
+                
+                    
+                    <a href="/join/" class="navbar-item ">Mitmachen</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/partners/" class="navbar-link ">Partner</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/partners/newpartner/" class="navbar-item ">Partner werden</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/contact/" class="navbar-link ">Kontakt</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/contact/imprint/" class="navbar-item ">Impressum</a>
+                            
+                            <a href="/contact/privacy/" class="navbar-item ">Datenschutz</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                
+            </div>
+                <div class="navbar-end">
+			
+			        
+			        <a class="navbar-item" href="/en/2020/05/14/engine-tests/">
+                            <span>&nbsp;EN</span>
+                            <span class="icon"><i class="fas fa-globe"></i></span>
+                		</a>
+			
+        	</div>        
+        </div>
+    </div>
+</nav>
+
+    
+        <section class="hero  is-narrow  is-bold is-primary" >
+    <div class="hero-body ">
+        <div class="container">
+            
+            <h1 class="title is-2">Motorprüfläufe: Zulassungsnormen und Testauslegung</h1>
+            
+            <p class="subtitle is-3"></p>
+            
+        </div>
+    </div>
+</section>
+    
+    
+
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                
+                <div class="column is-12">
+                    
+                    
+                    
+                    
+                    <div class="content">
+
+    <p>Veröffentlicht am 14.05.2020 von FVA</p>
+
+    <p>Zur Vorbereitung der Motorläufe für den verwendeten EMRAX 228 HV haben wir uns an den Zulassungsvorschriften der JAR 22 (Abschnitt H Unterabschnitt Prüfstandläufe) orientiert und anschließend dem LBA einen Vorschlag für unser Vorgehen bei den Motorläufen gemacht. Dieser Vorschlag wurde für den batterieelektrischen Prototypen vom LBA abgesegnet.</p>
+
+<p>In der ersten Ausbaustufe der FVA-30 soll diese nur batterieelektrisch fliegen und anschließend in der zweiten Stufe ein Range-Extender (REX) nachgerüstet werden. In der zweiten Ausbaustufe werden durch die zusätzlich zur Verfügung stehenden Leistung vom REX und des lang andauernden Reisefluges die Motoren höher und länger belastet als die Batterie. Wir werden deshalb einen Teil der Dauerprüfung auf einem Motorprüfstand durchführen, da unsere Batterie durch den Energiegehalt und die Kühlung der limitierende Faktor für die Teilläufe ist. Dazu werden wir auf einem Motorprüfstand den Propeller mit einer Lastmaschine und die Batterie mit einem Batteriesimulator oder entsprechendem Netzteil simulieren und somit nur den Motor und den Inverter testen (vgl. untenstehende Tabellen zu Motorläufen I und II). Zudem werden wir dabei nur je einen Motor und Inverter testen, da die beiden Antriebsstränge links und rechts identisch sind.</p>
+
+<p>Später werden Bodenläufe des batterieelektrischen Prototypen aus Phase 1 mit Batterie und Propeller im eingebauten Zustand mit zwei Leistungsprofilen durchgeführt, die an den realen Einsatz der FVA-30 angelehnt sind und den Batterie-Modultests ähneln (vgl. untenstehende Tabellen zu Motorläufen III und IV).</p>
+
+<h2 id="analyse-der-zulassungsrichtlinien-und-testauslegung">Analyse der Zulassungsrichtlinien und Testauslegung</h2>
+
+<p><strong>JAR 22.1843 – Schwingungsprüfung:</strong>  Als Außenläufer und Axial Flux Motor überträgt der Elektromotor die Torsion direkt über den Rotor an die Propellernabe. Da die Länge der Elektromotorwelle bei gleichzeitig großen Durchmesser kurz ist, werden durch den Motor keine kritischen Schwingungen erwartet. Zusätzliche Angabe vom Hersteller: „EMRAX motor features: […]- No vibrations”.</p>
+
+<p><strong>JAR 22.1845 Argumentation Leistungsvermessung:</strong> Der Motor wird zusammen mit dem Inverter auf einem Prüfstand vermessen. Dabei sollen einerseits Spannungen und Ströme batterieseitig und andererseits die vom Inverter ausgegeben Spannungen, Ströme und Drehzahlen inklusive Moment und der Drehzahl an der Antriebswelle vermessen und verglichen werden. Die Batterie wird dabei durch einen Batteriesimulator ersetzt. Die Leistungsvermessung findet nur im erwarteten Drehzahl- und Leistungsbereich des Propellers und dem erwarteten Spannungsbereich der Batterie statt.</p>
+
+<p><strong>JAR 22.1849 – Dauerprüfung:</strong> Wir werden einen Teil der Dauerprüfung auf einem Motorprüfstand durchführen, da die Batterie durch ihren Energiegehalt und die Kühlung der limitierende Faktor für die Teilläufe sind. Dazu werden wir auf einem Motorprüfstand den Propeller mit einer Lastmaschine und die Batterie mit einem Batteriesimulator oder entsprechendem Netzteil simulieren und nur je einen Motor und den Inverter testen (siehe Teilläufe 1 und 2, Tabellen unten).
+Anschließend werden Bodenläufe mit Batterie und Propeller im eingebauten Zustand durchgeführt, die mit zwei Leistungsprofilen an den realen Einsatz der FVA 30 angelehnt sind und den Batterie-Submodultests ähneln (siehe Teilläufe 3 und 4).</p>
+
+<p><strong>JAR 22.1849 (c) – Lastprofile der Teilläufe:</strong> Die Startleistung wird leicht über dem maximal dauerhaft zulässigen Motorstrom des EMRAX 228 HV liegen, aber unter dem maximalen zulässigen Strom, der auf 2 Minuten laut Hersteller beschränkt ist. Diese 2 Minuten möchten wir daher im Test nicht überschreiten.
+Außerdem wird die volle Startleistung der FVA-30 bei kurzen Startbahnen, wie in JAR 22.51-Start vermerkt, für ca. 35 Sekunden bis zum Überfliegen der Hindernishöhe benötigt. Somit hat der Pilot ca. 85 Sekunden Zeit die Leistung auf die höchste Dauerleistung zu reduzieren. Deshalb wollen wir den Teillauf nach JAR22.1843 (c) auf den Motorlauf nach Tabelle I (unten) anpassen.
+Hinzu kommt, dass mit höchster zur Verfügung stehender Dauerleistung die in JAR22.65 geforderten 4 Minuten Steigflug auf 360 m voraussichtlich halbiert werden. Somit sollte es aus Sicht der Flugleistung unkritisch sein, die maximale Startleistung z.B. auf eine Minute zu begrenzen und den Motor für eine Dauer von zwei Minuten zu testen. Das führt zu einem Sicherheitsfaktor von 2 für die Dauer der Startleistung.
+Zudem findet mit den Temperatursensor an der Motorwindung eine Überwachung der Temperatur statt, sodass der Pilot rechtzeitig gewarnt werden kann, falls die Startleistung zu lange abgerufen wird und die Kühlung für diese nicht ausreicht.
+Wir werden zusätzlich einen zweiten Teillauf (Tabelle II, siehe unten) auf dem Prüfstand durchführen, in dem direkt nach den 2 Minuten Startleistung (ohne Kühllauf) für 15 Minuten höchste Dauerleistung abgerufen wird. Dies stellt für die Motorkühlung und den Motor den kritischsten und realen Lastfall dar.</p>
+
+<p><strong>JAR 22.1851 – Prüfung des Betriebsverhaltens:</strong> Das Betriebsverhalten wird ebenfalls auf Prüfstand, Bodentests und anschließender Flugerprobung geprüft. Zusätzlich werden wir auf dem Motorprüfstand das Verhalten des Motors testen, wie z.B. das Übergangsverhalten zwischen den Betriebsstufen, das Beschleunigungsverhalten der Lastannahme und das Verhalten bei Überdrehzahlen.</p>
+
+<p><strong>JAR 22.1853 – Prüfung von Teilen des Motors:</strong></p>
+
+<p>(a) Zusätzliche Teilläufe mit Leistungsprofilen, die an den realen Einsatz der FVA 30 angelehnt sind und den Batterie- Submodultests ähneln.</p>
+
+<p>(b) Es werden Temperaturgrenzen für die Motorwindung und Magnete und Kugellager in Höhe von -40°C bis 120°C festgelegt. Dies entspricht dem Datenblatt des Herstellers.</p>
+
+<p>(c) Der EMRAX Motor hat einen eingebauten Temperaturfühler zum Messen und Überwachen der Windungstemperatur.</p>
+
+<h2 id="detaillierte-auslegung-der-motorprüfläufe">Detaillierte Auslegung der Motorprüfläufe</h2>
+
+<p>In folgenden Tabellen sind unsere vier zulassungsrelevanten Motorläufe aufgeführt. Da diese Missionsprofile zusammen mit dem Luftfahrtbundesamt (LBA) entwickelt wurden, können wir sie ohne Weiteres für die Zulassung unseres Antriebsstranges verwenden.</p>
+
+<p>MOTORPRÜFSTAND – MOTORLAUF I
+| Reihenfolge  | Dauer [min]  | Betriebszustand  |
+|—|—|—|
+| 1  | 1  | Anlassen (Leerlauf)  |
+| 2  | 2  | Startleistung  |
+| 3  | 1  | Kühllauf (Leerlauf)  |
+| 4  | 2  | Startleistung  |
+| 5  | 1  | Kühllauf (Leerlauf)  |
+| 6  | 2  | Startleistung  |
+| 7  | 1  | Kühllauf (Leerlauf)  |
+| 8  | 5  | 75 % höchste Dauerleistung  |
+| 9  | 2  | Kühllauf (Leerlauf)  |
+| 10  | 15  | höchste Dauerleistung  |
+| 11  | 2  | Kühllauf und Abstellen  |
+| Gesamt   | 34  |   |</p>
+
+<p>MOTORPRÜFSTAND – MOTORLAUF II
+| Reihenfolge  | Dauer [min]  | Betriebszustand  |
+|—|—|—|
+| 1  | 1  | Anlassen (Leerlauf)  |
+| 2  | 2  | Startleistung  |
+| 3  | 15  | höchste Dauerleistung  |
+| 4  | 5  | Reiseflugleistung  |
+| 5  | 2  | Kühllauf und Abstellen  |
+| Gesamt   | 25  |   |</p>
+
+<p>MOTORPRÜFSTAND – MOTORLAUF III
+| Reihenfolge  | Dauer [min]  | Betriebszustand  |
+|—|—|—|
+| 1  | 1  | Anlassen (Leerlauf)  |
+| 2  | 2  | Startleistung  |
+| 3  | 5  | höchste Dauerleistung  |
+| 4  | 10  | Reiseflugleistung  |
+| 5  | 2  | Kühllauf und Abstellen  |
+| Gesamt   | 20  |   |</p>
+
+<p>MOTORPRÜFSTAND – MOTORLAUF IV
+| Reihenfolge  | Dauer [min]  | Betriebszustand  |
+|—|—|—|
+| 1  | 1  | Anlassen (Leerlauf)  |
+| 2  | 2  | Startleistung  |
+| 3  | 10  | Reduzierte Dauerleistung  |
+| 4  | 3  | Reiseflugleistung  |
+| 5  | 2  | Kühllauf und Abstellen  |
+| Gesamt   | 18  |   |</p>
+
+</div>
+
+<div class="field is-grouped is-grouped-multiline">
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/FVA30">
+<span class="tag  is-primary ">
+    FVA30
+</span>
+</a>
+    </div>
+  </div>
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/FVA30power">
+<span class="tag  is-primary ">
+    FVA30 Antriebsstrang
+</span>
+</a>
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+        <footer class="footer">
+    <div class="container">
+        
+        
+        <div class="columns is-multiline">
+            
+        </div>
+        
+
+        <div class="column is-12">
+            <div class="has-text-centered">
+                <p><strong>Folgen auf</strong></p>
+                <div class="buttons is-centered">
+                    <a href="https://www.facebook.com/fva1920/" class="button is-light">
+                        <i class="fab fa-facebook fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.instagram.com/fva1920/" class="button is-light">
+                        <i class="fab fa-instagram fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCTCcUCZQNPcGdRwlTqN_M-Q" class="button is-light">
+                        <i class="fab fa-youtube fa-lg has-text-danger"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/fva-1920/" class="button is-light">
+                        <i class="fab fa-linkedin fa-lg has-text-link"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class="">Theme built by <a href="https://www.csrhymes.com">C.S. Rhymes</a></p>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class=""><a href="/contact/imprint/">Impressum</a> 
+                <a href="/contact/privacy/">Datenschutzerklärung</a>
+                <a href="https://fva.cloud">Intern</a></p>
+            </div>
+    </div>
+</footer>
+
+    
+    <script src="/assets/js/app.js" type="text/javascript"></script><!-- footer scripts --></body>
+</html>

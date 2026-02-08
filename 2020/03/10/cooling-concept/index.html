@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+
+
+
+<html
+ lang="de"
+ class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content=#ffffff>
+    
+    <title>Kühlkonzept für Motor und Inverter - FVA</title>
+    
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="shortcut icon" type="image/png"
+           href="/favicon.png" 
+    />
+    <link rel=preload href="/assets/css/roboto.css" as="style">
+    <link rel=preload href="/assets/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/roboto-v20-latin-ext_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <script src="/assets/js/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/fontawesome.all.min.css">
+    
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Kühlkonzept für Motor und Inverter" />
+<meta name="author" content="FVA" />
+<meta property="og:locale" content="de" />
+<meta name="description" content="Nach der Ausarbeitung einer umfangreichen Auswahl an Kühlkonzepten, fiel die Wahl auf ein herkömmliches Konzept auf Basis eines für die Automobilbranche typischen Lamellenradiators. Dies garantier im Wesentlichen eine maßgeschneiderte Auswahl des Radiators und das Entfallen einer aufwendigen und rechenintensiven Auslegung für einen Eigenbau. Außerdem entschieden wir uns dafür, die Kühlung der beiden Antriebsstränge vollständig zu trennen, um die bisher entwickelte Redundanz und somit auch die Ausfallsicherheit zu wahren. Der gesamte Prozess der Auslegung fand unter Berücksichtigung der JAR 22, sowie der Vorläufigen Richtlinie für den Einbau von Elektromotoren in Motorseglern statt." />
+<meta property="og:description" content="Nach der Ausarbeitung einer umfangreichen Auswahl an Kühlkonzepten, fiel die Wahl auf ein herkömmliches Konzept auf Basis eines für die Automobilbranche typischen Lamellenradiators. Dies garantier im Wesentlichen eine maßgeschneiderte Auswahl des Radiators und das Entfallen einer aufwendigen und rechenintensiven Auslegung für einen Eigenbau. Außerdem entschieden wir uns dafür, die Kühlung der beiden Antriebsstränge vollständig zu trennen, um die bisher entwickelte Redundanz und somit auch die Ausfallsicherheit zu wahren. Der gesamte Prozess der Auslegung fand unter Berücksichtigung der JAR 22, sowie der Vorläufigen Richtlinie für den Einbau von Elektromotoren in Motorseglern statt." />
+<meta property="og:site_name" content="FVA" />
+<meta property="og:image" content="/assets/img/archive/Kuhlung.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-03-10T12:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="/assets/img/archive/Kuhlung.png" />
+<meta property="twitter:title" content="Kühlkonzept für Motor und Inverter" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"FVA"},"dateModified":"2020-03-10T12:00:00+00:00","datePublished":"2020-03-10T12:00:00+00:00","description":"Nach der Ausarbeitung einer umfangreichen Auswahl an Kühlkonzepten, fiel die Wahl auf ein herkömmliches Konzept auf Basis eines für die Automobilbranche typischen Lamellenradiators. Dies garantier im Wesentlichen eine maßgeschneiderte Auswahl des Radiators und das Entfallen einer aufwendigen und rechenintensiven Auslegung für einen Eigenbau. Außerdem entschieden wir uns dafür, die Kühlung der beiden Antriebsstränge vollständig zu trennen, um die bisher entwickelte Redundanz und somit auch die Ausfallsicherheit zu wahren. Der gesamte Prozess der Auslegung fand unter Berücksichtigung der JAR 22, sowie der Vorläufigen Richtlinie für den Einbau von Elektromotoren in Motorseglern statt.","headline":"Kühlkonzept für Motor und Inverter","image":"/assets/img/archive/Kuhlung.png","mainEntityOfPage":{"@type":"WebPage","@id":"/2020/03/10/cooling-concept/"},"url":"/2020/03/10/cooling-concept/"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- head scripts --></head>
+
+  
+  <body>
+  
+    <nav class="navbar is-primary  is-fixed-top " x-data="{ openNav: false }">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/" class="navbar-item">
+                <img src=/assets/img/fvaLogo.png>
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu" :class="{ 'is-active': openNav }" x-on:click="openNav = !openNav">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu" :class="{ 'is-active': openNav }">
+            <div class="navbar-start">
+                <a href="/" class="navbar-item ">FVA</a>
+                
+                
+                    
+                    <a href="/blog/" class="navbar-item ">News</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/about/" class="navbar-link ">Über uns</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/about/team/" class="navbar-item ">Team</a>
+                            
+                            <a href="/about/workshop/" class="navbar-item ">Werkstatt</a>
+                            
+                            <a href="/about/history/" class="navbar-item ">Geschichte</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/projects/" class="navbar-link ">Projekte</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/projects/fva30/" class="navbar-item ">FVA 30</a>
+                            
+                            <a href="/projects/fva29/" class="navbar-item ">FVA 29</a>
+                            
+                            <a href="/projects/fva24/" class="navbar-item ">FVA 24d</a>
+                            
+                            <a href="/projects/oldprojects/" class="navbar-item ">Ältere Projekte</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <a href="/flying/" class="navbar-item ">Fliegen</a>
+                    
+                
+                    
+                    <a href="/join/" class="navbar-item ">Mitmachen</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/partners/" class="navbar-link ">Partner</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/partners/newpartner/" class="navbar-item ">Partner werden</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/contact/" class="navbar-link ">Kontakt</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/contact/imprint/" class="navbar-item ">Impressum</a>
+                            
+                            <a href="/contact/privacy/" class="navbar-item ">Datenschutz</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                
+            </div>
+                <div class="navbar-end">
+			
+			        
+			        <a class="navbar-item" href="/en/2020/03/10/cooling-concept/">
+                            <span>&nbsp;EN</span>
+                            <span class="icon"><i class="fas fa-globe"></i></span>
+                		</a>
+			
+        	</div>        
+        </div>
+    </div>
+</nav>
+
+    
+        <section class="hero  is-narrow  is-bold is-primary" >
+    <div class="hero-body ">
+        <div class="container">
+            
+            <h1 class="title is-2">Kühlkonzept für Motor und Inverter</h1>
+            
+            <p class="subtitle is-3"></p>
+            
+        </div>
+    </div>
+</section>
+    
+    
+
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                
+                <div class="column is-12">
+                    
+                    
+                    
+                    
+                    <div class="content">
+
+    <p>Veröffentlicht am 10.03.2020 von FVA</p>
+
+    <p>Nach der Ausarbeitung einer umfangreichen Auswahl an Kühlkonzepten, fiel die Wahl auf ein herkömmliches Konzept auf Basis eines für die Automobilbranche typischen Lamellenradiators. Dies garantier im Wesentlichen eine maßgeschneiderte Auswahl des Radiators und das Entfallen einer aufwendigen und rechenintensiven Auslegung für einen Eigenbau. Außerdem entschieden wir uns dafür, die Kühlung der beiden Antriebsstränge vollständig zu trennen, um die bisher entwickelte Redundanz und somit auch die Ausfallsicherheit zu wahren. Der gesamte Prozess der Auslegung fand unter Berücksichtigung der JAR 22, sowie der Vorläufigen Richtlinie für den Einbau von Elektromotoren in Motorseglern statt.</p>
+
+<h2 id="systemübersicht">Systemübersicht</h2>
+
+<p>Im Wesentlichen besteht die Kühlung eines Antriebsstrangs aus zwei räumlich voneinander getrennten Kreisläufen. Diese Trennung wurde auf Grund der räumlich großen Entfernung zwischen Motor und Inverter vorgenommen. Ein Verbund der Systeme zeichnete sich im Weight &amp; Balance durch negative Auswirkung auf den Schwerpunkt und das Gesamtgewicht aus, welches im Wesentlichen auf das Gewicht der Leitungen und die zusätzliche Kühlflüssigkeit zurückzuführen ist. Das Kühlsystem des Motors befindet sich in den Motorgondeln, während sich das System des Inverters im hinteren Teil der Zelle befindet. Beide Systeme verfügen neben baugleichen Radiatoren und Pumpen über eine Reihe von Sensoren und ein Ausgleichsgefäß, welches gleichzeitig als Nachfüllstutzen dient.</p>
+
+<p><img src="/assets/img/archive/Kuhlung.png" alt="" /></p>
+
+<p>Vorläufige Systemübersicht über die Kühlung eines Antriebsstrangs</p>
+
+<h2 id="radiator">Radiator</h2>
+
+<p>Die Auslegung des Radiators sollte so erfolgen, dass dieser auch in der Lage wäre dauerhaft die Start-Verlustleistung von ca 2kW bei einer Anströmung von etwa 30 m/s abzuführen. Diese Strömung ist im Startfall im direkten Nachlauf des Propellers zu erwarten. Die vorläufige Wahl fiel hierbei auf einen Ölkühler in Lamellenbauart der Firma Setrab. Haupvorteile dieser Bauart sind das geringe Gewicht bei vergleichsweise geringem Druckverlust. Anhand der von dieser Firma zur Verfügung gestellten Datenblätter konnte, bei der in den Datenblättern des Inverters und Motors geforderten Durchlussmenge, eine ausreichende Kühlung der betroffenen Komponenten verifiziert werden. Die beiden Kühlkreisläufe verfügen über das gleiche Radiatormodell, da die Anforderungen, insbesondere die Verlustleistung sich stark ähneln.</p>
+
+<p><img src="/assets/img/archive/Radiator.jpg" alt="" /></p>
+
+<h2 id="kühlmittelpumpe">Kühlmittelpumpe</h2>
+
+<p>Dies Auswahl der Kühlmittelpumpe gestaltete sich als recht schwierig, da die Auswahl in der geforderten Leistungsklasse gering ist. Allein der Druckverlust des Motors beträgt bei 7l/min etwa 0,9 Bar. Darauf addieren sich die Verluste in den Leitungen und dem Radiator zu einem Gesamtverlust von 1,3 Bar (0,9 Bar im Inverterkreislauf) bei 7l/min. Eine der wenigen Pumpen die eine deartige Leistung bei geringem Gewicht erbringt ist die GRIPumps INTG3 Serie.</p>
+
+<h2 id="sensorik">Sensorik</h2>
+
+<p>Die elektronische Steuerung und Überwachung der Kühlkreisläufe ist essentiell für einen sicheren, effizienten Betrieb, sowie eine angemessene Integration in das Bedienkonzept der FVA-30. Aus diesem Grund verbauen wir einen Temperatur- und einen Flow-Sensor. Der Temperatursensor wird am Einlauf des zu kühlenden Bauteils eingebaut. Dies ermöglicht uns eine Überwachung der Einlauftemperatur, welche im Bauteildatenblatt auf ein Maximum begrenzt ist, sowie den Schutz des Bauteils vor Überhitzung. Außerdem kann die Leistung der Kühlmittelpumpe dynamisch geregelt werden und damit Energie gespart werden. Der Flow-Sensor hingegen wird direkt hinter der Pumpe verbaut. Dies ermöglicht eine Verifikation der Steuerung und eine frühzeitige Erkennung von Leckage oder Versagen der Pumpe.</p>
+
+<h2 id="kühlflüssigkeit-und-schläuche">Kühlflüssigkeit und Schläuche</h2>
+
+<p>Als Kühlmittel eignet sich für unsere Zwecke besonders ein herkömmliches Gemisch aus Wasser und Frostschutz auf Basis von Ethylenglycol. Diese Kühlmittel sind nicht nur weit verbreitet, sie verfügen auch über eine hohe Wärmekapazität, welche die Aufwärmung deutlich verzögert. Auch ist der Frostschutzgrad frei anpassbar und Gemisch weit verbreitet im Einzelhandel erhältlich.</p>
+
+<p>Daher lassen sich auch leicht beständige Schläuche und Dichtungen finden. In diesem Fall wählten wir spezielle druckfeste Schläuche und Dichtungen aus dem Material EPDM, welches besonders widerstandsfähig und resistent gegen Ethylenglycol ist.</p>
+
+<h2 id="lufteinlass">Lufteinlass</h2>
+
+<p>Die Einführung von Kühlluft in die beiden Kühlkreisläufe befindet sich im Augenblick noch in der Entwicklung. So wird voraussichtlich im Kreislauf der Motorkühlung nur ein NACA-Lufteinlass in die Oberfläche der Motorgondel eingelassen, da hier sobald Verlustleistung produziert wird auch Luftströmung anliegt (Propeller dreht).</p>
+
+<p>Etwas komplexer gestaltet sich hingegen die Luftzufuhr zum Inverterkreislauf, da hier erst Strömung anliegt sobald sich das Flugzeug in Bewegung setzt. Aus diesem Grund soll hier ein Lüfter verbaut werden, der sich momentan in der Auslegung befindet. Hierzu sind noch Versuche notwendig um den Druckverlust der Luftströmung durch den Radiator zu bestimmen.</p>
+
+<h2 id="ausblick">Ausblick</h2>
+
+<p>Aktuell befinden sich die beiden Kreisläufe eines Antriebstrangs im Bau. Auch werden erste Erfahrungen mit der Sensorik gesammelt und auf Basis eines Entwicklungsboards ein vorläufiges Steuergerät entwickelt. Dies soll im Zuge der ersten Tests kalibriert werden und die Steuerung während der im nächsten Jahr anstehenden Motortests übernehmen. Zunächst werden jedoch die Kreisläufe Druck- und Dichtigkeitsprüfungen ausgesetzt um ein Versagen und dadurch ausgelöstes Fehlschlagen der Tests auf dem Motorteststand zu verhindern. Während dieser Phase ist das zu kühlende Bauteil nicht an das System angeschlossen, sondern wird durch Erhitzung des Kühlwassers simuliert. So soll Erfahrung im Umgang mit diesem System gesammelt werden, sowie mögliche Fehler und Schwachstellen frühzeitig erkannt und behoben werden.</p>
+
+<p>Vorläufiges Ziel ist die Verifikation der Auslegung durch Simulation der Leistungsprofile der FVA-30 im Zuge der Motortests sowie, falls nötig, die Optimierung des Systems.</p>
+
+</div>
+
+<div class="field is-grouped is-grouped-multiline">
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/FVA30">
+<span class="tag  is-primary ">
+    FVA30
+</span>
+</a>
+    </div>
+  </div>
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/FVA30power">
+<span class="tag  is-primary ">
+    FVA30 Antriebsstrang
+</span>
+</a>
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+        <footer class="footer">
+    <div class="container">
+        
+        
+        <div class="columns is-multiline">
+            
+        </div>
+        
+
+        <div class="column is-12">
+            <div class="has-text-centered">
+                <p><strong>Folgen auf</strong></p>
+                <div class="buttons is-centered">
+                    <a href="https://www.facebook.com/fva1920/" class="button is-light">
+                        <i class="fab fa-facebook fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.instagram.com/fva1920/" class="button is-light">
+                        <i class="fab fa-instagram fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCTCcUCZQNPcGdRwlTqN_M-Q" class="button is-light">
+                        <i class="fab fa-youtube fa-lg has-text-danger"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/fva-1920/" class="button is-light">
+                        <i class="fab fa-linkedin fa-lg has-text-link"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class="">Theme built by <a href="https://www.csrhymes.com">C.S. Rhymes</a></p>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class=""><a href="/contact/imprint/">Impressum</a> 
+                <a href="/contact/privacy/">Datenschutzerklärung</a>
+                <a href="https://fva.cloud">Intern</a></p>
+            </div>
+    </div>
+</footer>
+
+    
+    <script src="/assets/js/app.js" type="text/javascript"></script><!-- footer scripts --></body>
+</html>

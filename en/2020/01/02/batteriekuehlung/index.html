@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+
+
+
+
+<html
+ lang="en"
+ class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content=#ffffff>
+    
+    <title>PCM Battery Cooling Simulation - FVA</title>
+    
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="shortcut icon" type="image/png"
+           href="/favicon.png" 
+    />
+    <link rel=preload href="/assets/css/roboto.css" as="style">
+    <link rel=preload href="/assets/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/roboto-v20-latin-ext_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <script src="/assets/js/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/fontawesome.all.min.css">
+    
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="PCM Battery Cooling Simulation" />
+<meta name="author" content="Marvin Garbade" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="A particular challenge in the development of our battery pack is the design of a fail-safe thermal management system that can mitigate temperature rise during start &amp; climb and prevent undercooling during 4-5 h of range-extender-powered cruise flight at up to 3000 m, where batteries need to be recharged and remain operable, e.g. for a go-around. Therefore, a passive cooling approach based on a phase change material compound (paraffin encapsulated in solid structure, e.g. a porous matrix of expanded graphite or HDPE with a thermally conductive additive) was laid out, that effectively raises the pack’s thermal inertia, provides structural support (less overhead on cell fixations) and allows the pack to be fully sealed. This approach overcomes major deficits of conventional cooling techniques: both liquid and air cooling would not allow a significantly denser cell packaging (currently: 3.6 mm distance between cells), hence having higher volume demands regardless of their cooling power due to additional components outside the pack (e.g. air inlet, radiator, tubes, heat exchanger) while volume is our toughest constraint as available installation space must also fit both range extender and converter. In addition, the proven protection against fire propagation offers a decisive advantage over conventional cooling. As far as weight is concerned, the additional weight of the PCM compared to a lighter (forced) air cooling does also come as a benefit since the battery is used to stabilize our center of gravity that is shifted backwards due to our tail-integrated propulsion." />
+<meta property="og:description" content="A particular challenge in the development of our battery pack is the design of a fail-safe thermal management system that can mitigate temperature rise during start &amp; climb and prevent undercooling during 4-5 h of range-extender-powered cruise flight at up to 3000 m, where batteries need to be recharged and remain operable, e.g. for a go-around. Therefore, a passive cooling approach based on a phase change material compound (paraffin encapsulated in solid structure, e.g. a porous matrix of expanded graphite or HDPE with a thermally conductive additive) was laid out, that effectively raises the pack’s thermal inertia, provides structural support (less overhead on cell fixations) and allows the pack to be fully sealed. This approach overcomes major deficits of conventional cooling techniques: both liquid and air cooling would not allow a significantly denser cell packaging (currently: 3.6 mm distance between cells), hence having higher volume demands regardless of their cooling power due to additional components outside the pack (e.g. air inlet, radiator, tubes, heat exchanger) while volume is our toughest constraint as available installation space must also fit both range extender and converter. In addition, the proven protection against fire propagation offers a decisive advantage over conventional cooling. As far as weight is concerned, the additional weight of the PCM compared to a lighter (forced) air cooling does also come as a benefit since the battery is used to stabilize our center of gravity that is shifted backwards due to our tail-integrated propulsion." />
+<meta property="og:site_name" content="FVA" />
+<meta property="og:image" content="/en/assets/img/archive/makrozelle.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-01-02T12:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="/en/assets/img/archive/makrozelle.jpg" />
+<meta property="twitter:title" content="PCM Battery Cooling Simulation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Marvin Garbade"},"dateModified":"2020-01-02T12:00:00+00:00","datePublished":"2020-01-02T12:00:00+00:00","description":"A particular challenge in the development of our battery pack is the design of a fail-safe thermal management system that can mitigate temperature rise during start &amp; climb and prevent undercooling during 4-5 h of range-extender-powered cruise flight at up to 3000 m, where batteries need to be recharged and remain operable, e.g. for a go-around. Therefore, a passive cooling approach based on a phase change material compound (paraffin encapsulated in solid structure, e.g. a porous matrix of expanded graphite or HDPE with a thermally conductive additive) was laid out, that effectively raises the pack’s thermal inertia, provides structural support (less overhead on cell fixations) and allows the pack to be fully sealed. This approach overcomes major deficits of conventional cooling techniques: both liquid and air cooling would not allow a significantly denser cell packaging (currently: 3.6 mm distance between cells), hence having higher volume demands regardless of their cooling power due to additional components outside the pack (e.g. air inlet, radiator, tubes, heat exchanger) while volume is our toughest constraint as available installation space must also fit both range extender and converter. In addition, the proven protection against fire propagation offers a decisive advantage over conventional cooling. As far as weight is concerned, the additional weight of the PCM compared to a lighter (forced) air cooling does also come as a benefit since the battery is used to stabilize our center of gravity that is shifted backwards due to our tail-integrated propulsion.","headline":"PCM Battery Cooling Simulation","image":"/en/assets/img/archive/makrozelle.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"/en/2020/01/02/batteriekuehlung/"},"url":"/en/2020/01/02/batteriekuehlung/"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- head scripts --></head>
+
+  
+  <body>
+  
+    <nav class="navbar is-primary  is-fixed-top " x-data="{ openNav: false }">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/en/" class="navbar-item">
+                <img src=/assets/img/fvaLogo.png>
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu" :class="{ 'is-active': openNav }" x-on:click="openNav = !openNav">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu" :class="{ 'is-active': openNav }">
+            <div class="navbar-start">
+                <a href="/en/" class="navbar-item ">FVA</a>
+                
+                
+                    
+                    <a href="/en/blog/" class="navbar-item ">News</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/en/about/" class="navbar-link ">About</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/en/about/team/" class="navbar-item ">Team</a>
+                            
+                            <a href="/en/about/workshop/" class="navbar-item ">Workshop</a>
+                            
+                            <a href="/en/about/history/" class="navbar-item ">History</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/en/projects/" class="navbar-link ">Projects</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/en/projects/fva30/" class="navbar-item ">FVA 30</a>
+                            
+                            <a href="/en/projects/fva29/" class="navbar-item ">FVA 29</a>
+                            
+                            <a href="/en/projects/fva24/" class="navbar-item ">FVA 24d</a>
+                            
+                            <a href="/en/projects/oldprojects/" class="navbar-item ">Older Projects</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <a href="/en/flying/" class="navbar-item ">Fly</a>
+                    
+                
+                    
+                    <a href="/en/join/" class="navbar-item ">Join</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/en/partners/" class="navbar-link ">Partners</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/en/partners/newpartner/" class="navbar-item ">Become a partner!</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/en/contact/" class="navbar-link ">Contact</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/en/contact/imprint/" class="navbar-item ">Imprint</a>
+                            
+                            <a href="/en/contact/privacy/" class="navbar-item ">Privacy</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                
+            </div>
+                <div class="navbar-end">
+			
+				
+			  	<a class="navbar-item" href="/2020/01/02/batteriekuehlung/">
+                            <span>&nbsp;DE</span>
+                    		<span class="icon"><i class="fas fa-globe"></i></span>
+        			</a>
+			
+        	</div>        
+        </div>
+    </div>
+</nav>
+
+    
+        <section class="hero  is-narrow  is-bold is-primary" >
+    <div class="hero-body ">
+        <div class="container">
+            
+            <h1 class="title is-2">PCM Battery Cooling Simulation</h1>
+            
+            <p class="subtitle is-3"></p>
+            
+        </div>
+    </div>
+</section>
+    
+    
+
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                
+                <div class="column is-12">
+                    
+                    
+                    
+                    
+                    <div class="content">
+
+    <p>Published: 2.01.2020 by Marvin Garbade</p>
+
+    <p>A particular challenge in the development of our battery pack is the design of a fail-safe thermal management system that can mitigate temperature rise during start &amp; climb and prevent undercooling during 4-5 h of range-extender-powered cruise flight at up to 3000 m, where batteries need to be recharged and remain operable, e.g. for a go-around. Therefore, a passive cooling approach based on a phase change material compound (paraffin encapsulated in solid structure, e.g. a porous matrix of expanded graphite or HDPE with a thermally conductive additive) was laid out, that effectively raises the pack’s thermal inertia, provides structural support (less overhead on cell fixations) and allows the pack to be fully sealed. This approach overcomes major deficits of conventional cooling techniques: both liquid and air cooling would not allow a significantly denser cell packaging (currently: 3.6 mm distance between cells), hence having higher volume demands regardless of their cooling power due to additional components outside the pack (e.g. air inlet, radiator, tubes, heat exchanger) while volume is our toughest constraint as available installation space must also fit both range extender and converter. In addition, the proven protection against fire propagation offers a decisive advantage over conventional cooling. As far as weight is concerned, the additional weight of the PCM compared to a lighter (forced) air cooling does also come as a benefit since the battery is used to stabilize our center of gravity that is shifted backwards due to our tail-integrated propulsion.</p>
+
+<p>We previously covered the construction of our first test module as well as flight profile tests performed with it, while the module already integrates all relevant components of the later battery pack, that will comprise 12 of such modules in series. The component selection for the test system was, however, partly based on availability and differs from the final design. Particularly, the PCM compound used – a donation by the Fraunhofer Institute for Structural Durability and System Reliability (LBF) – does not suit our requirements with a melting point of 25 °C, as the paraffin encapsulated in the structure must not be melted at (reasonable) ground temperatures since the phase change is to be triggered by battery heating. The CAD-design and preceding material demand estimations were, however, based on the product PCC48-1000 by AllCell Technologies that provides a useful reference for what is possible. These material properties shall be analyzed more closely in conjunction with the power loss of our battery cell, covering different flight scenarios. By studying heat loss and transient heat transfer, we are able to optimize material selection (melting point) and composition (heat capacity ⇔ thermal conductivity).</p>
+
+<p>The battery module consists of 12 serially connected submodules, each being a string of 5 parallel connected cells in a PCM cell holder as shown below.</p>
+
+<p><img src="/assets/img/archive/makrozelle.jpg" alt="" /></p>
+
+<p>Submodule with five parallel connected cells in PCM cell holder</p>
+
+<p>Each cell is surrounded by a 1.8 mm thick PCM wall (at the narrowest point), hence there is a distance of 3.6 mm between the cells. The thermal connection between cell and PCM is established by tightly fitting the cells in the corresponding sockets and applying thermal grease for improved conductivity.</p>
+
+<h2 id="simulation-strategy--assumptions">Simulation Strategy &amp; Assumptions</h2>
+
+<p>For the transient heat analysis, the free CAE software SimScale is used. A single battery cell enclosed in the corresponding PCM shell is imported as shown below.</p>
+
+<p><img src="/assets/img/archive/einzelzelle.jpg" alt="" /></p>
+
+<p>Single cell in PCM shell, 1.8 mm wall thickness (narrowest point)</p>
+
+<p>The simulation setup is completely adiabatic, i.e. all power losses of the cell are transferred into sensible heat of the battery and PCM as well as latent heat of the phase change. Therefore, this scenario gives a conservative estimate of the thermal behavior since the strong heat flow into the copper connectors and heat up of other elements in the module assembly is neglected.</p>
+
+<p>For simplicity, thermal conductivity is implemented as isotropic, using values for radial conductivity within the cell (which is much lower than axial conductivity) and pessimistic conductivity values from the PCM data sheet.</p>
+
+<p>The phase change is transferred into a sensible heat scenario, where for the given melting range of 45° C – 50 °C, the PCM heat capacity is replaced by the latent heat capacity divided over that temperature interval.</p>
+
+<p>The battery is assumed to produce a uniform volume heat flow corresponding to the profile simulated. Power loss is directly estimated from current and voltage data, taking the cell’s state-of-charge (SOC)-dependent open circuit voltage (OCV) as a reference:</p>
+
+<p><img src="/assets/img/archive/latex.svg" alt="" /></p>
+
+<h2 id="input-profiles">Input Profiles</h2>
+
+<p>The same profiles as tested previously on the whole module are used, i.e. constant power profiles for the 4 cases</p>
+
+<ul>
+  <li>Full-power battery-electric profile (ELECTRIC-FULL)</li>
+  <li>Reduced climb rate battery-electric profile (ELECTRIC-REDUCED)</li>
+  <li>Range-extender-supported profile (REX)</li>
+  <li>Emergent redundancy profile (EMERGENCY)</li>
+</ul>
+
+<p>The data from the previous tests is used where the measured pack current is divided equally over the 5 parallel cells and cell voltages are averaged. The measured power profiles for the above mentioned 4 cases are again summarized in following tables, here mapped on single-cell level.</p>
+
+<h3 id="electric-full">ELECTRIC-FULL</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Start</th>
+      <th>Climb</th>
+      <th>Cruise</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Power</td>
+      <td>65.5 W</td>
+      <td>47.57 W</td>
+      <td>10.22 W</td>
+    </tr>
+    <tr>
+      <td>Duration</td>
+      <td>90 s</td>
+      <td>300 s</td>
+      <td>1108 s</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="electric-reduced">ELECTRIC-REDUCED</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Start</th>
+      <th>Climb</th>
+      <th>Cruise</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Power</td>
+      <td>65.5 W</td>
+      <td>34.67 W</td>
+      <td>10.22 W</td>
+    </tr>
+    <tr>
+      <td>Duration</td>
+      <td>90 s</td>
+      <td>634 s</td>
+      <td>389 s</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="rex">REX</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Start</th>
+      <th>Climb</th>
+      <th>Cruise</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Power</td>
+      <td>48.17 W</td>
+      <td>30.17 W</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Duration</td>
+      <td>90 s</td>
+      <td>891 s</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="emergency">EMERGENCY</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Start</th>
+      <th>Climb</th>
+      <th>Cruise</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Power</td>
+      <td>131 W</td>
+      <td>83.3 W</td>
+      <td>20.4 W</td>
+    </tr>
+    <tr>
+      <td>Duration</td>
+      <td>35 s</td>
+      <td>160 s</td>
+      <td>764 s</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="material-parameters">Material Parameters</h2>
+
+<p>Following material parameters were extracted from the data sheet of PCC48-1000 and implemented according to the above-described approach.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Melting Range</td>
+      <td>45 °C – 50 °C</td>
+    </tr>
+    <tr>
+      <td>Density</td>
+      <td>890 kg/m<sup>3</sup></td>
+    </tr>
+    <tr>
+      <td>Thermal Conductivity (here isotropic)</td>
+      <td>10 W/mK</td>
+    </tr>
+    <tr>
+      <td>Latent Heat</td>
+      <td>180000 J/kg</td>
+    </tr>
+    <tr>
+      <td>Specific Heat Solid</td>
+      <td>1820 J/kgK</td>
+    </tr>
+    <tr>
+      <td>Specific Heat Liquid</td>
+      <td>1960 J/kgK</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Overall, the mass of PCM per cell amounts to 7.27 g according to our CAD-draft. That results in a latent heat capacity of 1308.6 J = 0.3635 Wh. Further heat loss will result in a temperature increase of battery and PCM. The battery cell’s specific heat capacity has been assumed as 950 J/kgK based on literature values for comparable 18650 cells.</p>
+
+<p>For the thermal conductivity within the cell, literature values have been studied and a value of 0.2 W/mK seemed to be a valid conservative estimate for an 18650 high-energy NMC cell, e.g. according to this NASA report (2018).</p>
+
+<p>All profiles start at an ambient temperature of 20 °C.</p>
+
+<h2 id="simulation-results">Simulation Results</h2>
+
+<p>For each profile, two results are shown: the left side depicts power loss over time with the integral being the amount of heat generated while on the right side, the transient temperature simulation can be viewed.</p>
+
+<h3 id="electric-full-1">ELECTRIC-FULL</h3>
+
+<p><img src="/assets/img/archive/electric.jpg" alt="" />
+<a href="/assets/img/archive/electric.mp4">Video</a></p>
+
+<h3 id="electric-reduced-1">ELECTRIC-REDUCED</h3>
+
+<p><img src="/assets/img/archive/reduced.jpg" alt="" />
+<a href="/assets/img/archive/reduced.mp4">Video</a></p>
+
+<h2 id="rex-1">REX</h2>
+
+<p><img src="/assets/img/archive/rex.jpg" alt="" />
+<a href="/assets/img/archive/rex.mp4">Video</a></p>
+
+<h3 id="emergency-1">EMERGENCY</h3>
+
+<p><img src="/assets/img/archive/redundance.jpg" alt="" />
+<a href="/assets/img/archive/emergency.mp4">Video</a></p>
+
+<p>Considering the thermal mass of battery and PCM in addition to the phase change energy, the theoretical thermal capacity for a temperature rise of \Delta T = 40 °C (e.g. starting from 20 °C ground temperature and allowing a maximum temperature of 60 °C) would be 1.01 Wh, which is sufficient for all profiles except for the emergency case. The latter needs to receive additional considerations in upcoming tests.</p>
+
+<p>However, it is to note that all of the above profiles exceed the actual design targets, i.e. a fully-electric flight with start, 1000 m climb and 15 minutes cruise flight (phase I) or a battery-assisted start with range extender to a maximum altitude of 3000 m (but not necessarily at the tested high climb rate of 3.4 m/s), where the range extender covers the constant cruise power (phase II).</p>
+
+<p>Concerning the PCM compound, the simulations suggest that the properties of PCC48-1000 would indeed suffice both in terms of thermal capacity and conductivity. Even higher paraffin loadings seem possible as thermal conductivity plays a minor role due to the thin structure. Regarding the optimal melting point, however, a slight reduction, e.g. to 42 – 45 °C, might be beneficial as the melting process is only triggered when the battery cell has already reached a (significantly) higher temperature.</p>
+
+</div>
+
+<div class="field is-grouped is-grouped-multiline">
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/en/tags/FVA30">
+<span class="tag  is-primary ">
+    FVA30
+</span>
+</a>
+    </div>
+  </div>
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/en/tags/FVA30power">
+<span class="tag  is-primary ">
+    FVA30 powertrain
+</span>
+</a>
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+        <footer class="footer">
+    <div class="container">
+        
+        
+        <div class="columns is-multiline">
+            
+        </div>
+        
+
+        <div class="column is-12">
+            <div class="has-text-centered">
+                <p><strong>Follow</strong></p>
+                <div class="buttons is-centered">
+                    <a href="https://www.facebook.com/fva1920/" class="button is-light">
+                        <i class="fab fa-facebook fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.instagram.com/fva1920/" class="button is-light">
+                        <i class="fab fa-instagram fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCTCcUCZQNPcGdRwlTqN_M-Q" class="button is-light">
+                        <i class="fab fa-youtube fa-lg has-text-danger"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/fva-1920/" class="button is-light">
+                        <i class="fab fa-linkedin fa-lg has-text-link"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class="">Theme built by <a href="https://www.csrhymes.com">C.S. Rhymes</a></p>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class=""><a href="/en/contact/imprint/">Impressum</a> 
+                <a href="/en/contact/privacy/">Datenschutzerklärung</a>
+                <a href="https://fva.cloud">Intern</a></p>
+            </div>
+    </div>
+</footer>
+
+    
+    <script src="/assets/js/app.js" type="text/javascript"></script><!-- footer scripts --></body>
+</html>

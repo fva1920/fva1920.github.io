@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+
+
+
+<html
+ lang="en"
+ class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content=#ffffff>
+    
+    <title>Design of the V-tail - FVA</title>
+    
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="shortcut icon" type="image/png"
+           href="/favicon.png" 
+    />
+    <link rel=preload href="/assets/css/roboto.css" as="style">
+    <link rel=preload href="/assets/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/roboto-v20-latin-ext_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <script src="/assets/js/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/fontawesome.all.min.css">
+    
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Design of the V-tail" />
+<meta name="author" content="FVA" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="To ensure the flight mechanical stability and controllability of the FVA-30, an adapted tail unit and appropriately dimensioned control surfaces are required. Last year, in coordination with the LBA (German FAA), conformity with parts of the CS-23 certification regulation was worked out due to the twin-engine nature of the FVA-30. The new requirements, together with more precise flight-mechanical coefficients and modified center-of-gravity estimates, prompted a new design calculation for the V-tail." />
+<meta property="og:description" content="To ensure the flight mechanical stability and controllability of the FVA-30, an adapted tail unit and appropriately dimensioned control surfaces are required. Last year, in coordination with the LBA (German FAA), conformity with parts of the CS-23 certification regulation was worked out due to the twin-engine nature of the FVA-30. The new requirements, together with more precise flight-mechanical coefficients and modified center-of-gravity estimates, prompted a new design calculation for the V-tail." />
+<meta property="og:site_name" content="FVA" />
+<meta property="og:image" content="/en/assets/img/archive/leitwerk-skizze.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-01-29T12:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="/en/assets/img/archive/leitwerk-skizze.png" />
+<meta property="twitter:title" content="Design of the V-tail" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"FVA"},"dateModified":"2020-01-29T12:00:00+00:00","datePublished":"2020-01-29T12:00:00+00:00","description":"To ensure the flight mechanical stability and controllability of the FVA-30, an adapted tail unit and appropriately dimensioned control surfaces are required. Last year, in coordination with the LBA (German FAA), conformity with parts of the CS-23 certification regulation was worked out due to the twin-engine nature of the FVA-30. The new requirements, together with more precise flight-mechanical coefficients and modified center-of-gravity estimates, prompted a new design calculation for the V-tail.","headline":"Design of the V-tail","image":"/en/assets/img/archive/leitwerk-skizze.png","mainEntityOfPage":{"@type":"WebPage","@id":"/en/2020/01/29/v-tail/"},"url":"/en/2020/01/29/v-tail/"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- head scripts --></head>
+
+  
+  <body>
+  
+    <nav class="navbar is-primary  is-fixed-top " x-data="{ openNav: false }">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/en/" class="navbar-item">
+                <img src=/assets/img/fvaLogo.png>
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu" :class="{ 'is-active': openNav }" x-on:click="openNav = !openNav">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu" :class="{ 'is-active': openNav }">
+            <div class="navbar-start">
+                <a href="/en/" class="navbar-item ">FVA</a>
+                
+                
+                    
+                    <a href="/en/blog/" class="navbar-item ">News</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/en/about/" class="navbar-link ">About</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/en/about/team/" class="navbar-item ">Team</a>
+                            
+                            <a href="/en/about/workshop/" class="navbar-item ">Workshop</a>
+                            
+                            <a href="/en/about/history/" class="navbar-item ">History</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/en/projects/" class="navbar-link ">Projects</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/en/projects/fva30/" class="navbar-item ">FVA 30</a>
+                            
+                            <a href="/en/projects/fva29/" class="navbar-item ">FVA 29</a>
+                            
+                            <a href="/en/projects/fva24/" class="navbar-item ">FVA 24d</a>
+                            
+                            <a href="/en/projects/oldprojects/" class="navbar-item ">Older Projects</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <a href="/en/flying/" class="navbar-item ">Fly</a>
+                    
+                
+                    
+                    <a href="/en/join/" class="navbar-item ">Join</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/en/partners/" class="navbar-link ">Partners</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/en/partners/newpartner/" class="navbar-item ">Become a partner!</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/en/contact/" class="navbar-link ">Contact</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/en/contact/imprint/" class="navbar-item ">Imprint</a>
+                            
+                            <a href="/en/contact/privacy/" class="navbar-item ">Privacy</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                
+            </div>
+                <div class="navbar-end">
+			
+				
+			  	<a class="navbar-item" href="/2020/01/29/v-tail/">
+                            <span>&nbsp;DE</span>
+                    		<span class="icon"><i class="fas fa-globe"></i></span>
+        			</a>
+			
+        	</div>        
+        </div>
+    </div>
+</nav>
+
+    
+        <section class="hero  is-narrow  is-bold is-primary" >
+    <div class="hero-body ">
+        <div class="container">
+            
+            <h1 class="title is-2">Design of the V-tail</h1>
+            
+            <p class="subtitle is-3"></p>
+            
+        </div>
+    </div>
+</section>
+    
+    
+
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                
+                <div class="column is-12">
+                    
+                    
+                    
+                    
+                    <div class="content">
+
+    <p>Published: 29.01.2020 by FVA</p>
+
+    <p>To ensure the flight mechanical stability and controllability of the FVA-30, an adapted tail unit and appropriately dimensioned control surfaces are required. Last year, in coordination with the LBA (German FAA), conformity with parts of the CS-23 certification regulation was worked out due to the twin-engine nature of the FVA-30. The new requirements, together with more precise flight-mechanical coefficients and modified center-of-gravity estimates, prompted a new design calculation for the V-tail.</p>
+
+<p>In the following flight mechanics design, the V-tail is dimensioned on the basis of critical design cases of longitudinal and lateral controllability and validated for all critical flight cases resulting from the certification regulations CS-22 and CS-23 via a flight dynamics calculation program. The figure below gives an overview of the principle structure of our flight mechanics computer.</p>
+
+<p><img src="/assets/img/archive/flugmechanik-rechner-en.jpg" alt="" /></p>
+
+<p>Structure of the flight mechanics computer with analytical design and numerical evaluations of the flight case list.</p>
+
+<p><strong>Analytical design:</strong> Basically, the empennage was first designed by an analytical, flight-mechanical analysis based on dimensioning flight conditions (i.e., by considering the moment balance under consideration of all relevant influencing factors). For the rudders, a maximum deflection necessary for lateral and altitude control (e.g. symmetric +/- 10°, antimetric +/- 15°, superimposable) and thus also a composite maximum deflection of 25° were determined in each case.</p>
+
+<p><strong>Numerical recalculation:</strong> Subsequently, the overall configuration was recalculated numerically (in AVL) for many different, expected flight conditions (including those from the certification regulation CS-22). In this case, the previously specified maximum rudder deflections, including a safety buffer for nonlinearities, must not be exceeded. The pitch and yaw moments generated by the engine thrust are included via trim conditions. Secondary effects, however, such as an increase in dynamic pressure due to additional blowing (propeller) or propeller jet constriction were not taken into account here.</p>
+
+<p>The following critical flight condition &amp; stability requirements were set as dimensioning for the tail unit for longitudinal movement:</p>
+
+<ol>
+  <li>Take-off through (max. thrust) at VS0 (landing), i.e. the tailplane must generate maximum downforce</li>
+  <li>Stability requirement negative moment rise (Cmα &lt; 0)</li>
+  <li>Stability requirement positive zero moment (Cmα &gt; 0)</li>
+</ol>
+
+<p>For lateral movement, the following critical flight condition turned out to be dimensional:</p>
+
+<p>According to CS-23.147: Max. Pitching flight with additional unilateral engine failure at 1.4*VS1 (VS1: cruise minimum speed), while the remaining drive provides full thrust (at pos. pitching angles the failure of the left drive (looking in flight direction) would be critical for the required rudder deflection, for example).</p>
+
+<p>The resulting maximum requirements for the tailplane area of a horizontal and vertical stabilizer equivalent to the V-tail are then converted into a corresponding V-tail according to the simplified V-tail theory.</p>
+
+<h2 id="analytical-design">Analytical Design</h2>
+
+<p><strong>Approximation for the neutral point:</strong> The neutral point varies with the deflection of the flaps and the lift distribution. This means that ultimately only the numerical calculation will provide information about the stability reserve of the longitudinal movement. However, a conservative approximation can be used for the analytical design of the tailplane. The neutral point can be calculated by considering the Mean Aerodynamic Chord (MAC). For the FVA-30, the MAC and the neutral point position were calculated using the getMAC program of the Public Domain Aeronautical Software (PDAS).</p>
+
+<p>Maximum rudder deflections to be assumed: With the profile used and a rudder depth of 35%, the rudder effectiveness decreases sharply for large rudder angles beyond 25°, so that effectively no additional lift is generated, but mainly drag. The tailplane profile selected by us (FX 71-L-150/30) shows here from approx. 25° flap angle at 35% rudder depth first larger deviations from the rudder effectiveness theoretically assumed for the tailplane design. In a V-tail, both the yaw motion is controlled by antimetric and the pitch motion by symmetric control deflections of the two rudders. Due to the previously mentioned saturation, the two control inputs combined should not exceed that rudder angle above which the rudder effectiveness assumed to be constant is no longer tenable. If these angles are nevertheless exceeded, a correspondingly increased rudder deflection must be expected to compensate for the nonlinearity. It must be differentiated whether the local lift coefficient, from which the nonlinearity occurs, is exceeded or whether the change of the zero lift angle and less the local lift at the control surface is in the foreground due to the inflow conditions (e.g. sliding flight in the lateral movement).</p>
+
+<p>The tail unit geometry resulting from the analytical consideration and its flight mechanical parameters were finally compared with those of the e-Genius as part of a plausibility check. Overall, the newly designed empennage is very similar to the e-Genius from a flight mechanics point of view.</p>
+
+<h2 id="numerical-evaluation-of-all-critical-flight-conditions">Numerical evaluation of all critical flight conditions</h2>
+
+<p>AVL provides the functionality of “Run Cases” for easy checking of different flight cases or flight conditions. This is a text file in which all state variables and trim conditions are defined for each flight condition (see figure below).</p>
+
+<p><img src="/assets/img/archive/401_RunCase.png" alt="" /></p>
+
+<p>Example of the flight condition “Take-off on landing approach, foremost center of gravity with max. thrust”.</p>
+
+<p>To enter the masses, AVL also offers the possibility to enter the masses and inertias as a text file. An example is omitted at this point. The sum of the individual centers of gravity then results in a total mass, the center of gravity and the inertia tensor. With this, calculations for dynamic stability are now also possible. If a calculation is performed in AVL, the results can be output graphically within the program in the Trefftz plane (suitable for visualizing lift distributions, cf. first figure below) or as a text file. In addition, qualitatively the lift distribution can be displayed three-dimensionally on the aircraft (cf. second figure below).</p>
+
+<p><img src="/assets/img/archive/01_Lo_Trefftz.png" alt="" /></p>
+
+<p>Lift distribution in the Trefftz plane for the flight condition “Take-off on landing approach, foremost center of gravity with max. thrust”.</p>
+
+<p><img src="/assets/img/archive/Drallwinkelverteilung_Geometry.png" alt="" /></p>
+
+<p>AVL geometry view with lift distributions for the flight condition “take-off on landing approach, foremost center of gravity with max. thrust”, fuselage approximated as a flat plate (cruciform fuselage)</p>
+
+<h2 id="calculation-results-for-critical-flight-conditions-in-longitudinal-and-lateral-motion">Calculation results for critical flight conditions in longitudinal and lateral motion</h2>
+
+<p>The following table lists the necessary rudder deflections to achieve the respective critical flight conditions in longitudinal and lateral movement.</p>
+
+<p><img src="/assets/img/archive/leitwerk-flugfaelle_en.jpg" alt="" /></p>
+
+<p>Overview of the results of the AVL recalculation: Required rudder deflections and the neutral point for the design cases in longitudinal and lateral motion</p>
+
+<p>It is remarkable that the numerically determined rudder deflections in the longitudinal movement, which poses the more safety-critical requirements, are so close to the analytically calculated rudder deflections. Compared to the design case 01-Lo-PL-GA-VS0-CGFPM, there is only a deviation of 1.1% to the safe side. In the lateral movement, a larger deviation of 9.4% exists due to the worse condition of the problem. Apart from this, the static stability reserve is above 5% except for the fast flight case 04.2-Lo-CS22.161-TR-2.0VS1-CGH-PW. Since the fuselage influence on the aircraft neutral point is overestimated with the cross fuselage method, an even larger stability reserve can be expected. For the fast flight case, a center of gravity limitation of the most aft attitude may need to be applied during flight testing.</p>
+
+<p>Since the rudder effectiveness decreases from a lift of cA ≈ 0.65 or the lift increase due to the rudder deflection shows a jump which is not mapped in AVL, a distinction must be made in the individual case between the geometric rudder deflection and the effective rudder deflection calculated in AVL. The decisive factor is whether it is a zero lift angle flight case cA;tail &lt; 0.65 or a maximum lift flight case cA;tail &gt; 0.65. Using the example of the Trefftz plane shown above, it can be seen that the maximum local lift coefficient is cA;tail ≈ 0.75. The geometrically necessary rudder deflection is thus ηV;max;geo = 12°. Consideration of all other flight cases of longitudinal motion (cf. plot in Trefftz plane) shows that all other lift requirements are below the design case 01-Lo-PL-GA-VS0-CGF-PM. Thus, the maximum symmetric rudder deflection is set to ηV;max;geo = 12°.</p>
+
+<p>For the lateral motion, the lift requirements are well below the nonlinearity in the lift rise (cA;tail &lt; 0.65), so that the maximum rudder angles for the antimetric rudder deflection at the V-tail do not need to be corrected. Due to the deviation of the numerical recalculation in the design case 54-La CS23.147ed-SFSEI-1.4VS1-CGB-SMSEI, the rudder deflection is raised to ζV;max;geo = 15°.</p>
+
+<p>Thus, the empennage is fully designed in terms of flight mechanics and validated for static controllability. The final geometry with control surface deflections is summarized in the following overview.</p>
+
+<p><img src="/assets/img/archive/leitwerk-final_en.jpg" alt="" /></p>
+
+<p>Summary of the final tail geometry of the FVA-30</p>
+
+<h2 id="outlook">Outlook</h2>
+
+<p>In the area of flight mechanics, the calculation of the maximum rudder torques now follows, which results in the requirements for the control system. In addition, the exact design of the V-tail geometry is to be determined in collaboration with the structure team.</p>
+
+</div>
+
+<div class="field is-grouped is-grouped-multiline">
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/en/tags/FVA30">
+<span class="tag  is-primary ">
+    FVA30
+</span>
+</a>
+    </div>
+  </div>
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/en/tags/FVA30aero">
+<span class="tag  is-primary ">
+    FVA30 aerodynamics
+</span>
+</a>
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+        <footer class="footer">
+    <div class="container">
+        
+        
+        <div class="columns is-multiline">
+            
+        </div>
+        
+
+        <div class="column is-12">
+            <div class="has-text-centered">
+                <p><strong>Follow</strong></p>
+                <div class="buttons is-centered">
+                    <a href="https://www.facebook.com/fva1920/" class="button is-light">
+                        <i class="fab fa-facebook fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.instagram.com/fva1920/" class="button is-light">
+                        <i class="fab fa-instagram fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCTCcUCZQNPcGdRwlTqN_M-Q" class="button is-light">
+                        <i class="fab fa-youtube fa-lg has-text-danger"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/fva-1920/" class="button is-light">
+                        <i class="fab fa-linkedin fa-lg has-text-link"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class="">Theme built by <a href="https://www.csrhymes.com">C.S. Rhymes</a></p>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class=""><a href="/en/contact/imprint/">Impressum</a> 
+                <a href="/en/contact/privacy/">Datenschutzerklärung</a>
+                <a href="https://fva.cloud">Intern</a></p>
+            </div>
+    </div>
+</footer>
+
+    
+    <script src="/assets/js/app.js" type="text/javascript"></script><!-- footer scripts --></body>
+</html>

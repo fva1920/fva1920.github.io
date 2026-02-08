@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+
+
+
+<html
+ lang="de"
+ class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content=#ffffff>
+    
+    <title>Erweiterung des Flugleistungsrechners - FVA</title>
+    
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="shortcut icon" type="image/png"
+           href="/favicon.png" 
+    />
+    <link rel=preload href="/assets/css/roboto.css" as="style">
+    <link rel=preload href="/assets/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/roboto-v20-latin-ext_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <script src="/assets/js/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/fontawesome.all.min.css">
+    
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Erweiterung des Flugleistungsrechners" />
+<meta name="author" content="FVA" />
+<meta property="og:locale" content="de" />
+<meta name="description" content="Die gesamte Antriebsauslegung hängt wesentlich von den sich aus dem geplanten Flugprofil resultierenden Leistungsanforderungen ab. Der in der Vorauslegung verwendete Flugleistungsrechner der FVA-30 basierte auf einem 2-DOF Modell, das in Matlab implementiert ist. Für eine detailliertere Validierung und insbesondere für die anstehenden zulassungsrelevanten Motorprüfläufe sowie später geplante Bodentests am vollständigen Antriebssystem („Iron Bird“), schien eine Weiterentwicklung des Modells in ein genaueres mit mehr Freiheitsgraden unerlässlich. Darüber hinaus soll mit dem geplanten Ziel eines vollwertigen Simulationsmodells der FVA-30 (digitaler Zwilling) eine Kopplung mit einem Flugsimulator ermöglicht werden. Später soll das Modell zudem für einen besonders effizienten Flug mit geringem Workload für den Piloten sowie zum Austesten verschiedener Regelungsmodi im Flug direkt ins Steuergerät eingebunden werden." />
+<meta property="og:description" content="Die gesamte Antriebsauslegung hängt wesentlich von den sich aus dem geplanten Flugprofil resultierenden Leistungsanforderungen ab. Der in der Vorauslegung verwendete Flugleistungsrechner der FVA-30 basierte auf einem 2-DOF Modell, das in Matlab implementiert ist. Für eine detailliertere Validierung und insbesondere für die anstehenden zulassungsrelevanten Motorprüfläufe sowie später geplante Bodentests am vollständigen Antriebssystem („Iron Bird“), schien eine Weiterentwicklung des Modells in ein genaueres mit mehr Freiheitsgraden unerlässlich. Darüber hinaus soll mit dem geplanten Ziel eines vollwertigen Simulationsmodells der FVA-30 (digitaler Zwilling) eine Kopplung mit einem Flugsimulator ermöglicht werden. Später soll das Modell zudem für einen besonders effizienten Flug mit geringem Workload für den Piloten sowie zum Austesten verschiedener Regelungsmodi im Flug direkt ins Steuergerät eingebunden werden." />
+<meta property="og:site_name" content="FVA" />
+<meta property="og:image" content="/assets/img/archive/sim_leo_4.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-10-15T12:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="/assets/img/archive/sim_leo_4.jpg" />
+<meta property="twitter:title" content="Erweiterung des Flugleistungsrechners" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"FVA"},"dateModified":"2020-10-15T12:00:00+00:00","datePublished":"2020-10-15T12:00:00+00:00","description":"Die gesamte Antriebsauslegung hängt wesentlich von den sich aus dem geplanten Flugprofil resultierenden Leistungsanforderungen ab. Der in der Vorauslegung verwendete Flugleistungsrechner der FVA-30 basierte auf einem 2-DOF Modell, das in Matlab implementiert ist. Für eine detailliertere Validierung und insbesondere für die anstehenden zulassungsrelevanten Motorprüfläufe sowie später geplante Bodentests am vollständigen Antriebssystem („Iron Bird“), schien eine Weiterentwicklung des Modells in ein genaueres mit mehr Freiheitsgraden unerlässlich. Darüber hinaus soll mit dem geplanten Ziel eines vollwertigen Simulationsmodells der FVA-30 (digitaler Zwilling) eine Kopplung mit einem Flugsimulator ermöglicht werden. Später soll das Modell zudem für einen besonders effizienten Flug mit geringem Workload für den Piloten sowie zum Austesten verschiedener Regelungsmodi im Flug direkt ins Steuergerät eingebunden werden.","headline":"Erweiterung des Flugleistungsrechners","image":"/assets/img/archive/sim_leo_4.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"/2020/10/15/flight-performance/"},"url":"/2020/10/15/flight-performance/"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- head scripts --></head>
+
+  
+  <body>
+  
+    <nav class="navbar is-primary  is-fixed-top " x-data="{ openNav: false }">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/" class="navbar-item">
+                <img src=/assets/img/fvaLogo.png>
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu" :class="{ 'is-active': openNav }" x-on:click="openNav = !openNav">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu" :class="{ 'is-active': openNav }">
+            <div class="navbar-start">
+                <a href="/" class="navbar-item ">FVA</a>
+                
+                
+                    
+                    <a href="/blog/" class="navbar-item ">News</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/about/" class="navbar-link ">Über uns</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/about/team/" class="navbar-item ">Team</a>
+                            
+                            <a href="/about/workshop/" class="navbar-item ">Werkstatt</a>
+                            
+                            <a href="/about/history/" class="navbar-item ">Geschichte</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/projects/" class="navbar-link ">Projekte</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/projects/fva30/" class="navbar-item ">FVA 30</a>
+                            
+                            <a href="/projects/fva29/" class="navbar-item ">FVA 29</a>
+                            
+                            <a href="/projects/fva24/" class="navbar-item ">FVA 24d</a>
+                            
+                            <a href="/projects/oldprojects/" class="navbar-item ">Ältere Projekte</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <a href="/flying/" class="navbar-item ">Fliegen</a>
+                    
+                
+                    
+                    <a href="/join/" class="navbar-item ">Mitmachen</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/partners/" class="navbar-link ">Partner</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/partners/newpartner/" class="navbar-item ">Partner werden</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/contact/" class="navbar-link ">Kontakt</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/contact/imprint/" class="navbar-item ">Impressum</a>
+                            
+                            <a href="/contact/privacy/" class="navbar-item ">Datenschutz</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                
+            </div>
+                <div class="navbar-end">
+			
+			        
+			        <a class="navbar-item" href="/en/2020/10/15/flight-performance/">
+                            <span>&nbsp;EN</span>
+                            <span class="icon"><i class="fas fa-globe"></i></span>
+                		</a>
+			
+        	</div>        
+        </div>
+    </div>
+</nav>
+
+    
+        <section class="hero  is-narrow  is-bold is-primary" >
+    <div class="hero-body ">
+        <div class="container">
+            
+            <h1 class="title is-2">Erweiterung des Flugleistungsrechners</h1>
+            
+            <p class="subtitle is-3"></p>
+            
+        </div>
+    </div>
+</section>
+    
+    
+
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                
+                <div class="column is-12">
+                    
+                    
+                    
+                    
+                    <div class="content">
+
+    <p>Veröffentlicht am 15.10.2020 von FVA</p>
+
+    <p>Die gesamte Antriebsauslegung hängt wesentlich von den sich aus dem geplanten Flugprofil resultierenden Leistungsanforderungen ab. Der in der Vorauslegung verwendete Flugleistungsrechner der FVA-30 basierte auf einem 2-DOF Modell, das in Matlab implementiert ist. Für eine detailliertere Validierung und insbesondere für die anstehenden zulassungsrelevanten Motorprüfläufe sowie später geplante Bodentests am vollständigen Antriebssystem („Iron Bird“), schien eine Weiterentwicklung des Modells in ein genaueres mit mehr Freiheitsgraden unerlässlich. Darüber hinaus soll mit dem geplanten Ziel eines vollwertigen Simulationsmodells der FVA-30 (digitaler Zwilling) eine Kopplung mit einem Flugsimulator ermöglicht werden. Später soll das Modell zudem für einen besonders effizienten Flug mit geringem Workload für den Piloten sowie zum Austesten verschiedener Regelungsmodi im Flug direkt ins Steuergerät eingebunden werden.</p>
+
+<p>Da das Modell zur dynamischen Berechnung der Motorlast für den entstehenden HiL-Prüfstand für Motor und Inverter gebraucht wurde, musste die gesamte Simulation kompatibel mit Matlab 2016 und dSpace sein sowie ausreichend schnell für die Echtzeitabschätzung der Motorleistung für den Prüfstandsbetrieb. Da für zukünftige Designentscheidungen ein detailliertes Modell benötigt wird, wurde die Simulation zu einem 3-DOF Modell neu aufgebaut.</p>
+
+<h2 id="hybrider-flugleistungsrechner">Hybrider Flugleistungsrechner</h2>
+
+<p>Der Flugleistungsrechner besteht aus drei Komponenten: Dem Flugzeug, das sowohl aerodynamisch als auch über seine Massenträgheiten beschrieben wird, dem Antriebsstrang und einem Pilotenmodell. Die Simulation ist vektoriell aufgebaut, sodass das Modell in Zukunft einfach in eine 6-DOF Modell umgewandelt werden kann. Wichtig für die Entwicklung der Simulation war den Detailgrad besonders an den Stellen hoch zu halten, an denen in näherer Zukunft wichtige Entscheidungen anstehen. So wurde beispielsweise die Druckpunktverschiebung auf dem Flügel berücksichtigt, wohingegen das thermische Verhalten der Motoren vernachlässigt wurde, da es bereits auf dem Prüfstand getestet wurde.</p>
+
+<h2 id="antriebsstrang">Antriebsstrang</h2>
+
+<p>Der Antriebsstrang besteht aus drei Modellen: Dem Motor, der Batterie und dem Propeller. Jedes Modell wird durch ein Kennfeld beschrieben und wurde im Vorhinein validiert oder aus Herstellerdaten abgeleitet und mit Messdaten validiert. Sowohl über die Teilmodelle als auch den gesamten Antriebsstrang kann die Effizienz berechnet werden. Diese ist sowohl für die Validierung der Daten als auch für die zukünftigen Designentscheidungen interessant.</p>
+
+<h2 id="aerodynamik">Aerodynamik</h2>
+
+<p>Die aerodynamischen Kräfte Momente werden über die Beiwertderivative ermittelt, die in der flugmechanischen Auslegung bestimmt wurden. Hierbei wurden, in der der ersten Version, die für eine grundlegende Betrachtung üblichen Vereinfachungen getroffen. Beispielsweise wird das Moment durch den Widerstand des V-Leitwerks nicht berücksichtigt. Neben den aerodynamischen Kenngrößen des Flugzeuges selbst, soll auch der Einfluss des Fahrwerks und des Bodenabstands berücksichtigt werden. Des Weiteren wurde bei Bodenkontakt ein zusätzlicher Widerstand eingefügt, um des Einfluss der Reibung des Fahrwerks zu berücksichtigen.</p>
+
+<p><img src="/assets/img/archive/sim_leo_4.jpg" alt="" /></p>
+
+<p>Beispiel: Bestimmung der Kräfte und Momente aus den Beiwerten im aerodynamischen Koordinatensystem und Transformation ins körperfeste Koordinatensystem</p>
+
+<h2 id="bewegungsgleichungen">Bewegungsgleichungen</h2>
+
+<p>Das aktuelle Modell realisiert den ersten Aufbau der FVA-30 ohne Range Extender. Allerdings verfügt das Modell bereits jetzt über eine Möglichkeit veränderliche Massenträgheiten durch den Kraftstoffverbrauch zu berücksichtigen, die im rein elektrischen Betrieb des Motorseglers konstant sind. Ein weiteres Feature der Simulation ist die Abbildung des Einflusses der Propellerwinkel auf den Schub.</p>
+
+<h2 id="ausblick">Ausblick</h2>
+
+<p>Der Flugleistungsrechner soll mit dem entstehenden digitalen Zwilling der FVA-30 so verknüpft werden, dass bereits am Boden verschiedene Regelungsmodi und Missionsprofile realitätsnah ausgetestet werden können. Beispielsweise wird der Einfluss einer drehzahlbasierten Regelung für die Elektromotoren erprobt. Weiterhin interessant sind die damit möglichen Tests verschiedener Bedien- und Anzeigekonzepte, sodass sich Piloten mit einer PPL-Lizenz schnell in die Bedienung des neuartigen Flugzeugtyps einfinden können. Zuletzt liegt ein wichtiger Schwerpunkt der Simulation in der Erprobung von Fehlerfällen und deren Auswirkungen auf den Nutzer.</p>
+
+</div>
+
+<div class="field is-grouped is-grouped-multiline">
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/FVA30">
+<span class="tag  is-primary ">
+    FVA30
+</span>
+</a>
+    </div>
+  </div>
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/FVA30aero">
+<span class="tag  is-primary ">
+    FVA30 Aerodynamik
+</span>
+</a>
+    </div>
+  </div>
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/FVA30power">
+<span class="tag  is-primary ">
+    FVA30 Antriebsstrang
+</span>
+</a>
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+        <footer class="footer">
+    <div class="container">
+        
+        
+        <div class="columns is-multiline">
+            
+        </div>
+        
+
+        <div class="column is-12">
+            <div class="has-text-centered">
+                <p><strong>Folgen auf</strong></p>
+                <div class="buttons is-centered">
+                    <a href="https://www.facebook.com/fva1920/" class="button is-light">
+                        <i class="fab fa-facebook fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.instagram.com/fva1920/" class="button is-light">
+                        <i class="fab fa-instagram fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCTCcUCZQNPcGdRwlTqN_M-Q" class="button is-light">
+                        <i class="fab fa-youtube fa-lg has-text-danger"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/fva-1920/" class="button is-light">
+                        <i class="fab fa-linkedin fa-lg has-text-link"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class="">Theme built by <a href="https://www.csrhymes.com">C.S. Rhymes</a></p>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class=""><a href="/contact/imprint/">Impressum</a> 
+                <a href="/contact/privacy/">Datenschutzerklärung</a>
+                <a href="https://fva.cloud">Intern</a></p>
+            </div>
+    </div>
+</footer>
+
+    
+    <script src="/assets/js/app.js" type="text/javascript"></script><!-- footer scripts --></body>
+</html>

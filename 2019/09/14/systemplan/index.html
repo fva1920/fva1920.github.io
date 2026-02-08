@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+
+
+
+<html
+ lang="de"
+ class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content=#ffffff>
+    
+    <title>Systemplan - FVA</title>
+    
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="shortcut icon" type="image/png"
+           href="/favicon.png" 
+    />
+    <link rel=preload href="/assets/css/roboto.css" as="style">
+    <link rel=preload href="/assets/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/roboto-v20-latin-ext_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <script src="/assets/js/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/fontawesome.all.min.css">
+    
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Systemplan" />
+<meta name="author" content="Moritz Scholjegerdes" />
+<meta property="og:locale" content="de" />
+<meta name="description" content="Die FVA-30 ist als hybrid-elektrischer Motorsegler für Mittelstreckenflüge (600-800 km) ausgelegt, wobei der Range Extender (REX) die im Reiseflug benötigte Leistung zur Verfügung stellt (optimaler Betriebspunkt). Die Batterie dient hierbei zur Abdeckung von Leistungsspitzen im Flugprofil (Start, Steigflug, ggf. Durchstartmanöver) und Puffern von Leistungsschwankungen im Reiseflug. In der ersten Ausbauphase ist jedoch zunächst die Zulassung eines rein-elektrischen Prototypen vorgesehen, der das selbstständige Starten, Steigen auf 1000 m Höhe (über Grund) und einen 15-minütigen Reiseflug unter pessimistischen Bedingungen erlaubt." />
+<meta property="og:description" content="Die FVA-30 ist als hybrid-elektrischer Motorsegler für Mittelstreckenflüge (600-800 km) ausgelegt, wobei der Range Extender (REX) die im Reiseflug benötigte Leistung zur Verfügung stellt (optimaler Betriebspunkt). Die Batterie dient hierbei zur Abdeckung von Leistungsspitzen im Flugprofil (Start, Steigflug, ggf. Durchstartmanöver) und Puffern von Leistungsschwankungen im Reiseflug. In der ersten Ausbauphase ist jedoch zunächst die Zulassung eines rein-elektrischen Prototypen vorgesehen, der das selbstständige Starten, Steigen auf 1000 m Höhe (über Grund) und einen 15-minütigen Reiseflug unter pessimistischen Bedingungen erlaubt." />
+<meta property="og:site_name" content="FVA" />
+<meta property="og:image" content="/assets/img/archive/Systemplan.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-09-14T12:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="/assets/img/archive/Systemplan.png" />
+<meta property="twitter:title" content="Systemplan" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Moritz Scholjegerdes"},"dateModified":"2019-09-14T12:00:00+00:00","datePublished":"2019-09-14T12:00:00+00:00","description":"Die FVA-30 ist als hybrid-elektrischer Motorsegler für Mittelstreckenflüge (600-800 km) ausgelegt, wobei der Range Extender (REX) die im Reiseflug benötigte Leistung zur Verfügung stellt (optimaler Betriebspunkt). Die Batterie dient hierbei zur Abdeckung von Leistungsspitzen im Flugprofil (Start, Steigflug, ggf. Durchstartmanöver) und Puffern von Leistungsschwankungen im Reiseflug. In der ersten Ausbauphase ist jedoch zunächst die Zulassung eines rein-elektrischen Prototypen vorgesehen, der das selbstständige Starten, Steigen auf 1000 m Höhe (über Grund) und einen 15-minütigen Reiseflug unter pessimistischen Bedingungen erlaubt.","headline":"Systemplan","image":"/assets/img/archive/Systemplan.png","mainEntityOfPage":{"@type":"WebPage","@id":"/2019/09/14/systemplan/"},"url":"/2019/09/14/systemplan/"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- head scripts --></head>
+
+  
+  <body>
+  
+    <nav class="navbar is-primary  is-fixed-top " x-data="{ openNav: false }">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/" class="navbar-item">
+                <img src=/assets/img/fvaLogo.png>
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu" :class="{ 'is-active': openNav }" x-on:click="openNav = !openNav">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu" :class="{ 'is-active': openNav }">
+            <div class="navbar-start">
+                <a href="/" class="navbar-item ">FVA</a>
+                
+                
+                    
+                    <a href="/blog/" class="navbar-item ">News</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/about/" class="navbar-link ">Über uns</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/about/team/" class="navbar-item ">Team</a>
+                            
+                            <a href="/about/workshop/" class="navbar-item ">Werkstatt</a>
+                            
+                            <a href="/about/history/" class="navbar-item ">Geschichte</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/projects/" class="navbar-link ">Projekte</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/projects/fva30/" class="navbar-item ">FVA 30</a>
+                            
+                            <a href="/projects/fva29/" class="navbar-item ">FVA 29</a>
+                            
+                            <a href="/projects/fva24/" class="navbar-item ">FVA 24d</a>
+                            
+                            <a href="/projects/oldprojects/" class="navbar-item ">Ältere Projekte</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <a href="/flying/" class="navbar-item ">Fliegen</a>
+                    
+                
+                    
+                    <a href="/join/" class="navbar-item ">Mitmachen</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/partners/" class="navbar-link ">Partner</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/partners/newpartner/" class="navbar-item ">Partner werden</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/contact/" class="navbar-link ">Kontakt</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/contact/imprint/" class="navbar-item ">Impressum</a>
+                            
+                            <a href="/contact/privacy/" class="navbar-item ">Datenschutz</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                
+            </div>
+                <div class="navbar-end">
+			
+			        
+			        <a class="navbar-item" href="/en/2019/09/14/systemplan/">
+                            <span>&nbsp;EN</span>
+                            <span class="icon"><i class="fas fa-globe"></i></span>
+                		</a>
+			
+        	</div>        
+        </div>
+    </div>
+</nav>
+
+    
+        <section class="hero  is-narrow  is-bold is-primary" >
+    <div class="hero-body ">
+        <div class="container">
+            
+            <h1 class="title is-2">Systemplan</h1>
+            
+            <p class="subtitle is-3"></p>
+            
+        </div>
+    </div>
+</section>
+    
+    
+
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                
+                <div class="column is-12">
+                    
+                    
+                    
+                    
+                    <div class="content">
+
+    <p>Veröffentlicht am 14.09.2019 von Moritz Scholjegerdes</p>
+
+    <p>Die FVA-30 ist als hybrid-elektrischer Motorsegler für Mittelstreckenflüge (600-800 km) ausgelegt, wobei der Range Extender (REX) die im Reiseflug benötigte Leistung zur Verfügung stellt (optimaler Betriebspunkt). Die Batterie dient hierbei zur Abdeckung von Leistungsspitzen im Flugprofil (Start, Steigflug, ggf. Durchstartmanöver) und Puffern von Leistungsschwankungen im Reiseflug. In der ersten Ausbauphase ist jedoch zunächst die Zulassung eines rein-elektrischen Prototypen vorgesehen, der das selbstständige Starten, Steigen auf 1000 m Höhe (über Grund) und einen 15-minütigen Reiseflug unter pessimistischen Bedingungen erlaubt.</p>
+
+<h2 id="ausbauphase-i-batterieelektrischer-prototyp">Ausbauphase I: Batterieelektrischer Prototyp</h2>
+
+<p>Für den batterieelektrischen Prototypen werden wir zunächst eine möglichst einfache Systemarchitektur verwenden und dann mit der Zeit und Erfahrungen die Komplexität systematisch steigern. Dazu werden wir jeden Inverter fest mit einer Batterie verbinden und die Antriebe der linken und rechten Seite somit komplett voneinander separiert belassen (siehe Abbildung unten). Des Weiteren wollen wir anfangs auf eine zusätzliche Regelung zu der in den Invertern verzichten, indem die Inverter direkt und nur über die Schubhebel gesteuert werden. Die Bedieneinheit im Cockpit soll lediglich der Anzeige von Informationen dienen und nicht systemrelevant sein. Durch die Trennung der Antriebsstränge wird im Vergleich zum Systemplan Phase II (siehe nächster Abschnitt) jedoch je ein Isolations-Wächter pro Batterie benötigt. Der DC-DC Wandler zwischen HV- und LV-Ebene soll in der ersten Ausbaustufe der FVA-30 wegfallen und durch eine größere Nieder-Volt Batterie ersetzt werden, weshalb jede Antriebsseite eine eigene 12 V LiFePo Batterie bekommen soll.</p>
+
+<p><img src="/assets/img/archive/Systemplan.png" alt="" /></p>
+
+<p>Systemplan des Antriebsstrangs des batterieelektrischen Prototyps (Phase I)</p>
+
+<p>Die vorgesehene Redundanz im Antriebsstrang wird auch durch die Aufteilung des Batteriesystems auf zwei unabhängige parallele Batteriesysteme mit jeweils eigenem BMS abgebildet. Die in der zweiten Ausbauphase vorgesehene Kopplung der beiden HV-DC Stränge, erlaubt damit den Betrieb beider Motoren bei einseitigem Batterieausfall (siehe Batterietests, Redundanzfall).</p>
+
+<h2 id="ausbauphase-ii-hybrid-elektrischer-betrieb">Ausbauphase II: Hybrid-elektrischer Betrieb</h2>
+
+<p>Beim hybrid-elektrischen Betrieb speist der Range-Extender die für den Reiseflug benötigte Leistung über einen AC/DC-Wandler in den DC-Zwischenkreis, dessen Spannung bei reinem REX-Betrieb auf die Batteriespannung geregelt wird. Die über die Power Distribution Unit gekoppelten Antriebsstränge sind zusätzlich über einen DC/DC-Wandler mit dem 12 V Bordnetz zur Versorgung der Bordelektronik und Avionik verbunden, sodass letzteres nur im Notfall auf die verkleinerte Backup LV-Batterie zurückgreifen muss. Zur Überwachung des Isolationszustandes der zwei HV Batterien kommt ein Isolationswächter zum Einsatz.</p>
+
+<p><img src="/assets/img/archive/02_BSB_Systemarchitektur_RevI.png" alt="" /></p>
+
+<p>Grober Systemplan für den hybrid-elektrischen Betrieb (Phase II)</p>
+
+<p>Ausblick: Aktuell wird ein detaillierter Systemplan entwickelt, der auch Signalflüsse und Steuerungselektronik beinhaltet.</p>
+
+</div>
+
+<div class="field is-grouped is-grouped-multiline">
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/FVA30">
+<span class="tag  is-primary ">
+    FVA30
+</span>
+</a>
+    </div>
+  </div>
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/FVA30rex">
+<span class="tag  is-primary ">
+    FVA30 Range Extender
+</span>
+</a>
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+        <footer class="footer">
+    <div class="container">
+        
+        
+        <div class="columns is-multiline">
+            
+        </div>
+        
+
+        <div class="column is-12">
+            <div class="has-text-centered">
+                <p><strong>Folgen auf</strong></p>
+                <div class="buttons is-centered">
+                    <a href="https://www.facebook.com/fva1920/" class="button is-light">
+                        <i class="fab fa-facebook fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.instagram.com/fva1920/" class="button is-light">
+                        <i class="fab fa-instagram fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCTCcUCZQNPcGdRwlTqN_M-Q" class="button is-light">
+                        <i class="fab fa-youtube fa-lg has-text-danger"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/fva-1920/" class="button is-light">
+                        <i class="fab fa-linkedin fa-lg has-text-link"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class="">Theme built by <a href="https://www.csrhymes.com">C.S. Rhymes</a></p>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class=""><a href="/contact/imprint/">Impressum</a> 
+                <a href="/contact/privacy/">Datenschutzerklärung</a>
+                <a href="https://fva.cloud">Intern</a></p>
+            </div>
+    </div>
+</footer>
+
+    
+    <script src="/assets/js/app.js" type="text/javascript"></script><!-- footer scripts --></body>
+</html>

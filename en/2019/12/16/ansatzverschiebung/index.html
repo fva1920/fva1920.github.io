@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+
+
+
+<html
+ lang="en"
+ class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content=#ffffff>
+    
+    <title>Wing Displacement - FVA</title>
+    
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="shortcut icon" type="image/png"
+           href="/favicon.png" 
+    />
+    <link rel=preload href="/assets/css/roboto.css" as="style">
+    <link rel=preload href="/assets/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/roboto-v20-latin-ext_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <script src="/assets/js/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/fontawesome.all.min.css">
+    
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Wing Displacement" />
+<meta name="author" content="Benjamin Kelm" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="For the FVA-30, the wing geometry and a large part of the fuselage are identical to the e-Genius. However, there are major deviations in the mass distribution for the components associated with the tail unit, the propulsion system and the power supply. This results in a center of gravity shift that must be corrected to ensure flight mechanical stability." />
+<meta property="og:description" content="For the FVA-30, the wing geometry and a large part of the fuselage are identical to the e-Genius. However, there are major deviations in the mass distribution for the components associated with the tail unit, the propulsion system and the power supply. This results in a center of gravity shift that must be corrected to ensure flight mechanical stability." />
+<meta property="og:site_name" content="FVA" />
+<meta property="og:image" content="/en/assets/img/archive/fva-30-draft.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-12-16T12:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="/en/assets/img/archive/fva-30-draft.png" />
+<meta property="twitter:title" content="Wing Displacement" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Benjamin Kelm"},"dateModified":"2019-12-16T12:00:00+00:00","datePublished":"2019-12-16T12:00:00+00:00","description":"For the FVA-30, the wing geometry and a large part of the fuselage are identical to the e-Genius. However, there are major deviations in the mass distribution for the components associated with the tail unit, the propulsion system and the power supply. This results in a center of gravity shift that must be corrected to ensure flight mechanical stability.","headline":"Wing Displacement","image":"/en/assets/img/archive/fva-30-draft.png","mainEntityOfPage":{"@type":"WebPage","@id":"/en/2019/12/16/ansatzverschiebung/"},"url":"/en/2019/12/16/ansatzverschiebung/"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- head scripts --></head>
+
+  
+  <body>
+  
+    <nav class="navbar is-primary  is-fixed-top " x-data="{ openNav: false }">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/en/" class="navbar-item">
+                <img src=/assets/img/fvaLogo.png>
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu" :class="{ 'is-active': openNav }" x-on:click="openNav = !openNav">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu" :class="{ 'is-active': openNav }">
+            <div class="navbar-start">
+                <a href="/en/" class="navbar-item ">FVA</a>
+                
+                
+                    
+                    <a href="/en/blog/" class="navbar-item ">News</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/en/about/" class="navbar-link ">About</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/en/about/team/" class="navbar-item ">Team</a>
+                            
+                            <a href="/en/about/workshop/" class="navbar-item ">Workshop</a>
+                            
+                            <a href="/en/about/history/" class="navbar-item ">History</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/en/projects/" class="navbar-link ">Projects</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/en/projects/fva30/" class="navbar-item ">FVA 30</a>
+                            
+                            <a href="/en/projects/fva29/" class="navbar-item ">FVA 29</a>
+                            
+                            <a href="/en/projects/fva24/" class="navbar-item ">FVA 24d</a>
+                            
+                            <a href="/en/projects/oldprojects/" class="navbar-item ">Older Projects</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <a href="/en/flying/" class="navbar-item ">Fly</a>
+                    
+                
+                    
+                    <a href="/en/join/" class="navbar-item ">Join</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/en/partners/" class="navbar-link ">Partners</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/en/partners/newpartner/" class="navbar-item ">Become a partner!</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/en/contact/" class="navbar-link ">Contact</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/en/contact/imprint/" class="navbar-item ">Imprint</a>
+                            
+                            <a href="/en/contact/privacy/" class="navbar-item ">Privacy</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                
+            </div>
+                <div class="navbar-end">
+			
+				
+			  	<a class="navbar-item" href="/2019/12/16/ansatzverschiebung/">
+                            <span>&nbsp;DE</span>
+                    		<span class="icon"><i class="fas fa-globe"></i></span>
+        			</a>
+			
+        	</div>        
+        </div>
+    </div>
+</nav>
+
+    
+        <section class="hero  is-narrow  is-bold is-primary" >
+    <div class="hero-body ">
+        <div class="container">
+            
+            <h1 class="title is-2">Wing Displacement</h1>
+            
+            <p class="subtitle is-3"></p>
+            
+        </div>
+    </div>
+</section>
+    
+    
+
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                
+                <div class="column is-12">
+                    
+                    
+                    
+                    
+                    <div class="content">
+
+    <p>Published: 16.12.2019 by Benjamin Kelm</p>
+
+    <p>For the FVA-30, the wing geometry and a large part of the fuselage are identical to the e-Genius. However, there are major deviations in the mass distribution for the components associated with the tail unit, the propulsion system and the power supply. This results in a center of gravity shift that must be corrected to ensure flight mechanical stability.</p>
+
+<p><img src="/assets/img/archive/fva-30-draft.png" alt="" /></p>
+
+<p>Preliminary aircraft geometry of the FVA-30 (as of 2019).</p>
+
+<h2 id="neutral-point-shift-due-to-hull-influence">Neutral point shift due to hull influence</h2>
+<p>In addition, the fuselage contributes to an aircraft neutral point displacement. In order to be able to represent this influence, the fuselage is included in the AVL geometry model as a lift surface by means of a projection into the x-y plane (cf. figure below). Numerical comparisons with and without the fuselage show that this methodology does indeed represent the neutral point displacement due to the fuselage. However, the influence is slightly overestimated (20%).</p>
+
+<p><img src="/assets/img/archive/Drallwinkelverteilung_Geometry.png" alt="" /></p>
+
+<p>AVL geometry view with lift distributions for the flight condition “take-off on landing approach, foremost center of gravity with max. thrust”, fuselage approximated as a flat plate (cruciform fuselage)</p>
+
+<h2 id="necessity-of-a-wing-displacement">Necessity of a wing displacement</h2>
+
+<p>To ensure static stability, the aircraft neutral point must be located behind the most rearward C.G. position. In addition, a static margin of 5% should be maintained. However, this cannot be maintained with the expected center of gravity limits. Therefore, in order to meet this stability requirement, either the aftmost C.G. boundary must be moved forward (1) or the aircraft neutral point must be moved aft (2).</p>
+
+<p><strong>(1) Shifting the rear center of gravity boundary forward</strong></p>
+
+<ul>
+  <li>Fore fuselage extension:
+  – Difficulties with contour continuity &amp; construction effort</li>
+  <li>Raising the minimum payload or trim weights:
+  – Reserved as a final adjustment option</li>
+</ul>
+
+<p><strong>(2) Shifting the aircraft neutral point backward</strong>
+<strong>Modification of the tail unit:</strong></p>
+
+<ul>
+  <li>Increase of the tail surface:
+    <ul>
+      <li>Simple implementation (tail unit still to be built)
+  – Weight, resistance, low efficiency</li>
+    </ul>
+  </li>
+  <li>Modification of the tail extension:
+    <ul>
+      <li>Simple implementation (tail unit still to be built)
+  – Larger lever arms for thrust moment, weight, low efficiency.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Wing adjustments:</strong></p>
+
+<ul>
+  <li>Geometry changes: not possible, as wings are to be completely taken over by the e-Genius</li>
+  <li>Change of the wing attachment point:
+    <ul>
+      <li>Great effectiveness, only about 30% of the mass (wing) is displaced with.</li>
+      <li>Implementable with relatively little effort.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Due to the relatively low effort to move the wing attachment to the fuselage and the high effectiveness, this method is preferred to the others.</strong></p>
+
+<h2 id="optimization-methodology">Optimization Methodology</h2>
+<p>With the gained degree of freedom of the wing root displacement, an optimization calculation for the optimal, i.e. smallest empennage, which nevertheless fulfills the requirements for stability and controllability, was performed. This is only possible numerically (MATLAB, FVA-30 Flight Mechanical Design Computer), since a large number of dependencies (e.g. pitching moments dependent on thrust and tailplane height) can only be solved iteratively.</p>
+
+<p>In the calculator, the C.G. position is first adjusted for a possible wing root displacement range of +/- 200mm, based on the current wing position, since the masses of the tanks/wingpods are always also displaced with a displacement of the wing root. Further, for each optional wing root displacement point (step size 1mm) a minimum control surface is calculated and stored according to the flight mechanical requirements for longitudinal and lateral movement. Maximum rudder deflections to be controlled, which result from aerodynamic considerations at the tail unit, are also included in the calculation. The results of the optimization calculation are shown in the following figure. It can be clearly seen that a minimum for a wing root displacement of 136 mm emerges. The legend lists the individual requirements according to which the empennage areas are calculated, whereby the total area of the empennage is to be minimized.</p>
+
+<p><img src="/assets/img/archive/201_Fluegelverschiebung.png" alt="" /></p>
+
+<p>Change in the size of the empennage as a result of the wing root displacement</p>
+
+<p>After considering various other factors, such as the modifiability of the original shape, belt positions and tail wheel loads, it was finally decided to shift the wing attachment by 120 mm. However, since it is difficult to shift the wheel well due to restrictions in the installation space, the planned wing root shift results in a slightly increased tail wheel load, which must be taken into account in the tail wheel design.</p>
+
+</div>
+
+<div class="field is-grouped is-grouped-multiline">
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/en/tags/FVA30">
+<span class="tag  is-primary ">
+    FVA30
+</span>
+</a>
+    </div>
+  </div>
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/en/tags/FVA30aero">
+<span class="tag  is-primary ">
+    FVA30 aerodynamics
+</span>
+</a>
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+        <footer class="footer">
+    <div class="container">
+        
+        
+        <div class="columns is-multiline">
+            
+        </div>
+        
+
+        <div class="column is-12">
+            <div class="has-text-centered">
+                <p><strong>Follow</strong></p>
+                <div class="buttons is-centered">
+                    <a href="https://www.facebook.com/fva1920/" class="button is-light">
+                        <i class="fab fa-facebook fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.instagram.com/fva1920/" class="button is-light">
+                        <i class="fab fa-instagram fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCTCcUCZQNPcGdRwlTqN_M-Q" class="button is-light">
+                        <i class="fab fa-youtube fa-lg has-text-danger"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/fva-1920/" class="button is-light">
+                        <i class="fab fa-linkedin fa-lg has-text-link"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class="">Theme built by <a href="https://www.csrhymes.com">C.S. Rhymes</a></p>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class=""><a href="/en/contact/imprint/">Impressum</a> 
+                <a href="/en/contact/privacy/">Datenschutzerklärung</a>
+                <a href="https://fva.cloud">Intern</a></p>
+            </div>
+    </div>
+</footer>
+
+    
+    <script src="/assets/js/app.js" type="text/javascript"></script><!-- footer scripts --></body>
+</html>

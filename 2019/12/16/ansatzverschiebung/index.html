@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+
+
+
+<html
+ lang="de"
+ class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content=#ffffff>
+    
+    <title>Flügelansatzverschiebung - FVA</title>
+    
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="shortcut icon" type="image/png"
+           href="/favicon.png" 
+    />
+    <link rel=preload href="/assets/css/roboto.css" as="style">
+    <link rel=preload href="/assets/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel=preload href="/assets/webfonts/roboto-v20-latin-ext_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <script src="/assets/js/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/fontawesome.all.min.css">
+    
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Flügelansatzverschiebung" />
+<meta name="author" content="Benjamin Kelm" />
+<meta property="og:locale" content="de" />
+<meta name="description" content="Für die FVA-30 ist die Flügelgeometrie sowie ein Großteil des Rumpfes identisch mit dem e-Genius. In der Massenverteilung gibt es jedoch größere Abweichungen für die Komponenten, die dem Leitwerk, dem Antriebssystem und der Energieversorgung zugehörig sind. Dies führt zu einer Schwerpunktverschiebung die zur Sicherstellung der flugmechanischen Stabilität korrigiert werden muss." />
+<meta property="og:description" content="Für die FVA-30 ist die Flügelgeometrie sowie ein Großteil des Rumpfes identisch mit dem e-Genius. In der Massenverteilung gibt es jedoch größere Abweichungen für die Komponenten, die dem Leitwerk, dem Antriebssystem und der Energieversorgung zugehörig sind. Dies führt zu einer Schwerpunktverschiebung die zur Sicherstellung der flugmechanischen Stabilität korrigiert werden muss." />
+<meta property="og:site_name" content="FVA" />
+<meta property="og:image" content="/assets/img/archive/fva-30-draft.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-12-16T12:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="/assets/img/archive/fva-30-draft.png" />
+<meta property="twitter:title" content="Flügelansatzverschiebung" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Benjamin Kelm"},"dateModified":"2019-12-16T12:00:00+00:00","datePublished":"2019-12-16T12:00:00+00:00","description":"Für die FVA-30 ist die Flügelgeometrie sowie ein Großteil des Rumpfes identisch mit dem e-Genius. In der Massenverteilung gibt es jedoch größere Abweichungen für die Komponenten, die dem Leitwerk, dem Antriebssystem und der Energieversorgung zugehörig sind. Dies führt zu einer Schwerpunktverschiebung die zur Sicherstellung der flugmechanischen Stabilität korrigiert werden muss.","headline":"Flügelansatzverschiebung","image":"/assets/img/archive/fva-30-draft.png","mainEntityOfPage":{"@type":"WebPage","@id":"/2019/12/16/ansatzverschiebung/"},"url":"/2019/12/16/ansatzverschiebung/"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- head scripts --></head>
+
+  
+  <body>
+  
+    <nav class="navbar is-primary  is-fixed-top " x-data="{ openNav: false }">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/" class="navbar-item">
+                <img src=/assets/img/fvaLogo.png>
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu" :class="{ 'is-active': openNav }" x-on:click="openNav = !openNav">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu" :class="{ 'is-active': openNav }">
+            <div class="navbar-start">
+                <a href="/" class="navbar-item ">FVA</a>
+                
+                
+                    
+                    <a href="/blog/" class="navbar-item ">News</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/about/" class="navbar-link ">Über uns</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/about/team/" class="navbar-item ">Team</a>
+                            
+                            <a href="/about/workshop/" class="navbar-item ">Werkstatt</a>
+                            
+                            <a href="/about/history/" class="navbar-item ">Geschichte</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/projects/" class="navbar-link ">Projekte</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/projects/fva30/" class="navbar-item ">FVA 30</a>
+                            
+                            <a href="/projects/fva29/" class="navbar-item ">FVA 29</a>
+                            
+                            <a href="/projects/fva24/" class="navbar-item ">FVA 24d</a>
+                            
+                            <a href="/projects/oldprojects/" class="navbar-item ">Ältere Projekte</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <a href="/flying/" class="navbar-item ">Fliegen</a>
+                    
+                
+                    
+                    <a href="/join/" class="navbar-item ">Mitmachen</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/partners/" class="navbar-link ">Partner</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/partners/newpartner/" class="navbar-item ">Partner werden</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/contact/" class="navbar-link ">Kontakt</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/contact/imprint/" class="navbar-item ">Impressum</a>
+                            
+                            <a href="/contact/privacy/" class="navbar-item ">Datenschutz</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                
+            </div>
+                <div class="navbar-end">
+			
+			        
+			        <a class="navbar-item" href="/en/2019/12/16/ansatzverschiebung/">
+                            <span>&nbsp;EN</span>
+                            <span class="icon"><i class="fas fa-globe"></i></span>
+                		</a>
+			
+        	</div>        
+        </div>
+    </div>
+</nav>
+
+    
+        <section class="hero  is-narrow  is-bold is-primary" >
+    <div class="hero-body ">
+        <div class="container">
+            
+            <h1 class="title is-2">Flügelansatzverschiebung</h1>
+            
+            <p class="subtitle is-3"></p>
+            
+        </div>
+    </div>
+</section>
+    
+    
+
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                
+                <div class="column is-12">
+                    
+                    
+                    
+                    
+                    <div class="content">
+
+    <p>Veröffentlicht am 16.12.2019 von Benjamin Kelm</p>
+
+    <p>Für die FVA-30 ist die Flügelgeometrie sowie ein Großteil des Rumpfes identisch mit dem e-Genius. In der Massenverteilung gibt es jedoch größere Abweichungen für die Komponenten, die dem Leitwerk, dem Antriebssystem und der Energieversorgung zugehörig sind. Dies führt zu einer Schwerpunktverschiebung die zur Sicherstellung der flugmechanischen Stabilität korrigiert werden muss.</p>
+
+<p><img src="/assets/img/archive/fva-30-draft.png" alt="" /></p>
+
+<p>Vorläufige Flugzeuggeometrie der FVA-30 (Stand 2019)</p>
+
+<h2 id="neutralpunktverschiebung-infolge-rumpfeinfluss">Neutralpunktverschiebung infolge Rumpfeinfluss</h2>
+<p>Zusätzlich dazu trägt der Rumpf zu einer Flugzeugneutralpunktverschiebung bei. Um diesen Einfluss abbilden zu können, wird der Rumpf als Auftriebsfläche durch eine Projektion in die x-y Ebene in das AVL Geometriemodell mit aufgenommen (vgl. Abbildung unten). Numerische Verlgeichsrechnungen mit und ohne Rumpf zeigen, dass diese Methodik in der Tat die Neutralpunktverschiebung durch den Rumpf abbildet. Der Einfluss wird jedoch leicht (20%) überschätzt.</p>
+
+<p><img src="/assets/img/archive/Drallwinkelverteilung_Geometry.png" alt="" /></p>
+
+<p>AVL Geometrie-Ansicht mit Auftriebsverteilungen für den Flugzustand “Durchstarten beim Landeanflug, vorderster Schwerpunkt mit max. Schub”, Rumpf als ebene Platte angenähert (Kreuzrumpf)</p>
+
+<h2 id="notwendigkeit-einer-flügelverschiebung">Notwendigkeit einer Flügelverschiebung</h2>
+
+<p>Um statische Stabilität gewährleisten zu können, muss der Flugzeugneutralpunkt hinter der rückwärtigsten Schwerpunktlage liegen. Zuzüglich dazu sollte noch ein Sicherheitsabstand, ein static margin von 5% eingehalten werden. Dies ist mit den erwarteten Schwerpunktsgrenzen jedoch nicht einzuhalten. Daher muss zur Einhaltung dieser Stabilitätsanforderung entweder die hintere Schwerpunktgrenze nach vorn (1) verschoben werden oder der Flugzeugneutralpunkt nach hinten (2) verschoben werden.</p>
+
+<p><strong>(1) Verschieben der hinteren Schwerpunktgrenze nach vorn:</strong></p>
+
+<ul>
+  <li>Vorderrumpfverlängerung:
+  – Schwierigkeiten bei Konturstetigkeit &amp; baulicher Aufwand</li>
+  <li>Anheben der Minimalzuladung oder Trimmgewichte:
+  – Als letzte Anpassungsmöglichkeit vorbehalten</li>
+</ul>
+
+<p><strong>(2) Verschiebung des Flugzeugneutralpunkts nach hinten</strong>
+<strong>Änderung des Leitwerks:</strong></p>
+
+<ul>
+  <li>Vergrößerung der Leitwerksfläche:
+    <ul>
+      <li>Einfache Umsetzung (Leitwerksbau steht noch aus)
+  – Gewicht, Widerstand, geringe Wirksamkeit</li>
+    </ul>
+  </li>
+  <li>Änderung der Leitwerksstreckung:
+    <ul>
+      <li>Einfache Umsetzung (Leitwerksbau steht noch aus)
+  – Größere Hebelarme für Schub-Moment, Gewicht, geringe Wirksamkeit</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Änderung des Flügels</strong></p>
+
+<ul>
+  <li>Geometrieänderungen: nicht möglich, da Flügel vollständig vom e-Genius übernommen werden sollen</li>
+  <li>Änderung des Flügelansatzpunktes:
+    <ul>
+      <li>Große Wirksamkeit, nur ca. 30% der Masse (Flügel) wird mitverschoben.</li>
+      <li>umsetzbar mit verhältnismäßig geringem Aufwand.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Aufgrund des verhältnismäßig geringen Aufwands, den Flügelansatz am Rumpf zu verschieben und der hohen Wirksamkeit wird diese Methode den anderen vorgezogen.</strong></p>
+
+<h2 id="methodik-der-optimierungsrechnung">Methodik der Optimierungsrechnung</h2>
+<p>Mit dem gewonnenen Freiheitsgrad der Flügelansatzverschiebung wurde eine Optimierungsrechnung für das optimale, d.h. kleinste Leitwerk, welches jedoch die Forderungen nach Stabilität und Steuerbarkeit erfüllt, durchgeführt. Dies ist nur numerisch möglich (MATLAB, FVA-30 Flugmechanischer Auslegungsrechner), da eine Vielzahl der Abhängigkeiten (bspw. von Schub und Leitwerkshöhe abhängige Nickmomente) nur iterativ gelöst werden können.</p>
+
+<p>In dem Rechner wird für einen möglichen Flügelansatz-Verschiebungsbereich von +/- 200mm, ausgehend von der aktuellen Flügellage, zunächst die Schwerpunktlage angepasst, da mit einer Verschiebung des Flügelansatzes immer auch die Massen der Tanks/Wingpods mitverschoben werden. Weiter wird dann für jeden optionalen Flügelansatz Verschiebungspunkt (Schrittweite 1mm) ein minimales Leitwerk nach den flugmechanischen Forderungen für Längs- und Seitenbewegung berechnet und gespeichert. Auch maximal zu steuernde Ruderausschläge, die aus aerodynamischer Betrachtung am Leitwerk resultieren, gehen in die Rechnung mit ein. Die Ergebnisse der Optimierungsrechnung sind in der folgenden Abbildung abgebildet. Es ist eindeutig zu sehen, dass sich ein Minimum für eine Flügelansatzverschiebung von 136 mm abzeichnet. In der Legende sind die Einzelforderungen, nach denen sich die Leitwerksflächen berechnen, aufgelistet, wobei die Gesamtfläche des Leitwerks zu minimieren ist.</p>
+
+<p><img src="/assets/img/archive/201_Fluegelverschiebung.png" alt="" /></p>
+
+<p>Änderung der Leitwerksgröße infolge der Flügelansatzverschiebung</p>
+
+<p>Unter Abwägung verschiedener weiterer Faktoren wie z.B. der Modifizierbarkeit der Urform, Gurtpositionen und Spornradlasten, wurde final eine Flügelansatzverschiebung um 120 mm beschlossen. Da sich eine Verschiebung des Radkastens aufgrund von Einschränkungen im Bauraum schwierig gestaltet, resultiert die geplante Flügelansatzverschiebung jedoch in einer leicht erhöhten Spornradlast, die in der Spornradauslegung berücksichtigt werden muss.</p>
+
+</div>
+
+<div class="field is-grouped is-grouped-multiline">
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/FVA30">
+<span class="tag  is-primary ">
+    FVA30
+</span>
+</a>
+    </div>
+  </div>
+  
+  
+  <div class="control">
+    <div class="tags">
+      <a href="/tags/FVA30aero">
+<span class="tag  is-primary ">
+    FVA30 Aerodynamik
+</span>
+</a>
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+        <footer class="footer">
+    <div class="container">
+        
+        
+        <div class="columns is-multiline">
+            
+        </div>
+        
+
+        <div class="column is-12">
+            <div class="has-text-centered">
+                <p><strong>Folgen auf</strong></p>
+                <div class="buttons is-centered">
+                    <a href="https://www.facebook.com/fva1920/" class="button is-light">
+                        <i class="fab fa-facebook fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.instagram.com/fva1920/" class="button is-light">
+                        <i class="fab fa-instagram fa-lg has-text-link"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCTCcUCZQNPcGdRwlTqN_M-Q" class="button is-light">
+                        <i class="fab fa-youtube fa-lg has-text-danger"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/fva-1920/" class="button is-light">
+                        <i class="fab fa-linkedin fa-lg has-text-link"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class="">Theme built by <a href="https://www.csrhymes.com">C.S. Rhymes</a></p>
+            </div>
+            <div class="content is-small has-text-centered">
+                <p class=""><a href="/contact/imprint/">Impressum</a> 
+                <a href="/contact/privacy/">Datenschutzerklärung</a>
+                <a href="https://fva.cloud">Intern</a></p>
+            </div>
+    </div>
+</footer>
+
+    
+    <script src="/assets/js/app.js" type="text/javascript"></script><!-- footer scripts --></body>
+</html>
